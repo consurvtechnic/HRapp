@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color='primary'>
+    <ion-title>Setting</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button share="round" color="primary" (click)="logoutAction()">LOGOUT</ion-button>
+  <ion-item>Name: {{displayUserData?.staff_name}}</ion-item>
+  <div style="margin-top:1em;" *ngIf="showChangePassword==false" class="ion-text-center">
+    <ion-button (click)="showChangePassword=true">
+      Change Password kmu?
+    </ion-button>
+  </div>
+  <ion-item color='primary' *ngIf="showChangePassword==true">
+    <strong>
+      CHANGE PASSWORD
+    </strong>
+  </ion-item>
+  <ion-item *ngIf="showChangePassword==true">
+    <ion-label>
+      Old Password
+    </ion-label>
+    <ion-input [(ngModel)]='oldPassword' type="password"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="showChangePassword==true">
+    <ion-label>
+      New Password
+    </ion-label>
+    <ion-input [(ngModel)]="newPassword" type="password"></ion-input>
+  </ion-item>
+  <!-- <ion-item> -->
+    <div *ngIf="showChangePassword==true">
+      <ion-button color="danger" expand='full' (click)="changePassword()">
+        Send New Password
+      </ion-button>
+    </div>
+    <div *ngIf="showChangePassword==true">
+      <ion-button expand='full' fill="clear" color="dark" (click)="showChangePassword=false">
+        Close
+      </ion-button>
+    </div>
+
+  <!-- </ion-item> -->
+
+</ion-content>
