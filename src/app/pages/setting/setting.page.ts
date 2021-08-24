@@ -81,6 +81,13 @@ export class SettingPage implements OnInit {
   displayUserData: any;
   userInfo:any={};
 
+oldPassword:any;
+  newPassword:any;
+  showChangePassword=false;
+
+  passwordType: string = 'password';
+ passwordIcon: string = 'eye-off';
+
   constructor(
     private authService: AuthService, 
     private http:HttpService,
@@ -98,4 +105,21 @@ export class SettingPage implements OnInit {
     await this.authService.logout();
   }
 
+changePassword()
+  {
+    // console.log('User Info',this.userInfo);
+//     URL: http://consurv.no-ip.biz/leave/changepassword
+// Expected variable : username, olpass, newpass
+    this.http.post('changepassword',{username:this.userInfo.staff_id,olpass:this.oldPassword,newpass:this.newPassword})
+    .subscribe(res=>{
+      console.log(res);
+    },err=>{
+      console.log(err);
+    })
+  }
+
+  hideShowPassword() {
+     this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
+     this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
+ }
 }
