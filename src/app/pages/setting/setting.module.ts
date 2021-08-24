@@ -8,6 +8,7 @@ import { SettingPageRoutingModule } from './setting-routing.module';
 
 import { SettingPage } from './setting.page';
 
+
 @NgModule({
   imports: [
     CommonModule,

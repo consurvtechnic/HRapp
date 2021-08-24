@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar color='primary'>
     <ion-title>Setting</ion-title>
   </ion-toolbar>
@@ -29,7 +29,6 @@
     </ion-label>
     <ion-input [(ngModel)]="newPassword" type="password"></ion-input>
   </ion-item>
-  <!-- <ion-item> -->
     <div *ngIf="showChangePassword==true">
       <ion-button color="danger" expand='full' (click)="changePassword()">
         Send New Password
@@ -41,6 +40,60 @@
       </ion-button>
     </div>
 
-  <!-- </ion-item> -->
+</ion-content> -->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list-header>
+    <ion-label class="ion-text-uppercase" color="ios-lh-labl-gray">
+      User Details
+    </ion-label>
+  </ion-list-header>
+  <ion-list >
+    <ion-item lines="full">
+      <ion-avatar slot="start">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+      <ion-label>
+        <ion-item class="ion-text-lowercase" lines="none">{{displayUserData?.staff_name}}</ion-item>
+      </ion-label>
+      <div class="center">
+        <ion-button (click)="signOut()" fill="clear">Log out</ion-button>
+      </div>
+    </ion-item>
+  </ion-list>
+  <!-- <ion-list *ngIf="!user">
+    <ion-item lines="full">
+      <a class="link" (click)="loginAction()">Log in to view</a>
+    </ion-item>
+  </ion-list> -->
+
+  <ion-list-header>
+    <ion-label class="ion-text-uppercase" color="ios-lh-labl-gray">
+      Communications
+    </ion-label>
+  </ion-list-header>
+  <ion-list>
+    <ion-item>
+      <ion-icon name="send" slot="start" color="medium"></ion-icon>
+      <ion-label>Push Notifications</ion-label>
+      <ion-toggle slot checked></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="mail" slot="start" color="medium"></ion-icon>
+      <ion-label>Email</ion-label>
+      <ion-toggle slot></ion-toggle>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-icon name="chatbox-ellipses" slot="start" color="medium"></ion-icon>
+      <ion-label>SMS</ion-label>
+      <ion-toggle slot checked></ion-toggle>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
