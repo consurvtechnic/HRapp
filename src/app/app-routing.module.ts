@@ -27,7 +27,10 @@ const routes: Routes = [
     path: 'approve-modal',
     loadChildren: () => import('./approve-modal/approve-modal.module').then( m => m.ApproveModalPageModule)
   },
-
+  {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
+  }
   
   
 ];

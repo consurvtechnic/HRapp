@@ -7,6 +7,10 @@ import { Router } from '@angular/router';
 import { AuthConstants } from 'src/app/config/auth-constant';
 import { Observable, Subscriber } from 'rxjs';
 import { HttpService } from 'src/app/services/http.service';
+import { PopoverController } from '@ionic/angular';
+import { SettingComponent } from 'src/app/setting/setting.component';
+
+
 
 @Component({
   selector: 'app-mukadepan',
@@ -16,7 +20,7 @@ import { HttpService } from 'src/app/services/http.service';
 export class MukadepanPage implements OnInit {
 
   displayUserData: any;
-
+  showStatus: boolean = false;
   
 
   public postData = {
@@ -31,11 +35,32 @@ export class MukadepanPage implements OnInit {
   userInfo:any={};
   leaveDetail:any={}
 
+  async settingsPopover(ev: any) {
+    const siteInfo = { id: 1, name: 'edupala' };
+    const popover = await this.popoverController.create({
+      component: SettingComponent,
+      event: ev,
+      cssClass: 'popover_setting',
+      componentProps: {
+        site: siteInfo
+      },
+      translucent: true
+    });
+
+    popover.onDidDismiss().then((result) => {
+      console.log(result.data);
+    });
+
+    return await popover.present();
+    /** Sync event from popover component */
+
+  }
   constructor(private router: Router,
     private toastCtrl: ToastController, 
     private authService: AuthService,
     private storageService: StorageService,
-    private nav:NavController
+    private nav:NavController,
+    private popoverController: PopoverController
     ) { 
 
       
@@ -111,6 +136,7 @@ export class MukadepanPage implements OnInit {
         text: 'OK'
       }]
     }).then( res => res.present());
+    document.getElementById("status").innerHTML = "You've Checked-In!";
   }
 
   async showToast2(){
@@ -122,6 +148,7 @@ export class MukadepanPage implements OnInit {
         text: 'OK'
       }]
     }).then( res => res.present());
+    document.getElementById("status").innerHTML = "You've Checked-Out!";
   }
 
  async showToast3(){
@@ -143,4 +170,5 @@ export class MukadepanPage implements OnInit {
       console.log('golist',res)} )
   }
 
+  
 }
