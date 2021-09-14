@@ -8,13 +8,26 @@ import { CalendarPageRoutingModule } from './calendar-routing.module';
 
 import { CalendarPage } from './calendar.page';
 
+import { NgCalendarModule  } from 'ionic2-calendar';
+import { CalModalPageModule } from 'src/app/pages/cal-modal/cal-modal.module';
+ 
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeDe from '@angular/common/locales/de';
+registerLocaleData(localeDe);
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CalendarPageRoutingModule
+    CalendarPageRoutingModule,
+    NgCalendarModule,
+    CalModalPageModule
   ],
-  declarations: [CalendarPage]
+  declarations: [CalendarPage],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'en-US' }
+  ]
 })
 export class CalendarPageModule {}

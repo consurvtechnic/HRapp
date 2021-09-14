@@ -27,3 +27,6 @@ ion-content {
     text-transform: uppercase;
   }
   
+  ion-toolbar {
+    --min-height: 50px;
+  }

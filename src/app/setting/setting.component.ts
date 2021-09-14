@@ -14,6 +14,16 @@ import { NavController } from '@ionic/angular';
 })
 export class SettingComponent implements OnInit {
   site;
+  displayUserData: any;
+
+  public postData = {
+    staff_id: '',
+    action: 0,
+    staff_name: '',
+    checkin: '',
+    checkout: '',
+    id: '',
+  }
 
   constructor(
     private authService: AuthService, 
@@ -41,4 +51,10 @@ export class SettingComponent implements OnInit {
     this.popoverController.dismiss();
   }
 
+  async goToHistory(){
+   
+    await this.router.navigate(['history']);
+    console.log('goHistory');
+    this.popoverController.dismiss();
+  }
 }

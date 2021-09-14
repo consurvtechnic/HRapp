@@ -6,6 +6,8 @@ import { AuthService } from 'src/app/services/auth.service';
 import { HttpService } from 'src/app/services/http.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { ToastService } from 'src/app/services/toast.service';
+import { AlertController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-applyleave',
@@ -40,6 +42,7 @@ export class ApplyleavePage implements OnInit {
   halfday2:any;
   image='';
 
+
   constructor(private toastCtrl: ToastController, 
     private router: Router, 
     private authService: AuthService, 
@@ -47,18 +50,30 @@ export class ApplyleavePage implements OnInit {
     private toastService: ToastService,
     private nav:NavController,
     private http:HttpService,
+    public alertCtrl: AlertController
     ) {}
 
 
-   async showToastLeave(){
-    await this.toastCtrl.create({
-      message: "Done!",
-      duration: 2000,
-      position: 'middle',
-      buttons: [{
-        text: 'OK'
-      }]
-    }).then( res => res.present());
+  //  async showToastLeave(){
+  //   await this.toastCtrl.create({
+  //     message: "You have successfully applied for a leave!",
+  //     duration: 2000,
+  //     position: 'middle',
+  //     buttons: [{
+  //       text: 'OK'
+  //     }]
+  //   }).then( res => res.present());
+  // }
+
+    async showAlert() {
+    const alert = await this.alertCtrl.create({
+      header: 'SUCCESS!',
+      subHeader: 'You have successfully applied for a leave!',
+      cssClass:'my-custom-class',
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 
   ngOnInit() { }
