@@ -11,6 +11,14 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
+  {
+    path: '',
+    loadChildren: () => import('./home-hradmin/home-hradmin.module').then( m => m.HomeHRadminPageModule)
+  },
+  {
+    path: '',
+    loadChildren: () => import('./home-manager/home-manager.module').then( m => m.HomeManagerPageModule)
+  },
     {
     path: 'welcome',
     loadChildren: () => import('./components/components.module').then( m => m.ComponentsModule)
@@ -34,7 +42,8 @@ const routes: Routes = [
   {
     path: 'history',
     loadChildren: () => import('./pages/history/history.module').then( m => m.HistoryPageModule)
-  },  {
+  },
+  {
     path: 'cal-modal',
     loadChildren: () => import('./pages/cal-modal/cal-modal.module').then( m => m.CalModalPageModule)
   },
@@ -42,6 +51,32 @@ const routes: Routes = [
     path: 'leave',
     loadChildren: () => import('./pages/leave/leave.module').then( m => m.LeavePageModule)
   },
+  {
+    path: 'home-hradmin',
+    loadChildren: () => import('./home-hradmin/home-hradmin.module').then( m => m.HomeHRadminPageModule)
+  },
+{
+    path: 'applyleave',
+    loadChildren: () => import('./pages/applyleave/applyleave.module').then( m => m.ApplyleavePageModule)
+  },
+  {
+    path: 'mukadepan-admin',
+    loadChildren: () => import('./pages/mukadepan-admin/mukadepan-admin.module').then( m => m.MukadepanAdminPageModule)
+  },
+  {
+    path: 'staff',
+    loadChildren: () => import('./pages/staff/staff.module').then( m => m.StaffPageModule)
+  },
+  {
+    path: 'leaverules',
+    loadChildren: () => import('./pages/leaverules/leaverules.module').then( m => m.LeaverulesPageModule)
+  },
+  {
+    path: 'home-manager',
+    loadChildren: () => import('./home-manager/home-manager.module').then( m => m.HomeManagerPageModule)
+  },
+
+
 
   
 

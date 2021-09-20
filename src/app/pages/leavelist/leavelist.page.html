@@ -1,8 +1,14 @@
-<ion-header>
-  <ion-toolbar color='primary'>
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
     <ion-title>Leave List</ion-title>
+    <ion-buttons slot="end" (click)="goToLeaveHistory()">
+      <ion-button>
+        <ion-icon slot="icon-only" name="clipboard-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
 
 <ion-content>
   <ion-segment [(ngModel)]="selectTabs" mode="md">
@@ -21,7 +27,7 @@
 
   <div *ngIf="selectTabs == 'pending'" >
     <ion-list>
-      <ion-item color='medium'>
+      <ion-item color='dark'>
         <ion-grid>
           <ion-row>
             <ion-col>Type:</ion-col>

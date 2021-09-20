@@ -29,6 +29,7 @@
     "@material-ui/core": "^4.11.3",
     "@mobiscroll/angular": "https://npm.mobiscroll.com/@mobiscroll/angular-trial/-/angular-trial-5.9.0.tgz",
     "ap-angular2-fullcalendar": "^1.6.4",
+    "chart.js": "^3.5.1",
     "firebase": "^9.0.1",
     "ionic2-calendar": "^0.6.9",
     "jquery": "^3.6.0",

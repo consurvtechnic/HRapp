@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserDataResolver } from '../resolver/userData.resolver';
-import { HomePage } from './home.page';
+import { HomeManagerPage } from './home-manager.page';
 
 const routes: Routes = [
   {
-    path: 'home',
-    component: HomePage,
+    path: 'home-manager',
+    component: HomeManagerPage,
     resolve:{
       userData: UserDataResolver
     },
@@ -27,7 +27,7 @@ const routes: Routes = [
         {
         path: 'leavelist',
         loadChildren: () =>
-        import('../pages/leave/leave.module').then(m => m.LeavePageModule)
+        import('../pages/leavelist/leavelist.module').then(m => m.LeavelistPageModule)
         },
 
         {
@@ -50,4 +50,4 @@ const routes: Routes = [
     exports: [RouterModule]
   })
 
-  export class HomeRouter{}
+  export class HomeManagerRouter{}

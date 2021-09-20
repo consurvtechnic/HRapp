@@ -4,6 +4,9 @@ import { AuthService } from 'src/app/services/auth.service';
 import { LeaveModalPage } from '../../leave-modal/leave-modal.page';
 import {ApproveModalPage} from '../../approve-modal/approve-modal.page';
 import { StorageService } from '../../services/storage.service';
+import { SettingComponent } from 'src/app/setting/setting.component';
+import { PopoverController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-leavelist',
@@ -25,7 +28,9 @@ export class LeavelistPage implements OnInit {
     private nav:NavController,
     private loading:LoadingController,
     private modal:ModalController,
-    private storage:StorageService
+    private storage:StorageService,
+    private popoverController: PopoverController,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -40,7 +45,7 @@ export class LeavelistPage implements OnInit {
 
     loader.present();
 
-    this.approvedList=[];
+    this.approvedList=[];9
     this.pendingList=[];
     this.leaveMaster=[];
 
@@ -124,4 +129,14 @@ export class LeavelistPage implements OnInit {
     }
   }
 
+  // async addLeave () {
+  //   await this.router.navigate(['applyleave']);
+  //   console.log('apply leave for HR admin');
+
+  // }
+
+  async goToLeaveHistory () {
+    await this.router.navigate(['./leave']);
+    console.log('button is clicked');
+  }
 }

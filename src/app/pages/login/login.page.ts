@@ -91,4 +91,14 @@ export class LoginPage implements OnInit {
 
     }
   }
+
+  async navigateToHRadmin () {
+    await this.router.navigate(['./home-hradmin']);
+    console.log('button is clicked');
+  }
+
+  async navigateToManager () {
+    await this.router.navigate(['./home-manager/mukadepan']);
+    console.log('button is clicked');
+  }
 }
