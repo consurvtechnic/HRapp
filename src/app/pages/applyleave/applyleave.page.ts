@@ -111,7 +111,7 @@ export class ApplyleavePage implements OnInit {
     })
   }
 
-  /*validateInputs() {
+  validateInputs() {
     let staff_id = this.postData.staff_id;
     let leavetype = this.postData.leavetype;
     let reason = this.postData.reason;
@@ -123,7 +123,7 @@ export class ApplyleavePage implements OnInit {
 
     return (this.postData.staff_id && this.postData.leavetype && this.postData.reason && this.postData.currentDate
       && this.postData.endDate && this.postData.image && this.postData.halfday1 && this.postData.halfday2);
-  }*/
+  }
 
    applyCuti(){
     // this.postData.staff_id;
@@ -136,8 +136,8 @@ export class ApplyleavePage implements OnInit {
     //   this.authService.applyleave(this.postData).subscribe((res: any) => {
     //     console.log('apply',res)} )
 
-    let startDate= this.getCorrectDateFormat(this.currentDate);
-    let endDate= this.getCorrectDateFormat(this.endDate);
+    // let startDate= this.getCorrectDateFormat(this.currentDate);
+    // let endDate= this.getCorrectDateFormat(this.endDate);
 
 
     // staff_id(from user data),
@@ -172,7 +172,6 @@ export class ApplyleavePage implements OnInit {
       this.nav.navigateForward('home/mukadepan');
     },err=>{
       console.log(err);
-      this.nav.navigateForward('home/mukadepan');
     })
 
   }

@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserDataResolver } from '../resolver/userData.resolver';
 import { HomePage } from './home.page';
+import { HomeGuard } from '../guards/home.guard';
+
 
 const routes: Routes = [
   {
@@ -10,7 +12,7 @@ const routes: Routes = [
     resolve:{
       userData: UserDataResolver
     },
-
+    canActivate: [HomeGuard],
     children: [
         {
         path: 'mukadepan',

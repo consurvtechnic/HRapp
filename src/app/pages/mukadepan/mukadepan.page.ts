@@ -19,7 +19,7 @@ import { SettingComponent } from 'src/app/setting/setting.component';
 })
 export class MukadepanPage implements OnInit {
 
-  displayUserData: any;
+  public displayUserData: any;
   showStatus: boolean = false;
   
 

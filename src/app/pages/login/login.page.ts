@@ -22,6 +22,8 @@ export class LoginPage implements OnInit {
     gsm: '0',
   }
 
+  public displayUserData: any;
+
   constructor(private router: Router, 
     private authService: AuthService, 
     private storageService: StorageService, 
@@ -30,6 +32,9 @@ export class LoginPage implements OnInit {
     ) { }
 
   ngOnInit() {
+     this.authService.userData$.subscribe((res: any) => {
+      this.displayUserData = res;
+    })
     // this.authService.getUserDataPromise()
     // .then((res:any={})=>{
     //   console.log(res);
@@ -72,14 +77,17 @@ export class LoginPage implements OnInit {
     if (this.validateInputs()) {
       this.authService.login(this.postData).subscribe((res: any) => {
         console.log('here',res)
-        if(Array.isArray(res)) {
-          this.storageService.store(AuthConstants.AUTH, res[0]);
-          this.router.navigate(['./home/mukadepan']);
-        } else {
+        if(res.result[0]) {
+          this.storageService.store(AuthConstants.AUTH, res.result);
+          this.router.navigate(['./home-manager/mukadepan']);
+        } else if(res.result[1]) {
+          this.storageService.store(AuthConstants.AUTH, res.result);
+          this.router.navigate(['./home-manager/mukadepan']);
+        }
+        else {
           this.toastService.presentToast('Incorrect Name or Password');
 
         } 
-
       },
       (error: any) => {
         this.toastService.presentToast("Network Connection Error");
@@ -92,13 +100,13 @@ export class LoginPage implements OnInit {
     }
   }
 
-  async navigateToHRadmin () {
-    await this.router.navigate(['./home-hradmin']);
-    console.log('button is clicked');
-  }
+  // async navigateToHRadmin () {
+  //   await this.router.navigate(['./home-hradmin']);
+  //   console.log('button is clicked');
+  // }
 
-  async navigateToManager () {
-    await this.router.navigate(['./home-manager/mukadepan']);
-    console.log('button is clicked');
-  }
+  // async navigateToManager () {
+  //   await this.router.navigate(['./home-manager/mukadepan']);
+  //   console.log('button is clicked');
+  // }
 }

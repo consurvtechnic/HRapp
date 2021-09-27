@@ -75,6 +75,14 @@ const routes: Routes = [
     path: 'home-manager',
     loadChildren: () => import('./home-manager/home-manager.module').then( m => m.HomeManagerPageModule)
   },
+  {
+    path: 'signup',
+    loadChildren: () => import('./pages/signup/signup.module').then( m => m.SignupPageModule)
+  },  {
+    path: 'mukadepan-hod',
+    loadChildren: () => import('./pages/mukadepan-hod/mukadepan-hod.module').then( m => m.MukadepanHodPageModule)
+  },
+
 
 
 

@@ -43,7 +43,7 @@
 </ion-content> -->
 
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar color="light">
     <ion-title>Settings</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -61,7 +61,7 @@
       </ion-avatar>
       <ion-label>
         <h2 class="ion-text-lowercase" lines="none">{{displayUserData?.staff_name}}</h2>
-        <p class="ion-text-lowercase" lines="none">{{displayUserData?.staff_name}}@consurv.com.my</p>
+        <!-- <p class="ion-text-lowercase" lines="none">{{displayUserData?.staff_name}}@consurv.com.my</p> -->
       </ion-label>
       <div class="center">
         <ion-button (click)="signOut()" fill="clear">Log out</ion-button>
@@ -85,7 +85,7 @@
       <ion-label>Push Notifications</ion-label>
       <ion-toggle slot checked></ion-toggle>
     </ion-item>
-    <ion-item>
+    <!-- <ion-item>
       <ion-icon name="mail" slot="start" color="medium"></ion-icon>
       <ion-label>Email</ion-label>
       <ion-toggle slot></ion-toggle>
@@ -94,7 +94,7 @@
       <ion-icon name="chatbox-ellipses" slot="start" color="medium"></ion-icon>
       <ion-label>SMS</ion-label>
       <ion-toggle slot checked></ion-toggle>
-    </ion-item>
+    </ion-item> -->
   </ion-list>
 
   <div style="margin-top:1em;" *ngIf="showChangePassword==false" class="ion-text-center">

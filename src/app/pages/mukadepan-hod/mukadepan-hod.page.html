@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="light">
+    <ion-title>Home</ion-title>
+    <ion-buttons slot="end" (click)="GotoNotityPage()">
+      <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
+      <ion-badge color="danger" style="position: absolute; right: -5px; top: -3px;">3</ion-badge></ion-buttons>
+
+        <!-- <span>&nbsp;</span> -->
+
+      <ion-buttons slot="end">
+        <ion-button (click)="settingsPopover()">
+          <ion-icon slot="icon-only" ios="ellipsis-vertical" md="ellipsis-vertical"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+  
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content>
+  <div class="container">
+    <ion-text color="primary" style="margin-top: 10px;">
+      <h1 style="text-align:center">DynaConsurv</h1>
+    </ion-text>
+   
+    <h2 style="text-align:center">Welcome Back, {{displayUserData?.staff_name}}!</h2>
+    <img src="assets/images/home1.png"  class="smalllogo"/>
+    <p><ion-button (click)="goToList()" expand="block" color="dark" style="width: fit-content; margin: auto;">List of Attendees</ion-button></p>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <ion-button (click)="showToast1()" expand="full" (click)="checkInAction()" color="secondary">Check In</ion-button>
+        </ion-col>
+        <ion-col col-6>
+          <ion-button (click)="showToast2()" expand="full" (click)="checkOutAction()"color="secondary">Check Out</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-text color="dark">
+      <p style="text-align:center">STATUS:</p>
+    </ion-text>
+    <ion-text color="success">
+      <h1 style="text-align:center" id="status">None</h1>
+    </ion-text>
+      
+
+      <ion-list>
+        <ion-item *ngFor="let tran of transactions">      
+          <p *ngIf=" a.checkInAction == 'showToast1'" > You have redeemed  {{a.checkin | date:'EEEE, h:mm a, dd/MM/yyyy '}} points.  </p>
+          <p *ngIf=" a.checkOutAction == 'showToast2'" > You have earned  {{a.checkout | date:'EEEE, h:mm a, dd/MM/yyyy '}}} points.  </p>  
+        </ion-item>
+      </ion-list>
+  
+    <!-- <p><ion-button (click)="goToList()" expand="block" color="secondary" style="width: fit-content; margin: auto;">List of Attendees</ion-button></p> -->
+    <!-- <p><ion-button (click)="showToast3()" expand="block" >Leave</ion-button></p> -->
+  </div>
+</ion-content>

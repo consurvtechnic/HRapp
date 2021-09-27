@@ -25,3 +25,8 @@
     background-color: var(--ion-color-primary);
     border-radius: 15px;
   }
+
+  ion-toolbar {
+    --min-height: 50px;
+    color: #2C9DDE;
+  }

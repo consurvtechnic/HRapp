@@ -15,7 +15,8 @@ apiUrl1: 'http://consurv.no-ip.biz/leave/',
 //checkin-checkout
 apiUrl2: 'http://consurv.no-ip.biz:3000/api/dailycheck',
 
-
+//login
+apiUrl3: 'http://consurv.no-ip.biz:3000/api/',
 
 };
 

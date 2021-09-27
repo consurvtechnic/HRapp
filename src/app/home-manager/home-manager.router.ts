@@ -15,7 +15,7 @@ const routes: Routes = [
         {
         path: 'mukadepan',
         loadChildren: () =>
-        import('../pages/mukadepan/mukadepan.module').then(m => m.MukadepanPageModule)
+        import('../pages/mukadepan-hod/mukadepan-hod.module').then(m => m.MukadepanHodPageModule)
         },
 
         {

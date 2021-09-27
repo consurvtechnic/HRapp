@@ -47,6 +47,11 @@ export class HomeHRadminPage implements OnInit {
     console.log('button is clicked');
   }
 
+   async navigateToAddStaff() {
+    await this.router.navigate(['./signup']);
+    console.log('button is clicked');
+  }
+
    async navigateToLeaveRules() {
     await this.router.navigate(['./leaverules']);
     console.log('button is clicked');

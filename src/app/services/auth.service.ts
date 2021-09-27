@@ -5,6 +5,11 @@ import { AuthConstants } from '../config/auth-constant';
 import { HttpService } from './http.service';
 import { StorageService } from './storage.service';
 
+export interface User {
+  name: string;
+  role: number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -45,7 +50,8 @@ export class AuthService {
     }
 
     login(postData: any): Observable<any> {
-      return this.httpService.post('logintest', postData);
+      return this.httpService.post1('login', postData);
+      // return this.httpService.post('logintest', postData);
       }
 
     //logout(postData: Observable<any>){
@@ -54,7 +60,7 @@ export class AuthService {
       this.storageService.removeItem(AuthConstants.AUTH).then(res => {
         this.userData$.next('');
         this.router.navigate(['']);
-      });
+      }); 
     }
 
     applyleave(postData: any)

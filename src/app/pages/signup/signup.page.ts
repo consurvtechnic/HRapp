@@ -7,9 +7,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupPage implements OnInit {
 
+  name: string = "";
+  position: string = "";
+  email: string = "";
+  password: string = "";
+  confirm_password: string = ""; 
+  userCount: string = ""; 
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  onSubmit() {
+     alert(
+      this.name + ', ' + this.position + ', ' + this.email + ', ' + this.password + ', ' + this.confirm_password + ', ' + this.userCount
+     )
+  }
+
+  numberOnlyValidation(event: any) {
+    const pattern = /[0-9.,]/;
+    let inputChar = String.fromCharCode(event.charCode);
+
+    if (!pattern.test(inputChar)) {
+      // invalid character, prevent input
+      event.preventDefault();
+    }
   }
 
 }
