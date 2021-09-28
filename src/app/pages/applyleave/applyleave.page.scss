@@ -1,6 +1,5 @@
 .apply-button{
     float: right;
-   
 }
 
 .applyButton {
@@ -15,3 +14,17 @@ ion-toolbar {
     color: #2C9DDE;
   }
 
+ion-card {
+    color: #2C9DDE;
+    max-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+ion-list {
+    overflow: hidden;
+    overflow-y: auto;
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }

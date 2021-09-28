@@ -9,6 +9,7 @@ import { ToastService } from 'src/app/services/toast.service';
 import { AlertController } from '@ionic/angular';
 
 
+
 @Component({
   selector: 'app-applyleave',
   templateUrl: './applyleave.page.html',
@@ -25,13 +26,14 @@ export class ApplyleavePage implements OnInit {
     image: '',
     halfday1: '',
     halfday2: '',
-    
+    data: ''
   }
+  public displayUserData: any;
 
   userInfo:any={};
   leaveDetail:any={};
 
-  leaveBalance=10;
+  leaveBalance:any=[];
   leaveType:any;
   leaveTypeChoices:any=[];
 
@@ -76,7 +78,12 @@ export class ApplyleavePage implements OnInit {
     await alert.present();
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.authService.userData$.subscribe((res: any) => {
+      this.displayUserData = res;
+    })
+
+  }
 
   ionViewWillEnter()
   {
@@ -84,7 +91,7 @@ export class ApplyleavePage implements OnInit {
     .then((res:any={})=>{
       // console.log(res);
       this.userInfo=res;
-
+      this.getBalance();
 
       this.authService.leavedetailPromise({staffid:this.userInfo.staff_id})
       .then(res=>{
@@ -108,6 +115,15 @@ export class ApplyleavePage implements OnInit {
     .then(res=>{
       console.log(res);
       this.leaveTypeChoices=res;
+    })
+  }
+
+  getBalance()
+  {
+    this.http.get('http://consurv.no-ip.biz:3000/api/leavesummary/2')
+    .then(res=>{
+      console.log(res);
+      this.leaveBalance=res;
     })
   }
 
@@ -157,10 +173,10 @@ export class ApplyleavePage implements OnInit {
       staff_id:this.userInfo.staff_id, //ok
       leavetype:this.leaveType.toString(),//ok
       reason:this.reason, //ok
-      currentDate:this.currentDate, //ok
-      endDate:this.endDate, //ok
-      halfday1:this.halfday1.toString(),//ok
-      halfday2:this.halfday2.toString(),//ok
+      startdate:this.currentDate, //ok
+      enddate:this.endDate, //ok
+      startdate_type:this.halfday1.toString(),//ok
+      enddate_type:this.halfday2.toString(),//ok
       image:''//ok
     }
 
@@ -169,7 +185,7 @@ export class ApplyleavePage implements OnInit {
     this.authService.applyleave(pack_data)
     .then(res=>{
       console.log(res);
-      this.nav.navigateForward('home/mukadepan');
+      this.nav.navigateForward('home/calendar');
     },err=>{
       console.log(err);
     })
@@ -222,6 +238,5 @@ export class ApplyleavePage implements OnInit {
     return fullDate;
 
   }
-
 
 }

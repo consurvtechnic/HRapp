@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController,  NavController, ToastController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { HttpService } from 'src/app/services/http.service';
 import { StorageService } from 'src/app/services/storage.service';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-leave',
@@ -11,21 +12,69 @@ import { StorageService } from 'src/app/services/storage.service';
 })
 export class LeavePage implements OnInit {
 
-  userData:any={};
+  public postData = {
+    staff_id: '',
+    leavetype: '',
+    reason: '',
+    currentDate: '',
+    endDate: '',
+    image: '',
+    halfday1: '',
+    halfday2: '',
+    data: '',
+    status: ''
+  }
+
+  public displayUserData: any;
+
+
+  userInfo:any={};
+  leaveDetail:any=[];
+  leave:any={};
+
+  reason:any;
+  currentDate:any;
+  endDate:any;
+  halfday1:any;
+  halfday2:any;
+  image='';
 
   constructor(
     private modal:ModalController,
     private storage:StorageService,
     private authService:AuthService,
-    private httpService:HttpService
+    private http:HttpService,
+     private toastService: ToastService,
+    private nav:NavController,
   ) { }
 
   ngOnInit() {
+     this.authService.userData$.subscribe((res: any) => {
+      this.displayUserData = res;
+    })
   }
 
   ionViewWillEnter()
   {
-    this.userData=this.storage.modalData;
-    console.log(this.userData);
+    this.authService.getUserDataPromise()
+    .then((res:any={})=>{
+      // console.log(res);
+      this.userInfo=res;
+
+      this.authService.leavedetailPromise({staffid:this.userInfo.staff_id})
+      .then(res=>{
+        console.log(res);
+        this.leaveDetail=res[0]
+      },err=>{
+        console.log(err);
+      })
+
+
+    },err=>{
+      this.nav.navigateBack('login')
+    })
+
   }
+
+
 }

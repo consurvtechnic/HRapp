@@ -78,7 +78,8 @@ const routes: Routes = [
   {
     path: 'signup',
     loadChildren: () => import('./pages/signup/signup.module').then( m => m.SignupPageModule)
-  },  {
+  },
+  {
     path: 'mukadepan-hod',
     loadChildren: () => import('./pages/mukadepan-hod/mukadepan-hod.module').then( m => m.MukadepanHodPageModule)
   },
