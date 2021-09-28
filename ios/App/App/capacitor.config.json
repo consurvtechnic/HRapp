@@ -3,6 +3,7 @@
   "appName": "HRAppBeta",
   "bundledWebRuntime": false,
   "npmClient": "npm",
+  "allowMixedContent": true,
   "webDir": "www",
   "plugins": {
     "SplashScreen": {
