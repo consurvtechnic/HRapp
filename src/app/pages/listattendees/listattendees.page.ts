@@ -41,12 +41,6 @@ export class ListattendeesPage implements OnInit {
       
     })*/
   }
-
-  goBack(){
-    this.router.navigate(['./home/mukadepan']);
-
-  }
-
   
 
 

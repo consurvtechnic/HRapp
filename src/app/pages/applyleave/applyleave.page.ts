@@ -120,7 +120,7 @@ export class ApplyleavePage implements OnInit {
 
   getBalance()
   {
-    this.http.get('http://consurv.no-ip.biz:3000/api/leavesummary/2')
+    this.http.get('http://consurv.no-ip.biz:3000/api/leavesummary/' + `${this.userInfo.staff_id}`)
     .then(res=>{
       console.log(res);
       this.leaveBalance=res;

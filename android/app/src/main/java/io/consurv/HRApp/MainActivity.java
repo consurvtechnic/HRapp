@@ -1,4 +1,4 @@
-package io.consurv.HRAppBeta;
+package io.consurv.HRApp;
 
 import android.os.Bundle;
 

@@ -44,11 +44,13 @@ ion-content {
             }
         }
     }
-
+    
     ion-list {
+        
         ion-item {
             margin-top: 1vh;
             ion-label {
+                color: #2C9DDE;
                 font-size: 0.9rem;
                 p {
                     margin-top: 5px;
@@ -67,3 +69,8 @@ ion-toolbar {
     --min-height: 50px;
     color: #2C9DDE;
 }
+
+ion-back-button {
+    display: block;
+ }
+

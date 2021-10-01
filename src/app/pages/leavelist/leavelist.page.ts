@@ -45,7 +45,7 @@ export class LeavelistPage implements OnInit {
 
     loader.present();
 
-    this.approvedList=[];9
+    this.approvedList=[];
     this.pendingList=[];
     this.leaveMaster=[];
 
@@ -55,7 +55,7 @@ export class LeavelistPage implements OnInit {
       this.userInfo=res;
 
       //DEBUG
-      this.userInfo.staff_id=1;
+      this.userInfo.staff_id=2;
       this.userInfo.hod=0;
       //DEBUG
 

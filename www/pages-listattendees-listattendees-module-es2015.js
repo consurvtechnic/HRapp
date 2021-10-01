@@ -50,9 +50,6 @@ let ListattendeesPage = class ListattendeesPage {
           
         })*/
     }
-    goBack() {
-        this.router.navigate(['./home/mukadepan']);
-    }
 };
 ListattendeesPage.ctorParameters = () => [
     { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"] },

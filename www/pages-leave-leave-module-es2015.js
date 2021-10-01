@@ -97,6 +97,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/auth.service */ "lGQG");
 /* harmony import */ var src_app_services_http_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/services/http.service */ "N+K7");
 /* harmony import */ var src_app_services_storage_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/services/storage.service */ "n90K");
+/* harmony import */ var src_app_services_toast_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/services/toast.service */ "2g2N");
+
 
 
 
@@ -106,25 +108,59 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let LeavePage = class LeavePage {
-    constructor(modal, storage, authService, httpService) {
+    constructor(modal, storage, authService, http, toastService, nav) {
         this.modal = modal;
         this.storage = storage;
         this.authService = authService;
-        this.httpService = httpService;
-        this.userData = {};
+        this.http = http;
+        this.toastService = toastService;
+        this.nav = nav;
+        this.postData = {
+            staff_id: '',
+            leavetype: '',
+            reason: '',
+            currentDate: '',
+            endDate: '',
+            image: '',
+            halfday1: '',
+            halfday2: '',
+            data: '',
+            status: ''
+        };
+        this.userInfo = {};
+        this.leaveDetail = [];
+        this.leave = {};
+        this.image = '';
     }
     ngOnInit() {
+        this.authService.userData$.subscribe((res) => {
+            this.displayUserData = res;
+        });
     }
     ionViewWillEnter() {
-        this.userData = this.storage.modalData;
-        console.log(this.userData);
+        this.authService.getUserDataPromise()
+            .then((res = {}) => {
+            // console.log(res);
+            this.userInfo = res;
+            this.authService.leavedetailPromise({ staffid: this.userInfo.staff_id })
+                .then(res => {
+                console.log(res);
+                this.leaveDetail = res[0];
+            }, err => {
+                console.log(err);
+            });
+        }, err => {
+            this.nav.navigateBack('login');
+        });
     }
 };
 LeavePage.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] },
     { type: src_app_services_storage_service__WEBPACK_IMPORTED_MODULE_7__["StorageService"] },
     { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"] },
-    { type: src_app_services_http_service__WEBPACK_IMPORTED_MODULE_6__["HttpService"] }
+    { type: src_app_services_http_service__WEBPACK_IMPORTED_MODULE_6__["HttpService"] },
+    { type: src_app_services_toast_service__WEBPACK_IMPORTED_MODULE_8__["ToastService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["NavController"] }
 ];
 LeavePage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
@@ -160,7 +196,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\n  <ion-toolbar color=\"light\">\n    <ion-title>Leave History (coming soon)</ion-title>\n    <ion-back-button slot=\"start\"></ion-back-button>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <div class=\"cuti\">\n    <ion-card mode=\"ios\">\n      <ion-card-header></ion-card-header>\n      <ion-card-content>\n        <ion-card-title color=\"primary-contrast\" style=\"font-size:20px; text-transform: uppercase;\">\n          Emergency Leave\n        </ion-card-title>\n        <ion-card-subtitle style=\"text-transform:none\" color=\"primary-contrast\">Personal reason / family matters</ion-card-subtitle>\n        <ion-card-subtitle color=\"primary-contrast\" style=\"font-size:20px\"> 2 Days</ion-card-subtitle>\n        <a>From: 1/9/21</a> <a> Full Day</a> <br> <a>To: 2/9/21</a> <a> Morning only</a>\n        <ion-button color=\"warning\" expand=\"block\" class=\"main-button\">PENDING</ion-button>\n      </ion-card-content>\n      \n    </ion-card>\n    \n</div>\n  \n<div class=\"cuti\">\n  <ion-card mode=\"ios\">\n    <ion-card-header></ion-card-header>\n    <ion-card-content>\n      <ion-card-title color=\"primary-contrast\" style=\"font-size:20px; text-transform: uppercase;\">\n        Annual Leave\n      </ion-card-title>\n      <ion-card-subtitle style=\"text-transform:none\" color=\"primary-contrast\">Personal reason / family matters</ion-card-subtitle>\n      <ion-card-subtitle color=\"primary-contrast\" style=\"font-size:20px\"> 2 Days</ion-card-subtitle>\n      <a>From: 1/9/21</a> <a> Full Day</a> <br> <a>To: 2/9/21</a> <a> Morning only</a>\n      <ion-button color=\"success\" expand=\"block\" class=\"main-button\">APPROVED</ion-button>\n    </ion-card-content>\n    \n  </ion-card>\n  \n</div>\n<div class=\"cuti\">\n  <ion-card mode=\"ios\">\n    <ion-card-header></ion-card-header>\n    <ion-card-content>\n      <ion-card-title color=\"primary-contrast\" style=\"font-size:20px; text-transform: uppercase;\">\n        Annual Leave\n      </ion-card-title>\n      <ion-card-subtitle style=\"text-transform:none\" color=\"primary-contrast\">Personal reason / family matters</ion-card-subtitle>\n      <ion-card-subtitle color=\"primary-contrast\" style=\"font-size:20px\"> 2 Days</ion-card-subtitle>\n      <a>From: 1/9/21</a> <a> Full Day</a> <br> <a>To: 2/9/21</a> <a> Morning only</a>\n      <ion-button color=\"success\" expand=\"block\" class=\"main-button\">APPROVED</ion-button>\n    </ion-card-content>\n    \n  </ion-card>\n  \n</div>\n<div class=\"cuti\">\n  <ion-card mode=\"ios\">\n    <ion-card-header></ion-card-header>\n    <ion-card-content>\n      <ion-card-title color=\"primary-contrast\" style=\"font-size:20px; text-transform: uppercase;\">\n        Annual Leave\n      </ion-card-title>\n      <ion-card-subtitle style=\"text-transform:none\" color=\"primary-contrast\">Personal reason / family matters</ion-card-subtitle>\n      <ion-card-subtitle color=\"primary-contrast\" style=\"font-size:20px\"> 2 Days</ion-card-subtitle>\n      <a>From: 1/9/21</a> <a> Full Day</a> <br> <a>To: 2/9/21</a> <a> Morning only</a>\n      <ion-button color=\"danger\" expand=\"block\" class=\"main-button\">NOT APPROVED</ion-button>\n    </ion-card-content>\n    \n  </ion-card>\n  \n</div>\n<div class=\"cuti\">\n  <ion-card mode=\"ios\">\n    <ion-card-header></ion-card-header>\n    <ion-card-content>\n      <ion-card-title color=\"primary-contrast\" style=\"font-size:20px; text-transform: uppercase;\">\n        MC Leave\n      </ion-card-title>\n      <ion-card-subtitle style=\"text-transform:none\" color=\"primary-contrast\">Contagious illness </ion-card-subtitle>\n      <ion-card-subtitle color=\"primary-contrast\" style=\"font-size:20px\"> 3 Days</ion-card-subtitle>\n      <a>From: 1/9/21</a> <a> Full Day</a> <br> <a>To: 3/9/21</a> <a> Morning only</a>\n      <ion-button color=\"success\" expand=\"block\" class=\"main-button\">APPROVED</ion-button>\n    </ion-card-content>\n    \n  </ion-card>\n  \n</div>\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\n  <ion-toolbar color=\"light\">\n    <ion-title>Leave History</ion-title>\n    <ion-back-button slot=\"start\"></ion-back-button>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-list *ngFor=\"let leave of leaveDetail\" >\n  <div class=\"cuti\">\n    <ion-card mode=\"ios\">\n      <ion-card-header></ion-card-header>\n      <ion-card-content style=\"overflow: scroll;\">\n        <ion-card-title color=\"primary-contrast\" style=\"font-size:20px; text-transform: uppercase;\">\n          {{leave.leavetype}}\n        </ion-card-title>\n        <ion-card-subtitle style=\"text-transform:none\" color=\"primary-contrast\">{{leave.reason}}</ion-card-subtitle>\n        <ion-card-subtitle color=\"primary-contrast\" style=\"font-size:15px\"> Total of Days: {{leave.leaveday}}</ion-card-subtitle>\n        <a>From: {{leave.datefrom}}</a> <br> <a>To: {{leave.dateend}}</a>\n        <ion-button color=\"success\" expand=\"block\" class=\"main-button\" *ngIf = \"leave.status === 1; else pending\" >APPROVED</ion-button>\n        <ng-template #pending>\n          <ion-button color=\"warning\" expand=\"block\" class=\"main-button\">PENDING</ion-button>\n        </ng-template>\n      </ion-card-content>\n      \n    </ion-card>\n    \n</div>\n\n</ion-list>\n</ion-content>");
 
 /***/ })
 

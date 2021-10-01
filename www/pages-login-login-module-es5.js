@@ -324,11 +324,15 @@
               this.authService.login(this.postData).subscribe(function (res) {
                 console.log('here', res);
 
-                if (res.result[0]) {
+                if (res.result[0].level = 0) {
                   _this2.storageService.store(src_app_config_auth_constant__WEBPACK_IMPORTED_MODULE_6__["AuthConstants"].AUTH, res.result);
 
                   _this2.router.navigate(['./home/mukadepan']);
-                } else if (res.result[1]) {
+                } else if (res.result[0].level = 1) {
+                  _this2.storageService.store(src_app_config_auth_constant__WEBPACK_IMPORTED_MODULE_6__["AuthConstants"].AUTH, res.result);
+
+                  _this2.router.navigate(['./home-manager/mukadepan']);
+                } else if (res.result[0].level = 2) {
                   _this2.storageService.store(src_app_config_auth_constant__WEBPACK_IMPORTED_MODULE_6__["AuthConstants"].AUTH, res.result);
 
                   _this2.router.navigate(['./home-manager/mukadepan']);

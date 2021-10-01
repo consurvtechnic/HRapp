@@ -13,6 +13,16 @@
 <ion-item>
   <ion-label>
     <strong>
+    Type:
+    </strong>
+  </ion-label>
+  <ion-label text-wrap>
+    {{userData.leavetype}}
+  </ion-label>
+</ion-item>
+<ion-item>
+  <ion-label>
+    <strong>
     Reason:
     </strong>
   </ion-label>
@@ -30,8 +40,19 @@
     {{userData.staff_name}}
   </ion-label>
 </ion-item>
+<ion-item>
+  <ion-label>
+    <strong>
+      Leave Day:
+    </strong>
+  </ion-label>
+  <ion-label>
+    {{userData.leaveday}}
+  </ion-label>
+</ion-item>
 
 <!-- *ngIf="userData.datehalf=='0000-00-00'" -->
+
 <ion-grid>
 <ion-row class='ion-text-center'>
   <ion-col>

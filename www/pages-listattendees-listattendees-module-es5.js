@@ -99,11 +99,6 @@
               
             })*/
           }
-        }, {
-          key: "goBack",
-          value: function goBack() {
-            this.router.navigate(['./home/mukadepan']);
-          }
         }]);
 
         return ListattendeesPage;

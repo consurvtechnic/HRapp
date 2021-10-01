@@ -107,10 +107,31 @@ export class AuthService {
       return this.httpService.post('leavetype', postData);
       }  
     
+    // leavebalance(postData: any): Observable<any> {
+    //   console.log(postData);
+    //   return this.httpService.post1('leavesummary/', postData);
+    //   } 
+
     leavebalance(postData: any): Observable<any> {
-      console.log(postData);
-      return this.httpService.post1('leavesummary/2', postData);
-      } 
+      return this.httpService.post1('leavesummary/', postData);
+      }
+
+      leavebalancePromise(postData) {
+
+        return new Promise((resolve,reject)=>{
+
+          // console.log(postData);
+          this.httpService.post1('leavesummary/', postData)
+          .subscribe(res=>{
+            resolve(res);
+          },err=>{
+            reject(err);
+          })
+          
+        })
+        
+        
+      }
 
     checkIn(postData: any): Observable<any> {
       console.log(postData);

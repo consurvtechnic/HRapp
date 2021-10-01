@@ -185,11 +185,15 @@ let LoginPage = class LoginPage {
         if (this.validateInputs()) {
             this.authService.login(this.postData).subscribe((res) => {
                 console.log('here', res);
-                if (res.result[0]) {
+                if (res.result[0].level = 0) {
                     this.storageService.store(src_app_config_auth_constant__WEBPACK_IMPORTED_MODULE_6__["AuthConstants"].AUTH, res.result);
                     this.router.navigate(['./home/mukadepan']);
                 }
-                else if (res.result[1]) {
+                else if (res.result[0].level = 1) {
+                    this.storageService.store(src_app_config_auth_constant__WEBPACK_IMPORTED_MODULE_6__["AuthConstants"].AUTH, res.result);
+                    this.router.navigate(['./home-manager/mukadepan']);
+                }
+                else if (res.result[0].level = 2) {
                     this.storageService.store(src_app_config_auth_constant__WEBPACK_IMPORTED_MODULE_6__["AuthConstants"].AUTH, res.result);
                     this.router.navigate(['./home-manager/mukadepan']);
                 }

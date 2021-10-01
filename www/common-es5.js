@@ -1961,7 +1961,7 @@
             var _this9 = this;
 
             return new Promise(function (resolve, reject) {
-              _this9.httpService.post('submitleave', postData).subscribe(function (res) {
+              _this9.httpService.post1('app/submitleave', postData).subscribe(function (res) {
                 resolve(res);
               }, function (err) {
                 reject(err);
@@ -1996,6 +1996,12 @@
           key: "typeofleave",
           value: function typeofleave(postData) {
             return this.httpService.post('leavetype', postData);
+          }
+        }, {
+          key: "leavebalance",
+          value: function leavebalance(postData) {
+            console.log(postData);
+            return this.httpService.post1('leavesummary/2', postData);
           }
         }, {
           key: "checkIn",

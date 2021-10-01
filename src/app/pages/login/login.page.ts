@@ -77,10 +77,13 @@ export class LoginPage implements OnInit {
     if (this.validateInputs()) {
       this.authService.login(this.postData).subscribe((res: any) => {
         console.log('here',res)
-        if(res.result[0].level = 0) {
+        if(res.result[0].level == 0) {
           this.storageService.store(AuthConstants.AUTH, res.result);
           this.router.navigate(['./home/mukadepan']);
-        } else if(res.result[0].level = 1) {
+        } else if(res.result[0].level == 1) {
+          this.storageService.store(AuthConstants.AUTH, res.result);
+          this.router.navigate(['./home-manager/mukadepan']);
+        } else if(res.result[0].level == 2) {
           this.storageService.store(AuthConstants.AUTH, res.result);
           this.router.navigate(['./home-manager/mukadepan']);
         }

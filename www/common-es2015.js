@@ -1117,7 +1117,7 @@ let AuthService = class AuthService {
     }
     applyleave(postData) {
         return new Promise((resolve, reject) => {
-            this.httpService.post('submitleave', postData)
+            this.httpService.post1('app/submitleave', postData)
                 .subscribe(res => {
                 resolve(res);
             }, err => {
@@ -1144,6 +1144,10 @@ let AuthService = class AuthService {
     }
     typeofleave(postData) {
         return this.httpService.post('leavetype', postData);
+    }
+    leavebalance(postData) {
+        console.log(postData);
+        return this.httpService.post1('leavesummary/2', postData);
     }
     checkIn(postData) {
         console.log(postData);

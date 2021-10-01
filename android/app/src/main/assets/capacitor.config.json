@@ -1,6 +1,6 @@
 {
-  "appId": "io.consurv.HRAppBeta",
-  "appName": "HRAppBeta",
+  "appId": "io.consurv.HRApp",
+  "appName": "HRApp",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "allowMixedContent": true,
