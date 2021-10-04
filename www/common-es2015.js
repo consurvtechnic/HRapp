@@ -328,7 +328,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar color='light'>\n    <ion-title>Leave Approval</ion-title>\n    <ion-buttons slot='end'>\n      <ion-button (click)=\"close()\">\n        <ion-icon name='close'></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n<ion-item>\n  <ion-label>\n    <strong>\n    Reason:\n    </strong>\n  </ion-label>\n  <ion-label text-wrap>\n    {{userData.reason}}\n  </ion-label>\n</ion-item>\n<ion-item>\n  <ion-label>\n    <strong>\n      Staff Name:\n    </strong>\n  </ion-label>\n  <ion-label>\n    {{userData.staff_name}}\n  </ion-label>\n</ion-item>\n\n<!-- *ngIf=\"userData.datehalf=='0000-00-00'\" -->\n<ion-grid>\n<ion-row class='ion-text-center'>\n  <ion-col>\n    <strong>\n      Date From:<br>\n    </strong>\n      {{ getDate(userData.datefrom) }}\n  </ion-col>\n  <ion-col>\n      <strong>\n        Date End:<br>\n      </strong>\n      {{ getDate(userData.dateend) }}\n  </ion-col>\n</ion-row>\n</ion-grid>\n\n<ion-grid>\n  <ion-row>\n    <ion-col>\n        {{ getHalfDate(userData.datehalf) }}\n    </ion-col>\n    </ion-row>\n</ion-grid>\n\n<div *ngIf=\"userData.datehalf!='0000-00-00'\">\n<ion-item>\n  <ion-row>\n  <ion-col>\n      {{userData.datehalf}}\n  </ion-col>\n  </ion-row>\n</ion-item>\n</div>\n\n<ion-row>\n<ion-col>\n  <ion-button expand='full' color='danger' (click)=\"rejectLeave()\">\n    Reject\n  </ion-button>\n</ion-col>\n<ion-col>\n  <ion-button expand='full' color='primary' (click)=\"approveLeave()\">\n    Approve\n  </ion-button>\n</ion-col>\n</ion-row>\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar color='light'>\n    <ion-title>Leave Approval</ion-title>\n    <ion-buttons slot='end'>\n      <ion-button (click)=\"close()\">\n        <ion-icon name='close'></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n<ion-item>\n  <ion-label>\n    <strong>\n    Type:\n    </strong>\n  </ion-label>\n  <ion-label text-wrap>\n    {{userData.leavetype}}\n  </ion-label>\n</ion-item>\n<ion-item>\n  <ion-label>\n    <strong>\n    Reason:\n    </strong>\n  </ion-label>\n  <ion-label text-wrap>\n    {{userData.reason}}\n  </ion-label>\n</ion-item>\n<ion-item>\n  <ion-label>\n    <strong>\n      Staff Name:\n    </strong>\n  </ion-label>\n  <ion-label>\n    {{userData.staff_name}}\n  </ion-label>\n</ion-item>\n<ion-item>\n  <ion-label>\n    <strong>\n      Leave Day:\n    </strong>\n  </ion-label>\n  <ion-label>\n    {{userData.leaveday}}\n  </ion-label>\n</ion-item>\n\n<!-- *ngIf=\"userData.datehalf=='0000-00-00'\" -->\n\n<ion-grid>\n<ion-row class='ion-text-center'>\n  <ion-col>\n    <strong>\n      Date From:<br>\n    </strong>\n      {{ getDate(userData.datefrom) }}\n  </ion-col>\n  <ion-col>\n      <strong>\n        Date End:<br>\n      </strong>\n      {{ getDate(userData.dateend) }}\n  </ion-col>\n</ion-row>\n</ion-grid>\n\n<ion-grid>\n  <ion-row>\n    <ion-col>\n        {{ getHalfDate(userData.datehalf) }}\n    </ion-col>\n    </ion-row>\n</ion-grid>\n\n<div *ngIf=\"userData.datehalf!='0000-00-00'\">\n<ion-item>\n  <ion-row>\n  <ion-col>\n      {{userData.datehalf}}\n  </ion-col>\n  </ion-row>\n</ion-item>\n</div>\n\n<ion-row>\n<ion-col>\n  <ion-button expand='full' color='danger' (click)=\"rejectLeave()\">\n    Reject\n  </ion-button>\n</ion-col>\n<ion-col>\n  <ion-button expand='full' color='primary' (click)=\"approveLeave()\">\n    Approve\n  </ion-button>\n</ion-col>\n</ion-row>\n</ion-content>\n");
 
 /***/ }),
 
@@ -1145,9 +1145,23 @@ let AuthService = class AuthService {
     typeofleave(postData) {
         return this.httpService.post('leavetype', postData);
     }
+    // leavebalance(postData: any): Observable<any> {
+    //   console.log(postData);
+    //   return this.httpService.post1('leavesummary/', postData);
+    //   } 
     leavebalance(postData) {
-        console.log(postData);
-        return this.httpService.post1('leavesummary/2', postData);
+        return this.httpService.post1('leavesummary/', postData);
+    }
+    leavebalancePromise(postData) {
+        return new Promise((resolve, reject) => {
+            // console.log(postData);
+            this.httpService.post1('leavesummary/', postData)
+                .subscribe(res => {
+                resolve(res);
+            }, err => {
+                reject(err);
+            });
+        });
     }
     checkIn(postData) {
         console.log(postData);
@@ -1186,7 +1200,7 @@ AuthService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar color='light'>\n    <ion-title>Leave Approval</ion-title>\n    <ion-buttons slot='end'>\n      <ion-button (click)=\"close()\">\n        <ion-icon name='close'></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n<ion-item>\n  <ion-label>\n    <strong>\n    Reason:\n    </strong>\n  </ion-label>\n  <ion-label text-wrap>\n    {{userData.reason}}\n  </ion-label>\n</ion-item>\n<ion-item>\n  <ion-label>\n    <strong>\n      Staff Name:\n    </strong>\n  </ion-label>\n  <ion-label>\n    {{userData.staff_name}}\n  </ion-label>\n</ion-item>\n\n<!-- *ngIf=\"userData.datehalf=='0000-00-00'\" -->\n<ion-grid>\n<ion-row class='ion-text-center'>\n  <ion-col>\n    <strong>\n      Date From:<br>\n    </strong>\n      {{ getDate(userData.datefrom) }}\n  </ion-col>\n  <ion-col>\n      <strong>\n        Date End:<br>\n      </strong>\n      {{ getDate(userData.dateend) }}\n  </ion-col>\n</ion-row>\n</ion-grid>\n\n<ion-grid>\n  <ion-row>\n    <ion-col>\n        {{ getHalfDate(userData.datehalf) }}\n    </ion-col>\n    </ion-row>\n</ion-grid>\n\n<div *ngIf=\"userData.datehalf!='0000-00-00'\">\n<ion-item>\n  <ion-row>\n  <ion-col>\n      {{userData.datehalf}}\n  </ion-col>\n  </ion-row>\n</ion-item>\n</div>\n\n<!-- <ion-row>\n<ion-col>\n  <ion-button expand='full' color='danger'>\n    Reject\n  </ion-button>\n</ion-col>\n<ion-col>\n  <ion-button expand='full' color='primary'>\n    Approve\n  </ion-button>\n</ion-col>\n</ion-row> -->\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar color='light'>\n    <ion-title>Leave Approval</ion-title>\n    <ion-buttons slot='end'>\n      <ion-button (click)=\"close()\">\n        <ion-icon name='close'></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-item>\n    <ion-label>\n      <strong>\n      Type:\n      </strong>\n    </ion-label>\n    <ion-label text-wrap>\n      {{userData.leavetype}}\n    </ion-label>\n  </ion-item>\n<ion-item>\n  <ion-label>\n    <strong>\n    Reason:\n    </strong>\n  </ion-label>\n  <ion-label text-wrap>\n    {{userData.reason}}\n  </ion-label>\n</ion-item>\n<ion-item>\n  <ion-label>\n    <strong>\n      Staff Name:\n    </strong>\n  </ion-label>\n  <ion-label>\n    {{userData.staff_name}}\n  </ion-label>\n</ion-item>\n<ion-item>\n  <ion-label>\n    <strong>\n      Leave Day:\n    </strong>\n  </ion-label>\n  <ion-label>\n    {{userData.leaveday}}\n  </ion-label>\n</ion-item>\n\n<!-- *ngIf=\"userData.datehalf=='0000-00-00'\" -->\n<ion-grid>\n<ion-row class='ion-text-center'>\n  <ion-col>\n    <strong>\n      Date From:<br>\n    </strong>\n      {{ getDate(userData.datefrom) }}\n  </ion-col>\n  <ion-col>\n      <strong>\n        Date End:<br>\n      </strong>\n      {{ getDate(userData.dateend) }}\n  </ion-col>\n</ion-row>\n</ion-grid>\n\n<ion-grid>\n  <ion-row>\n    <ion-col>\n        {{ getHalfDate(userData.datehalf) }}\n    </ion-col>\n    </ion-row>\n</ion-grid>\n\n<div *ngIf=\"userData.datehalf!='0000-00-00'\">\n<ion-item>\n  <ion-row>\n  <ion-col>\n      {{userData.datehalf}}\n  </ion-col>\n  </ion-row>\n</ion-item>\n</div>\n\n<!-- <ion-row>\n<ion-col>\n  <ion-button expand='full' color='danger'>\n    Reject\n  </ion-button>\n</ion-col>\n<ion-col>\n  <ion-button expand='full' color='primary'>\n    Approve\n  </ion-button>\n</ion-col>\n</ion-row> -->\n</ion-content>\n");
 
 /***/ }),
 

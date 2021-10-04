@@ -55,7 +55,7 @@ export class LeavelistPage implements OnInit {
       this.userInfo=res;
 
       //DEBUG
-      this.userInfo.staff_id=2;
+      this.userInfo.staff_id = this.userInfo.staff_id;
       this.userInfo.hod=0;
       //DEBUG
 

@@ -128,7 +128,6 @@
                       loader = _context.sent;
                       loader.present();
                       this.approvedList = [];
-                      9;
                       this.pendingList = [];
                       this.leaveMaster = [];
                       this.authService.getUserDataPromise().then(function () {
@@ -136,7 +135,7 @@
                         // console.log('USER DATA',res);
                         _this.userInfo = res; //DEBUG
 
-                        _this.userInfo.staff_id = 1;
+                        _this.userInfo.staff_id = _this.userInfo.staff_id;
                         _this.userInfo.hod = 0; //DEBUG
 
                         _this.authService.leavedetailPromise({
@@ -160,7 +159,7 @@
                         _this.nav.navigateBack('login');
                       });
 
-                    case 9:
+                    case 8:
                     case "end":
                       return _context.stop();
                   }

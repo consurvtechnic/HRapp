@@ -17,9 +17,9 @@
         <ion-card-subtitle style="text-transform:none" color="primary-contrast">{{leave.reason}}</ion-card-subtitle>
         <ion-card-subtitle color="primary-contrast" style="font-size:15px"> Total of Days: {{leave.leaveday}}</ion-card-subtitle>
         <a>From: {{leave.datefrom}}</a> <br> <a>To: {{leave.dateend}}</a>
-        <ion-button color="success" expand="block" class="main-button" *ngIf = "leave.status === 1; else pending" >APPROVED</ion-button>
-        <ng-template #pending>
-          <ion-button color="warning" expand="block" class="main-button">PENDING</ion-button>
+        <ion-button color="warning" expand="block" class="main-button" *ngIf = "leave.approved === 0; else approved" >PENDING</ion-button>
+        <ng-template #approved>
+          <ion-button color="success" expand="block" class="main-button">APPROVED</ion-button>
         </ng-template>
       </ion-card-content>
       

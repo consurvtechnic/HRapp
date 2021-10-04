@@ -44,8 +44,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 let ApplyleavePage = class ApplyleavePage {
-    constructor(toastCtrl, router, authService, storageService, toastService, nav, http, alertCtrl) {
+    constructor(toastCtrl, router, authService, storageService, toastService, nav, http, alertCtrl, changeRef, loading) {
         this.toastCtrl = toastCtrl;
         this.router = router;
         this.authService = authService;
@@ -54,6 +55,8 @@ let ApplyleavePage = class ApplyleavePage {
         this.nav = nav;
         this.http = http;
         this.alertCtrl = alertCtrl;
+        this.changeRef = changeRef;
+        this.loading = loading;
         this.postData = {
             staff_id: '',
             leavetype: '',
@@ -123,7 +126,7 @@ let ApplyleavePage = class ApplyleavePage {
         });
     }
     getBalance() {
-        this.http.get('http://consurv.no-ip.biz:3000/api/leavesummary/2')
+        this.http.get('http://consurv.no-ip.biz:3000/api/leavesummary/' + `${this.userInfo.staff_id}`)
             .then(res => {
             console.log(res);
             this.leaveBalance = res;
@@ -142,42 +145,50 @@ let ApplyleavePage = class ApplyleavePage {
             && this.postData.endDate && this.postData.image && this.postData.halfday1 && this.postData.halfday2);
     }
     applyCuti() {
-        // this.postData.staff_id;
-        // this.postData.currentDate;
-        // this.postData.endDate;
-        // this.postData.halfday1;
-        // this.postData.halfday2;
-        // this.postData.leavetype;
-        // this.postData.reason;
-        //   this.authService.applyleave(this.postData).subscribe((res: any) => {
-        //     console.log('apply',res)} )
-        // let startDate= this.getCorrectDateFormat(this.currentDate);
-        // let endDate= this.getCorrectDateFormat(this.endDate);
-        // staff_id(from user data),
-        // leavetype(typeid from HRAppGetLeaveType),
-        // reason(user input string),
-        // currentDate(in string),
-        // endDate(in string),
-        // image(leave it null),
-        // halfday1( 1=full day, 2=morning, 3=evening )
-        // halfday2( 1=full day, 2=morning, 3=evening )
-        let pack_data = {
-            staff_id: this.userInfo.staff_id,
-            leavetype: this.leaveType.toString(),
-            reason: this.reason,
-            startdate: this.currentDate,
-            enddate: this.endDate,
-            startdate_type: this.halfday1.toString(),
-            enddate_type: this.halfday2.toString(),
-            image: '' //ok
-        };
-        console.log('pack_', pack_data);
-        this.authService.applyleave(pack_data)
-            .then(res => {
-            console.log(res);
-            this.nav.navigateForward('home/calendar');
-        }, err => {
-            console.log(err);
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            // let loader=await this.loading.create({
+            //   message:'Loading...',
+            //   spinner:'bubbles'
+            // })
+            // loader.present();
+            // this.postData.staff_id;
+            // this.postData.currentDate;
+            // this.postData.endDate;
+            // this.postData.halfday1;
+            // this.postData.halfday2;
+            // this.postData.leavetype;
+            // this.postData.reason;
+            //   this.authService.applyleave(this.postData).subscribe((res: any) => {
+            //     console.log('apply',res)} )
+            // let startDate= this.getCorrectDateFormat(this.currentDate);
+            // let endDate= this.getCorrectDateFormat(this.endDate);
+            // staff_id(from user data),
+            // leavetype(typeid from HRAppGetLeaveType),
+            // reason(user input string),
+            // currentDate(in string),
+            // endDate(in string),
+            // image(leave it null),
+            // halfday1( 1=full day, 2=morning, 3=evening )
+            // halfday2( 1=full day, 2=morning, 3=evening )
+            let pack_data = {
+                staff_id: this.userInfo.staff_id,
+                leavetype: this.leaveType.toString(),
+                reason: this.reason,
+                startdate: this.currentDate,
+                enddate: this.endDate,
+                startdate_type: this.halfday1.toString(),
+                enddate_type: this.halfday2.toString(),
+                image: '' //ok
+            };
+            console.log('pack_', pack_data);
+            this.authService.applyleave(pack_data)
+                .then(res => {
+                console.log(res);
+                this.changeRef.detectChanges();
+                // this.nav.navigateForward('home/calendar');
+            }, err => {
+                console.log(err);
+            });
         });
     }
     getCorrectDateFormat(dateTemp) {
@@ -203,6 +214,12 @@ let ApplyleavePage = class ApplyleavePage {
         // console.log(fullDate);
         return fullDate;
     }
+    onSubmit() {
+        if (this.myform.valid) {
+            console.log("Form Submitted!");
+            this.myform.reset();
+        }
+    }
 };
 ApplyleavePage.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["ToastController"] },
@@ -212,7 +229,9 @@ ApplyleavePage.ctorParameters = () => [
     { type: src_app_services_toast_service__WEBPACK_IMPORTED_MODULE_9__["ToastService"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["NavController"] },
     { type: src_app_services_http_service__WEBPACK_IMPORTED_MODULE_7__["HttpService"] },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["AlertController"] }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["AlertController"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["LoadingController"] }
 ];
 ApplyleavePage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
@@ -235,7 +254,7 @@ ApplyleavePage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\n  <ion-toolbar color='light'>\n    <ion-title>Apply Leave</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-card>\n  <ion-card-content style=\"overflow: scroll;\">\n    <ion-item>\n      <ion-label>Type of leave:</ion-label>\n        <ion-select required slot=\"end\" [(ngModel)]='leaveType'>\n          <ion-select-option *ngFor=\"let item of leaveTypeChoices\" [value]=\"item.typeid\">{{item.leavetype}}</ion-select-option>\n        </ion-select>\n    </ion-item>\n  \n    <ion-item lines=\"none\">\n      <ion-label>Reason:</ion-label>\n        <ion-input required type=\"text\" type=\"text\" [(ngModel)]='reason'> </ion-input>\n    </ion-item>\n  \n    <ion-list>\n      <ion-item-divider></ion-item-divider>\n      <ion-item color=\"secondary\" lines=\"none\">\n        <ion-label>Start Date</ion-label>\n        <ion-datetime [(ngModel)]=\"currentDate\" color=\"light\" placeholder=\"Select Date\"></ion-datetime>\n      </ion-item>\n      <ion-item>\n        <ion-label>Duration</ion-label>\n              <ion-select slot=\"end\" [(ngModel)]='halfday1'>\n                <ion-select-option value=\"1\">Full day</ion-select-option>\n                <ion-select-option value=\"2\">Morning Only</ion-select-option>\n                <ion-select-option value=\"3\">Evening Only</ion-select-option>\n          </ion-select>\n      </ion-item>\n      <ion-item color=\"secondary\" lines=\"none\">\n        <ion-label>Ends</ion-label>\n        <ion-datetime [(ngModel)]=\"endDate\" placeholder=\"Select Date\"></ion-datetime>\n      </ion-item>\n      <ion-item>\n        <ion-label>Duration</ion-label>\n              <ion-select slot=\"end\" [(ngModel)]='halfday2'>\n                <ion-select-option value=\"1\">Full day</ion-select-option>\n                <ion-select-option value=\"2\">Morning Only</ion-select-option>\n                <ion-select-option value=\"3\">Evening Only</ion-select-option>\n          </ion-select>\n      </ion-item>\n    </ion-list>\n  </ion-card-content>\n</ion-card>\n\n<ion-item lines=\"none\">\n  <div class=\"applyButton\">\n    <ion-button (ionClear)=\"ionClear($event)\" (click)=\"showAlert()\" (click)=\"applyCuti()\" class=\"apply-button\" color=\"secondary\">Apply Leave</ion-button>\n  </div>\n</ion-item>\n\n<div lines=\"none\" class=\"cuti\">\n  <ion-card color='light'>\n    <ion-card-header></ion-card-header>\n    <ion-card-content>\n      <ion-card-subtitle color=\"primary-contrast\">Leave Balance for year 2021:</ion-card-subtitle>\n      <ion-card-title color=\"primary-contrast\" style=\"font-size:70px\" >\n        {{leaveBalance.data}}\n      </ion-card-title>\n      <ion-card-subtitle color=\"primary-contrast\" style=\"font-size:20px\">Days</ion-card-subtitle>\n    </ion-card-content>\n  </ion-card>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\n  <ion-toolbar color='light'>\n    <ion-title>Apply Leave</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-card>\n    <ion-card-content style=\"overflow: scroll;\">\n      <form [formGroup]=\"myform\" (ngSubmit)=\"onSubmit()\">\n        <ion-item>\n          <ion-label>Type of leave:</ion-label>\n            <ion-select required slot=\"end\" [(ngModel)]='leaveType'>\n              <ion-select-option *ngFor=\"let item of leaveTypeChoices\" [value]=\"item.typeid\">{{item.leavetype}}</ion-select-option>\n            </ion-select>\n        </ion-item>\n      \n        <ion-item lines=\"none\">\n          <ion-label>Reason:</ion-label>\n            <ion-input required type=\"text\" type=\"text\" [(ngModel)]='reason'> </ion-input>\n        </ion-item>\n      \n        <ion-list>\n          <ion-item-divider></ion-item-divider>\n          <ion-item color=\"secondary\" lines=\"none\">\n            <ion-label>Start Date</ion-label>\n            <ion-datetime [(ngModel)]=\"currentDate\" color=\"light\" placeholder=\"Select Date\"></ion-datetime>\n          </ion-item>\n          <ion-item>\n            <ion-label>Duration</ion-label>\n                  <ion-select slot=\"end\" [(ngModel)]='halfday1'>\n                    <ion-select-option value=\"1\">Full day</ion-select-option>\n                    <ion-select-option value=\"2\">Morning Only</ion-select-option>\n                    <ion-select-option value=\"3\">Evening Only</ion-select-option>\n              </ion-select>\n          </ion-item>\n          <ion-item color=\"secondary\" lines=\"none\">\n            <ion-label>Ends</ion-label>\n            <ion-datetime [(ngModel)]=\"endDate\" placeholder=\"Select Date\"></ion-datetime>\n          </ion-item>\n          <ion-item>\n            <ion-label>Duration</ion-label>\n                  <ion-select slot=\"end\" [(ngModel)]='halfday2'>\n                    <ion-select-option value=\"1\">Full day</ion-select-option>\n                    <ion-select-option value=\"2\">Morning Only</ion-select-option>\n                    <ion-select-option value=\"3\">Evening Only</ion-select-option>\n              </ion-select>\n          </ion-item>\n        </ion-list>\n      </form>\n     \n    </ion-card-content>\n</ion-card>\n\n<ion-item lines=\"none\">\n  <div class=\"applyButton\">\n    <ion-button (ionClear)=\"ionClear($event)\" type=\"ngSubmit\" (click)=\"showAlert()\" (click)=\"applyCuti()\" class=\"apply-button\" color=\"secondary\">Apply Leave</ion-button>\n  </div>\n</ion-item>\n\n<div lines=\"none\" class=\"cuti\">\n  <ion-card color='light'>\n    <ion-card-header></ion-card-header>\n    <ion-card-content>\n      <ion-card-subtitle color=\"primary-contrast\">Leave Balance for year 2021:</ion-card-subtitle>\n      <ion-card-title color=\"primary-contrast\" style=\"font-size:70px\" >\n        {{leaveBalance.data}}\n      </ion-card-title>\n      <ion-card-subtitle color=\"primary-contrast\" style=\"font-size:20px\">Days</ion-card-subtitle>\n    </ion-card-content>\n  </ion-card>\n</div>");
 
 /***/ }),
 

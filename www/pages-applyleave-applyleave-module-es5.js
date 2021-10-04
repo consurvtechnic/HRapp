@@ -107,7 +107,7 @@
       "2g2N");
 
       var ApplyleavePage = /*#__PURE__*/function () {
-        function ApplyleavePage(toastCtrl, router, authService, storageService, toastService, nav, http, alertCtrl) {
+        function ApplyleavePage(toastCtrl, router, authService, storageService, toastService, nav, http, alertCtrl, changeRef, loading) {
           _classCallCheck(this, ApplyleavePage);
 
           this.toastCtrl = toastCtrl;
@@ -118,6 +118,8 @@
           this.nav = nav;
           this.http = http;
           this.alertCtrl = alertCtrl;
+          this.changeRef = changeRef;
+          this.loading = loading;
           this.postData = {
             staff_id: '',
             leavetype: '',
@@ -226,7 +228,7 @@
           value: function getBalance() {
             var _this4 = this;
 
-            this.http.get('http://consurv.no-ip.biz:3000/api/leavesummary/2').then(function (res) {
+            this.http.get('http://consurv.no-ip.biz:3000/api/leavesummary/' + "".concat(this.userInfo.staff_id)).then(function (res) {
               console.log(res);
               _this4.leaveBalance = res;
             });
@@ -247,46 +249,66 @@
         }, {
           key: "applyCuti",
           value: function applyCuti() {
-            var _this5 = this;
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+              var _this5 = this;
 
-            // this.postData.staff_id;
-            // this.postData.currentDate;
-            // this.postData.endDate;
-            // this.postData.halfday1;
-            // this.postData.halfday2;
-            // this.postData.leavetype;
-            // this.postData.reason;
-            //   this.authService.applyleave(this.postData).subscribe((res: any) => {
-            //     console.log('apply',res)} )
-            // let startDate= this.getCorrectDateFormat(this.currentDate);
-            // let endDate= this.getCorrectDateFormat(this.endDate);
-            // staff_id(from user data),
-            // leavetype(typeid from HRAppGetLeaveType),
-            // reason(user input string),
-            // currentDate(in string),
-            // endDate(in string),
-            // image(leave it null),
-            // halfday1( 1=full day, 2=morning, 3=evening )
-            // halfday2( 1=full day, 2=morning, 3=evening )
-            var pack_data = {
-              staff_id: this.userInfo.staff_id,
-              leavetype: this.leaveType.toString(),
-              reason: this.reason,
-              startdate: this.currentDate,
-              enddate: this.endDate,
-              startdate_type: this.halfday1.toString(),
-              enddate_type: this.halfday2.toString(),
-              image: '' //ok
+              var pack_data;
+              return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                while (1) {
+                  switch (_context2.prev = _context2.next) {
+                    case 0:
+                      // let loader=await this.loading.create({
+                      //   message:'Loading...',
+                      //   spinner:'bubbles'
+                      // })
+                      // loader.present();
+                      // this.postData.staff_id;
+                      // this.postData.currentDate;
+                      // this.postData.endDate;
+                      // this.postData.halfday1;
+                      // this.postData.halfday2;
+                      // this.postData.leavetype;
+                      // this.postData.reason;
+                      //   this.authService.applyleave(this.postData).subscribe((res: any) => {
+                      //     console.log('apply',res)} )
+                      // let startDate= this.getCorrectDateFormat(this.currentDate);
+                      // let endDate= this.getCorrectDateFormat(this.endDate);
+                      // staff_id(from user data),
+                      // leavetype(typeid from HRAppGetLeaveType),
+                      // reason(user input string),
+                      // currentDate(in string),
+                      // endDate(in string),
+                      // image(leave it null),
+                      // halfday1( 1=full day, 2=morning, 3=evening )
+                      // halfday2( 1=full day, 2=morning, 3=evening )
+                      pack_data = {
+                        staff_id: this.userInfo.staff_id,
+                        leavetype: this.leaveType.toString(),
+                        reason: this.reason,
+                        startdate: this.currentDate,
+                        enddate: this.endDate,
+                        startdate_type: this.halfday1.toString(),
+                        enddate_type: this.halfday2.toString(),
+                        image: '' //ok
 
-            };
-            console.log('pack_', pack_data);
-            this.authService.applyleave(pack_data).then(function (res) {
-              console.log(res);
+                      };
+                      console.log('pack_', pack_data);
+                      this.authService.applyleave(pack_data).then(function (res) {
+                        console.log(res);
 
-              _this5.nav.navigateForward('home/calendar');
-            }, function (err) {
-              console.log(err);
-            });
+                        _this5.changeRef.detectChanges(); // this.nav.navigateForward('home/calendar');
+
+                      }, function (err) {
+                        console.log(err);
+                      });
+
+                    case 3:
+                    case "end":
+                      return _context2.stop();
+                  }
+                }
+              }, _callee2, this);
+            }));
           }
         }, {
           key: "getCorrectDateFormat",
@@ -315,6 +337,14 @@
 
             return fullDate;
           }
+        }, {
+          key: "onSubmit",
+          value: function onSubmit() {
+            if (this.myform.valid) {
+              console.log("Form Submitted!");
+              this.myform.reset();
+            }
+          }
         }]);
 
         return ApplyleavePage;
@@ -337,6 +367,10 @@
           type: src_app_services_http_service__WEBPACK_IMPORTED_MODULE_7__["HttpService"]
         }, {
           type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["AlertController"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"]
+        }, {
+          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["LoadingController"]
         }];
       };
 
@@ -364,7 +398,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\n  <ion-toolbar color='light'>\n    <ion-title>Apply Leave</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-card>\n  <ion-card-content style=\"overflow: scroll;\">\n    <ion-item>\n      <ion-label>Type of leave:</ion-label>\n        <ion-select required slot=\"end\" [(ngModel)]='leaveType'>\n          <ion-select-option *ngFor=\"let item of leaveTypeChoices\" [value]=\"item.typeid\">{{item.leavetype}}</ion-select-option>\n        </ion-select>\n    </ion-item>\n  \n    <ion-item lines=\"none\">\n      <ion-label>Reason:</ion-label>\n        <ion-input required type=\"text\" type=\"text\" [(ngModel)]='reason'> </ion-input>\n    </ion-item>\n  \n    <ion-list>\n      <ion-item-divider></ion-item-divider>\n      <ion-item color=\"secondary\" lines=\"none\">\n        <ion-label>Start Date</ion-label>\n        <ion-datetime [(ngModel)]=\"currentDate\" color=\"light\" placeholder=\"Select Date\"></ion-datetime>\n      </ion-item>\n      <ion-item>\n        <ion-label>Duration</ion-label>\n              <ion-select slot=\"end\" [(ngModel)]='halfday1'>\n                <ion-select-option value=\"1\">Full day</ion-select-option>\n                <ion-select-option value=\"2\">Morning Only</ion-select-option>\n                <ion-select-option value=\"3\">Evening Only</ion-select-option>\n          </ion-select>\n      </ion-item>\n      <ion-item color=\"secondary\" lines=\"none\">\n        <ion-label>Ends</ion-label>\n        <ion-datetime [(ngModel)]=\"endDate\" placeholder=\"Select Date\"></ion-datetime>\n      </ion-item>\n      <ion-item>\n        <ion-label>Duration</ion-label>\n              <ion-select slot=\"end\" [(ngModel)]='halfday2'>\n                <ion-select-option value=\"1\">Full day</ion-select-option>\n                <ion-select-option value=\"2\">Morning Only</ion-select-option>\n                <ion-select-option value=\"3\">Evening Only</ion-select-option>\n          </ion-select>\n      </ion-item>\n    </ion-list>\n  </ion-card-content>\n</ion-card>\n\n<ion-item lines=\"none\">\n  <div class=\"applyButton\">\n    <ion-button (ionClear)=\"ionClear($event)\" (click)=\"showAlert()\" (click)=\"applyCuti()\" class=\"apply-button\" color=\"secondary\">Apply Leave</ion-button>\n  </div>\n</ion-item>\n\n<div lines=\"none\" class=\"cuti\">\n  <ion-card color='light'>\n    <ion-card-header></ion-card-header>\n    <ion-card-content>\n      <ion-card-subtitle color=\"primary-contrast\">Leave Balance for year 2021:</ion-card-subtitle>\n      <ion-card-title color=\"primary-contrast\" style=\"font-size:70px\" >\n        {{leaveBalance.data}}\n      </ion-card-title>\n      <ion-card-subtitle color=\"primary-contrast\" style=\"font-size:20px\">Days</ion-card-subtitle>\n    </ion-card-content>\n  </ion-card>\n</div>";
+      __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\n  <ion-toolbar color='light'>\n    <ion-title>Apply Leave</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-card>\n    <ion-card-content style=\"overflow: scroll;\">\n      <form [formGroup]=\"myform\" (ngSubmit)=\"onSubmit()\">\n        <ion-item>\n          <ion-label>Type of leave:</ion-label>\n            <ion-select required slot=\"end\" [(ngModel)]='leaveType'>\n              <ion-select-option *ngFor=\"let item of leaveTypeChoices\" [value]=\"item.typeid\">{{item.leavetype}}</ion-select-option>\n            </ion-select>\n        </ion-item>\n      \n        <ion-item lines=\"none\">\n          <ion-label>Reason:</ion-label>\n            <ion-input required type=\"text\" type=\"text\" [(ngModel)]='reason'> </ion-input>\n        </ion-item>\n      \n        <ion-list>\n          <ion-item-divider></ion-item-divider>\n          <ion-item color=\"secondary\" lines=\"none\">\n            <ion-label>Start Date</ion-label>\n            <ion-datetime [(ngModel)]=\"currentDate\" color=\"light\" placeholder=\"Select Date\"></ion-datetime>\n          </ion-item>\n          <ion-item>\n            <ion-label>Duration</ion-label>\n                  <ion-select slot=\"end\" [(ngModel)]='halfday1'>\n                    <ion-select-option value=\"1\">Full day</ion-select-option>\n                    <ion-select-option value=\"2\">Morning Only</ion-select-option>\n                    <ion-select-option value=\"3\">Evening Only</ion-select-option>\n              </ion-select>\n          </ion-item>\n          <ion-item color=\"secondary\" lines=\"none\">\n            <ion-label>Ends</ion-label>\n            <ion-datetime [(ngModel)]=\"endDate\" placeholder=\"Select Date\"></ion-datetime>\n          </ion-item>\n          <ion-item>\n            <ion-label>Duration</ion-label>\n                  <ion-select slot=\"end\" [(ngModel)]='halfday2'>\n                    <ion-select-option value=\"1\">Full day</ion-select-option>\n                    <ion-select-option value=\"2\">Morning Only</ion-select-option>\n                    <ion-select-option value=\"3\">Evening Only</ion-select-option>\n              </ion-select>\n          </ion-item>\n        </ion-list>\n      </form>\n     \n    </ion-card-content>\n</ion-card>\n\n<ion-item lines=\"none\">\n  <div class=\"applyButton\">\n    <ion-button (ionClear)=\"ionClear($event)\" type=\"ngSubmit\" (click)=\"showAlert()\" (click)=\"applyCuti()\" class=\"apply-button\" color=\"secondary\">Apply Leave</ion-button>\n  </div>\n</ion-item>\n\n<div lines=\"none\" class=\"cuti\">\n  <ion-card color='light'>\n    <ion-card-header></ion-card-header>\n    <ion-card-content>\n      <ion-card-subtitle color=\"primary-contrast\">Leave Balance for year 2021:</ion-card-subtitle>\n      <ion-card-title color=\"primary-contrast\" style=\"font-size:70px\" >\n        {{leaveBalance.data}}\n      </ion-card-title>\n      <ion-card-subtitle color=\"primary-contrast\" style=\"font-size:20px\">Days</ion-card-subtitle>\n    </ion-card-content>\n  </ion-card>\n</div>";
       /***/
     },
 

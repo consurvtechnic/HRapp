@@ -73,59 +73,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/auth.service */ "lGQG");
 /* harmony import */ var src_app_services_http_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/services/http.service */ "N+K7");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
-// import { Component, OnInit } from '@angular/core';
-// import { AuthService } from 'src/app/services/auth.service';
-// import { HttpService } from 'src/app/services/http.service';
 
 
 
-// @Component({
-//   selector: 'app-setting',
-//   templateUrl: './setting.page.html',
-//   styleUrls: ['./setting.page.scss'],
-// })
-// export class SettingPage implements OnInit {
-//   displayUserData: any;
-//   userInfo:any={};
-//   oldPassword:any;
-//   newPassword:any;
-//   showChangePassword=false;
-//   constructor(
-//     private authService: AuthService,
-//     private http:HttpService
-//     ) { }
-// ngOnInit() {
-//   this.authService.userData$.subscribe((res: any) => {
-//     this.displayUserData = res;
-//   })
-//     this.authService.getUserDataPromise()
-//     .then((res:any={})=>{
-//       // console.log(res);
-//       this.userInfo=res;
-//       // this.authService.leavedetailPromise({staffid:this.userInfo.staff_id})
-//       // .then(res=>{
-//       //   console.log(res);
-//       // },err=>{
-//       //   console.log(err);
-//       // })
-//     })
-//   }
-//   logoutAction(){
-//     this.authService.logout();
-//   }
-//   changePassword()
-//   {
-//     // console.log('User Info',this.userInfo);
-// //     URL: http://consurv.no-ip.biz/leave/changepassword
-// // Expected variable : username, olpass, newpass
-//     this.http.post('changepassword',{username:this.userInfo.staff_id,olpass:this.oldPassword,newpass:this.newPassword})
-//     .subscribe(res=>{
-//       console.log(res);
-//     },err=>{
-//       console.log(err);
-//     })
-//   }
-// }
 
 
 

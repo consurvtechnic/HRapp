@@ -56,7 +56,6 @@ let LeavelistPage = class LeavelistPage {
             });
             loader.present();
             this.approvedList = [];
-            9;
             this.pendingList = [];
             this.leaveMaster = [];
             this.authService.getUserDataPromise()
@@ -64,7 +63,7 @@ let LeavelistPage = class LeavelistPage {
                 // console.log('USER DATA',res);
                 this.userInfo = res;
                 //DEBUG
-                this.userInfo.staff_id = 1;
+                this.userInfo.staff_id = this.userInfo.staff_id;
                 this.userInfo.hod = 0;
                 //DEBUG
                 this.authService.leavedetailPromise({ staffid: this.userInfo.staff_id })

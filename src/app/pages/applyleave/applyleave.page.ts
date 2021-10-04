@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavController, ToastController } from '@ionic/angular';
+import { LoadingController, NavController, ToastController } from '@ionic/angular';
 import { AuthConstants } from 'src/app/config/auth-constant';
 import { AuthService } from 'src/app/services/auth.service';
 import { HttpService } from 'src/app/services/http.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { AlertController } from '@ionic/angular';
-
+import { ChangeDetectorRef } from '@angular/core'
 
 
 @Component({
@@ -43,6 +43,7 @@ export class ApplyleavePage implements OnInit {
   halfday1:any;
   halfday2:any;
   image='';
+  myform:any;
 
 
   constructor(private toastCtrl: ToastController, 
@@ -52,7 +53,9 @@ export class ApplyleavePage implements OnInit {
     private toastService: ToastService,
     private nav:NavController,
     private http:HttpService,
-    public alertCtrl: AlertController
+    public alertCtrl: AlertController,
+    private changeRef: ChangeDetectorRef,
+    private loading:LoadingController,
     ) {}
 
 
@@ -141,7 +144,14 @@ export class ApplyleavePage implements OnInit {
       && this.postData.endDate && this.postData.image && this.postData.halfday1 && this.postData.halfday2);
   }
 
-   applyCuti(){
+   async applyCuti(){
+
+    // let loader=await this.loading.create({
+    //   message:'Loading...',
+    //   spinner:'bubbles'
+    // })
+
+    // loader.present();
     // this.postData.staff_id;
     // this.postData.currentDate;
     // this.postData.endDate;
@@ -185,7 +195,8 @@ export class ApplyleavePage implements OnInit {
     this.authService.applyleave(pack_data)
     .then(res=>{
       console.log(res);
-      this.nav.navigateForward('home/calendar');
+      this.changeRef.detectChanges();
+      // this.nav.navigateForward('home/calendar');
     },err=>{
       console.log(err);
     })
@@ -238,5 +249,12 @@ export class ApplyleavePage implements OnInit {
     return fullDate;
 
   }
+
+  onSubmit() {
+  if (this.myform.valid) {
+    console.log("Form Submitted!");
+    this.myform.reset();
+  }
+}
 
 }
