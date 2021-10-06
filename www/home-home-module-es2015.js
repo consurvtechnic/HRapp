@@ -74,11 +74,11 @@ const routes = [
             },
             {
                 path: 'applyleave',
-                loadChildren: () => Promise.all(/*! import() | pages-applyleave-applyleave-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("pages-applyleave-applyleave-module")]).then(__webpack_require__.bind(null, /*! ../pages/applyleave/applyleave.module */ "xN67")).then(m => m.ApplyleavePageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-applyleave-applyleave-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("pages-applyleave-applyleave-module")]).then(__webpack_require__.bind(null, /*! ../pages/applyleave/applyleave.module */ "xN67")).then(m => m.ApplyleavePageModule)
             },
             {
                 path: 'leavelist',
-                loadChildren: () => Promise.all(/*! import() | pages-leave-leave-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("pages-leave-leave-module")]).then(__webpack_require__.bind(null, /*! ../pages/leave/leave.module */ "2/E7")).then(m => m.LeavePageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-leave-leave-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("pages-leave-leave-module")]).then(__webpack_require__.bind(null, /*! ../pages/leave/leave.module */ "2/E7")).then(m => m.LeavePageModule)
             },
             {
                 path: 'calendar',
@@ -171,7 +171,7 @@ HomePageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJob21lLnBhZ2Uuc2NzcyJ9 */");
+/* harmony default export */ __webpack_exports__["default"] = (":host .tab-selected {\n  color: #ffffff;\n  background-color: #2C9DDE;\n  border-radius: 30px 50px 0px 0px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL2hvbWUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBYVEsY0FBYztFQUNkLHlCQUF5QjtFQUN6QixnQ0FBZ0M7QUFYeEMiLCJmaWxlIjoiaG9tZS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyI6aG9zdCB7XG4gICAgLy8gaW9uLXRhYi1iYXIge1xuICAgIC8vICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgLy8gICAgIGJvdHRvbTogMDtcbiAgICAvLyAgICAgd2lkdGg6IDEwMCU7XG4gICAgLy8gfVxuXG4gICAgLy8gaW9uLXRhYi1idXR0b24ge1xuICAgIC8vICAgICBtYXgtd2lkdGg6IDU2cHg7XG4gICAgLy8gICAgIG1heC1oZWlnaHQ6IDM2cHg7XG4gICAgLy8gfVxuXG4gICAgLnRhYi1zZWxlY3RlZHtcbiAgICAgICAgY29sb3I6ICNmZmZmZmY7XG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMyQzlEREU7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDMwcHggNTBweCAwcHggMHB4O1xuICAgIH1cbn0iXX0= */");
 
 /***/ }),
 

@@ -1,12 +1,8 @@
 :host {
     // ion-tab-bar {
-    //     border: 0;
-    //     display: flex;
-    //     justify-content: space-between;
-    //     padding: 15px;
-    //     ion-icon {
-    //         font-size: 1.6rem;
-    //     }
+    //     position: absolute;
+    //     bottom: 0;
+    //     width: 100%;
     // }
 
     // ion-tab-button {
@@ -17,6 +13,6 @@
     .tab-selected{
         color: #ffffff;
         background-color: #2C9DDE;
-        border-radius: 20px;
+        border-radius: 30px 50px 0px 0px;
     }
 }

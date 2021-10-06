@@ -32,7 +32,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let LeavelistPage = class LeavelistPage {
-    constructor(authService, nav, loading, modal, storage, popoverController, router) {
+    constructor(authService, nav, loading, modal, storage, popoverController, router, storageService) {
         this.authService = authService;
         this.nav = nav;
         this.loading = loading;
@@ -40,13 +40,24 @@ let LeavelistPage = class LeavelistPage {
         this.storage = storage;
         this.popoverController = popoverController;
         this.router = router;
+        this.storageService = storageService;
         this.selectTabs = 'pending';
         this.userInfo = {};
         this.leaveMaster = [];
         this.approvedList = [];
         this.pendingList = [];
+        this.showBtn = true;
     }
     ngOnInit() {
+        this.authService.userData$.subscribe((res) => {
+            this.displayUserData = res;
+            if (this.displayUserData.level === 2) {
+                this.showBtn = false;
+            }
+            else {
+                this.showBtn = true;
+            }
+        });
     }
     ionViewWillEnter() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
@@ -136,7 +147,8 @@ LeavelistPage.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ModalController"] },
     { type: _services_storage_service__WEBPACK_IMPORTED_MODULE_8__["StorageService"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["PopoverController"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"] },
+    { type: _services_storage_service__WEBPACK_IMPORTED_MODULE_8__["StorageService"] }
 ];
 LeavelistPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
@@ -172,7 +184,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\n  <ion-toolbar color=\"light\">\n    <ion-title>Leave List</ion-title>\n    <ion-buttons slot=\"end\" (click)=\"goToLeaveHistory()\">\n      <ion-button>\n        <ion-icon slot=\"icon-only\" name=\"clipboard-outline\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n\n<ion-content>\n  <ion-segment [(ngModel)]=\"selectTabs\" mode=\"md\">\n\n    <ion-segment-button value=\"pending\">\n      <ion-icon name=\"hourglass-outline\"></ion-icon>\n        <ion-label>Pending</ion-label>\n    </ion-segment-button>\n    \n    <ion-segment-button value=\"approved\">\n      <ion-icon name=\"checkmark-circle-outline\"></ion-icon>\n        <ion-label>Approved</ion-label>\n    </ion-segment-button>\n\n  </ion-segment>\n\n  <div *ngIf=\"selectTabs == 'pending'\" >\n    <ion-list>\n      <ion-item color='secondary'>\n        <ion-grid>\n          <ion-row>\n            <ion-col>Name:</ion-col>\n            <ion-col>Type:</ion-col>\n            <ion-col>Date:</ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-item>\n      <ion-item *ngIf=\"pendingList.length==0\">\n        No pending leave found\n      </ion-item>\n      <ion-item *ngFor=\"let item of pendingList\">\n        <ion-grid>\n          <ion-row (click)='openModal(item)'>\n            <ion-col>\n              {{item.staff_name}}\n            </ion-col>\n            <ion-col>\n              {{item.leavetype}}\n            </ion-col>\n            <ion-col>\n              <span *ngIf=\"item.datehalf=='0000-00-00'\">\n              {{item.datefrom}}-{{item.dateend}}\n              </span>\n              <span *ngIf=\"item.datehalf!='0000-00-00'\">\n              {{item.datehalf}}\n              </span>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-item>\n    </ion-list>\n  </div>\n\n  <div *ngIf=\"selectTabs == 'approved'\">\n    <ion-list>\n      <ion-item color='secondary'>\n        <ion-grid>\n          <ion-row>\n            <ion-col>Name:</ion-col>\n            <ion-col>Type:</ion-col>\n            <ion-col>Date:</ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-item>\n      <ion-item *ngIf=\"approvedList.length==0\">\n        No approved leave found\n      </ion-item>\n      <ion-item *ngFor=\"let item of approvedList\">\n        <ion-grid>\n          <ion-row (click)='openModalApprove(item)'>\n            <ion-col>\n              {{item.staff_name}}\n            </ion-col>\n            <ion-col>\n              {{item.leavetype}}\n            </ion-col>\n            <ion-col>\n              <span *ngIf=\"item.datehalf=='0000-00-00'\">\n              {{item.datefrom}}-{{item.dateend}}\n              </span>\n              <span *ngIf=\"item.datehalf!='0000-00-00'\">\n              {{item.datehalf}}\n              </span>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-item>\n    </ion-list>\n  </div>\n\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\n  <ion-toolbar color=\"light\">\n    <ion-title>Leave List</ion-title>\n    <ion-buttons *ngIf=\"showBtn\" slot=\"end\" (click)=\"goToLeaveHistory()\">\n      <ion-button>\n        <ion-icon slot=\"icon-only\" name=\"clipboard-outline\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n\n<ion-content>\n  <ion-segment [(ngModel)]=\"selectTabs\" mode=\"md\">\n\n    <ion-segment-button value=\"pending\">\n      <ion-icon name=\"hourglass-outline\"></ion-icon>\n        <ion-label>Pending</ion-label>\n    </ion-segment-button>\n    \n    <ion-segment-button value=\"approved\">\n      <ion-icon name=\"checkmark-circle-outline\"></ion-icon>\n        <ion-label>Approved</ion-label>\n    </ion-segment-button>\n\n  </ion-segment>\n\n  <div *ngIf=\"selectTabs == 'pending'\" >\n    <ion-list>\n      <ion-item color='secondary'>\n        <ion-grid>\n          <ion-row>\n            <ion-col>Name:</ion-col>\n            <ion-col>Type:</ion-col>\n            <ion-col>Date:</ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-item>\n      <ion-item *ngIf=\"pendingList.length==0\">\n        No pending leave found\n      </ion-item>\n      <ion-item *ngFor=\"let item of pendingList\">\n        <ion-grid>\n          <ion-row (click)='openModal(item)'>\n            <ion-col>\n              {{item.staff_name}}\n            </ion-col>\n            <ion-col>\n              {{item.leavetype}}\n            </ion-col>\n            <ion-col>\n              <span *ngIf=\"item.datehalf=='0000-00-00'\">\n              {{item.datefrom}}-{{item.dateend}}\n              </span>\n              <span *ngIf=\"item.datehalf!='0000-00-00'\">\n              {{item.datehalf}}\n              </span>\n            </ion-col>\n          </ion-row>\n          <ion-col>\n            \n          </ion-col>\n        </ion-grid>\n      </ion-item>\n    </ion-list>\n  </div>\n\n  <div *ngIf=\"selectTabs == 'approved'\">\n    <ion-list>\n      <ion-item color='secondary'>\n        <ion-grid>\n          <ion-row>\n            <ion-col>Name:</ion-col>\n            <ion-col>Type:</ion-col>\n            <ion-col>Date:</ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-item>\n      <ion-item *ngIf=\"approvedList.length==0\">\n        No approved leave found\n      </ion-item>\n      <ion-item *ngFor=\"let item of approvedList\">\n        <ion-grid>\n          <ion-row (click)='openModalApprove(item)'>\n            <ion-col>\n              {{item.staff_name}}\n            </ion-col>\n            <ion-col>\n              {{item.leavetype}}\n            </ion-col>\n            <ion-col>\n              <span *ngIf=\"item.datehalf=='0000-00-00'\">\n              {{item.datefrom}}-{{item.dateend}}\n              </span>\n              <span *ngIf=\"item.datehalf!='0000-00-00'\">\n              {{item.datehalf}}\n              </span>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-item>\n    </ion-list>\n  </div>\n\n</ion-content>\n");
 
 /***/ }),
 

@@ -85,12 +85,12 @@ export class LoginPage implements OnInit {
           this.router.navigate(['./home-manager/mukadepan']);
         } else if(res.result[0].level == 2) {
           this.storageService.store(AuthConstants.AUTH, res.result);
-          this.router.navigate(['./home-manager/mukadepan']);
+          this.router.navigate(['./home-boss/mukadepan']);
         }
         else {
           this.toastService.presentToast('Incorrect Name or Password');
 
-        } 
+        }
       },
       (error: any) => {
         this.toastService.presentToast("Network Connection Error");

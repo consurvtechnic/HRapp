@@ -3,7 +3,8 @@
     <ion-title>Home</ion-title>
     <ion-buttons slot="end" (click)="GotoNotityPage()">
       <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
-      <ion-badge color="danger" style="position: absolute; right: -5px; top: -3px;">3</ion-badge></ion-buttons>
+      <ion-badge color="danger" style="position: absolute; right: -5px; top: -3px;">?</ion-badge>
+    </ion-buttons>
 
         <!-- <span>&nbsp;</span> -->
 
@@ -27,14 +28,14 @@
    
     <h2 style="text-align:center">Welcome Back, {{displayUserData?.staff_name}}!</h2>
     <img src="assets/images/home1.png"  class="smalllogo"/>
-    <p><ion-button (click)="goToList()" expand="block" color="dark" style="width: fit-content; margin: auto;">List of Attendees</ion-button></p>
+    <p><ion-button (click)="goToList()" expand="full" color="dark" style="width: fit-content; margin: auto;">List of Attendees</ion-button></p>
     <ion-grid>
       <ion-row>
         <ion-col col-6>
-          <ion-button (click)="showToast1()" expand="full" (click)="checkInAction()" color="secondary">Check In</ion-button>
+          <ion-button (click)="showToast1()" expand="block" (click)="checkInAction()" color="secondary">Check In</ion-button>
         </ion-col>
         <ion-col col-6>
-          <ion-button (click)="showToast2()" expand="full" (click)="checkOutAction()"color="secondary">Check Out</ion-button>
+          <ion-button (click)="showToast2()" expand="block" (click)="checkOutAction()"color="secondary">Check Out</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>

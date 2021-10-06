@@ -3,8 +3,8 @@
     left: 0;
     bottom: 10vh;
     right: 0;
-    top: 25px;
-    @media screen and (max-width:1200px) and (min-width: 1000px) {
+    top: 2vh;
+    @media screen and (max-width:1200px) and (min-width: 450px) {
         background: white;
     }
 }
@@ -14,3 +14,6 @@ ion-toolbar {
     color: #2C9DDE;
   }
 
+ ion-button {
+      --border-radius: 30px;
+  }

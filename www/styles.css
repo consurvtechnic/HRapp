@@ -1257,4 +1257,9 @@ sub {
   --border-radius: 10px;
   padding: 25px;
 }
+.scroll-content {
+  overflow: hidden;
+  margin-right: -17px;
+  overflow-y: scroll;
+}
 

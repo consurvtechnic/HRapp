@@ -19,6 +19,10 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./home-manager/home-manager.module').then( m => m.HomeManagerPageModule)
   },
+  {
+    path: '',
+    loadChildren: () => import('./home-boss/home-boss.module').then( m => m.HomeBossPageModule)
+  },
     {
     path: 'welcome',
     loadChildren: () => import('./components/components.module').then( m => m.ComponentsModule)
@@ -83,12 +87,13 @@ const routes: Routes = [
     path: 'mukadepan-hod',
     loadChildren: () => import('./pages/mukadepan-hod/mukadepan-hod.module').then( m => m.MukadepanHodPageModule)
   },
-
-
-
-
-  
-
+  {
+    path: 'home-boss',
+    loadChildren: () => import('./home-boss/home-boss.module').then( m => m.HomeBossPageModule)
+  },  {
+    path: 'leaveapproval',
+    loadChildren: () => import('./pages/leaveapproval/leaveapproval.module').then( m => m.LeaveapprovalPageModule)
+  },
 
   
   

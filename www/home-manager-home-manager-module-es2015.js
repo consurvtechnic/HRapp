@@ -66,11 +66,11 @@ const routes = [
         children: [
             {
                 path: 'mukadepan',
-                loadChildren: () => Promise.all(/*! import() | pages-mukadepan-hod-mukadepan-hod-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("pages-mukadepan-hod-mukadepan-hod-module")]).then(__webpack_require__.bind(null, /*! ../pages/mukadepan-hod/mukadepan-hod.module */ "BseU")).then(m => m.MukadepanHodPageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-mukadepan-hod-mukadepan-hod-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("pages-mukadepan-hod-mukadepan-hod-module")]).then(__webpack_require__.bind(null, /*! ../pages/mukadepan-hod/mukadepan-hod.module */ "BseU")).then(m => m.MukadepanHodPageModule)
             },
             {
                 path: 'applyleave',
-                loadChildren: () => Promise.all(/*! import() | pages-applyleave-applyleave-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("pages-applyleave-applyleave-module")]).then(__webpack_require__.bind(null, /*! ../pages/applyleave/applyleave.module */ "xN67")).then(m => m.ApplyleavePageModule)
+                loadChildren: () => Promise.all(/*! import() | pages-applyleave-applyleave-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("pages-applyleave-applyleave-module")]).then(__webpack_require__.bind(null, /*! ../pages/applyleave/applyleave.module */ "xN67")).then(m => m.ApplyleavePageModule)
             },
             {
                 path: 'leavelist',
@@ -122,7 +122,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJob21lLW1hbmFnZXIucGFnZS5zY3NzIn0= */");
+/* harmony default export */ __webpack_exports__["default"] = (":host .tab-selected {\n  color: #ffffff;\n  background-color: #2C9DDE;\n  border-radius: 30px 50px 0px 0px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL2hvbWUtbWFuYWdlci5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFpQlEsY0FBYztFQUNkLHlCQUF5QjtFQUN6QixnQ0FBZ0M7QUFmeEMiLCJmaWxlIjoiaG9tZS1tYW5hZ2VyLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIjpob3N0IHtcbiAgICAvLyBpb24tdGFiLWJhciB7XG4gICAgLy8gICAgIGJvcmRlcjogMDtcbiAgICAvLyAgICAgZGlzcGxheTogZmxleDtcbiAgICAvLyAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xuICAgIC8vICAgICBwYWRkaW5nOiAxNXB4O1xuICAgIC8vICAgICBpb24taWNvbiB7XG4gICAgLy8gICAgICAgICBmb250LXNpemU6IDEuNnJlbTtcbiAgICAvLyAgICAgfVxuICAgIC8vIH1cblxuICAgIC8vIGlvbi10YWItYnV0dG9uIHtcbiAgICAvLyAgICAgbWF4LXdpZHRoOiA1NnB4O1xuICAgIC8vICAgICBtYXgtaGVpZ2h0OiAzNnB4O1xuICAgIC8vIH1cblxuICAgIC50YWItc2VsZWN0ZWR7XG4gICAgICAgIGNvbG9yOiAjZmZmZmZmO1xuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMkM5RERFO1xuICAgICAgICBib3JkZXItcmFkaXVzOiAzMHB4IDUwcHggMHB4IDBweDtcbiAgICB9XG59Il19 */");
 
 /***/ }),
 

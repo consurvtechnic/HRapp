@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="light">
     <ion-title>Leave List</ion-title>
-    <ion-buttons slot="end" (click)="goToLeaveHistory()">
+    <ion-buttons *ngIf="showBtn" slot="end" (click)="goToLeaveHistory()">
       <ion-button>
         <ion-icon slot="icon-only" name="clipboard-outline"></ion-icon>
       </ion-button>
@@ -57,6 +57,9 @@
               </span>
             </ion-col>
           </ion-row>
+          <ion-col>
+            
+          </ion-col>
         </ion-grid>
       </ion-item>
     </ion-list>

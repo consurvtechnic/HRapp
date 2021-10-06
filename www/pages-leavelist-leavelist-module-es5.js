@@ -87,7 +87,7 @@
       "tyNb");
 
       var LeavelistPage = /*#__PURE__*/function () {
-        function LeavelistPage(authService, nav, loading, modal, storage, popoverController, router) {
+        function LeavelistPage(authService, nav, loading, modal, storage, popoverController, router, storageService) {
           _classCallCheck(this, LeavelistPage);
 
           this.authService = authService;
@@ -97,21 +97,35 @@
           this.storage = storage;
           this.popoverController = popoverController;
           this.router = router;
+          this.storageService = storageService;
           this.selectTabs = 'pending';
           this.userInfo = {};
           this.leaveMaster = [];
           this.approvedList = [];
           this.pendingList = [];
+          this.showBtn = true;
         }
 
         _createClass(LeavelistPage, [{
           key: "ngOnInit",
-          value: function ngOnInit() {}
+          value: function ngOnInit() {
+            var _this = this;
+
+            this.authService.userData$.subscribe(function (res) {
+              _this.displayUserData = res;
+
+              if (_this.displayUserData.level === 2) {
+                _this.showBtn = false;
+              } else {
+                _this.showBtn = true;
+              }
+            });
+          }
         }, {
           key: "ionViewWillEnter",
           value: function ionViewWillEnter() {
             return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-              var _this = this;
+              var _this2 = this;
 
               var loader;
               return regeneratorRuntime.wrap(function _callee$(_context) {
@@ -133,20 +147,20 @@
                       this.authService.getUserDataPromise().then(function () {
                         var res = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
                         // console.log('USER DATA',res);
-                        _this.userInfo = res; //DEBUG
+                        _this2.userInfo = res; //DEBUG
 
-                        _this.userInfo.staff_id = _this.userInfo.staff_id;
-                        _this.userInfo.hod = 0; //DEBUG
+                        _this2.userInfo.staff_id = _this2.userInfo.staff_id;
+                        _this2.userInfo.hod = 0; //DEBUG
 
-                        _this.authService.leavedetailPromise({
-                          staffid: _this.userInfo.staff_id
+                        _this2.authService.leavedetailPromise({
+                          staffid: _this2.userInfo.staff_id
                         }).then(function (res) {
                           console.log('abc', res[0]);
-                          _this.leaveMaster = res[0];
+                          _this2.leaveMaster = res[0];
 
-                          _this.segList(res[0]);
+                          _this2.segList(res[0]);
 
-                          _this.segList(res[1]);
+                          _this2.segList(res[1]);
 
                           loader.dismiss();
                         }, function (err) {
@@ -156,7 +170,7 @@
                       }, function (err) {
                         loader.dismiss();
 
-                        _this.nav.navigateBack('login');
+                        _this2.nav.navigateBack('login');
                       });
 
                     case 8:
@@ -171,7 +185,7 @@
           key: "openModal",
           value: function openModal(item) {
             return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-              var _this2 = this;
+              var _this3 = this;
 
               var approveModal;
               return regeneratorRuntime.wrap(function _callee2$(_context2) {
@@ -192,7 +206,7 @@
                     case 4:
                       approveModal = _context2.sent;
                       approveModal.onDidDismiss().then(function (_) {
-                        _this2.ionViewWillEnter(); //Refresh data
+                        _this3.ionViewWillEnter(); //Refresh data
 
                       });
                       approveModal.present();
@@ -294,6 +308,8 @@
           type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["PopoverController"]
         }, {
           type: _angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"]
+        }, {
+          type: _services_storage_service__WEBPACK_IMPORTED_MODULE_8__["StorageService"]
         }];
       };
 
@@ -341,7 +357,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\n  <ion-toolbar color=\"light\">\n    <ion-title>Leave List</ion-title>\n    <ion-buttons slot=\"end\" (click)=\"goToLeaveHistory()\">\n      <ion-button>\n        <ion-icon slot=\"icon-only\" name=\"clipboard-outline\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n\n<ion-content>\n  <ion-segment [(ngModel)]=\"selectTabs\" mode=\"md\">\n\n    <ion-segment-button value=\"pending\">\n      <ion-icon name=\"hourglass-outline\"></ion-icon>\n        <ion-label>Pending</ion-label>\n    </ion-segment-button>\n    \n    <ion-segment-button value=\"approved\">\n      <ion-icon name=\"checkmark-circle-outline\"></ion-icon>\n        <ion-label>Approved</ion-label>\n    </ion-segment-button>\n\n  </ion-segment>\n\n  <div *ngIf=\"selectTabs == 'pending'\" >\n    <ion-list>\n      <ion-item color='secondary'>\n        <ion-grid>\n          <ion-row>\n            <ion-col>Name:</ion-col>\n            <ion-col>Type:</ion-col>\n            <ion-col>Date:</ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-item>\n      <ion-item *ngIf=\"pendingList.length==0\">\n        No pending leave found\n      </ion-item>\n      <ion-item *ngFor=\"let item of pendingList\">\n        <ion-grid>\n          <ion-row (click)='openModal(item)'>\n            <ion-col>\n              {{item.staff_name}}\n            </ion-col>\n            <ion-col>\n              {{item.leavetype}}\n            </ion-col>\n            <ion-col>\n              <span *ngIf=\"item.datehalf=='0000-00-00'\">\n              {{item.datefrom}}-{{item.dateend}}\n              </span>\n              <span *ngIf=\"item.datehalf!='0000-00-00'\">\n              {{item.datehalf}}\n              </span>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-item>\n    </ion-list>\n  </div>\n\n  <div *ngIf=\"selectTabs == 'approved'\">\n    <ion-list>\n      <ion-item color='secondary'>\n        <ion-grid>\n          <ion-row>\n            <ion-col>Name:</ion-col>\n            <ion-col>Type:</ion-col>\n            <ion-col>Date:</ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-item>\n      <ion-item *ngIf=\"approvedList.length==0\">\n        No approved leave found\n      </ion-item>\n      <ion-item *ngFor=\"let item of approvedList\">\n        <ion-grid>\n          <ion-row (click)='openModalApprove(item)'>\n            <ion-col>\n              {{item.staff_name}}\n            </ion-col>\n            <ion-col>\n              {{item.leavetype}}\n            </ion-col>\n            <ion-col>\n              <span *ngIf=\"item.datehalf=='0000-00-00'\">\n              {{item.datefrom}}-{{item.dateend}}\n              </span>\n              <span *ngIf=\"item.datehalf!='0000-00-00'\">\n              {{item.datehalf}}\n              </span>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-item>\n    </ion-list>\n  </div>\n\n</ion-content>\n";
+      __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\n  <ion-toolbar color=\"light\">\n    <ion-title>Leave List</ion-title>\n    <ion-buttons *ngIf=\"showBtn\" slot=\"end\" (click)=\"goToLeaveHistory()\">\n      <ion-button>\n        <ion-icon slot=\"icon-only\" name=\"clipboard-outline\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n\n<ion-content>\n  <ion-segment [(ngModel)]=\"selectTabs\" mode=\"md\">\n\n    <ion-segment-button value=\"pending\">\n      <ion-icon name=\"hourglass-outline\"></ion-icon>\n        <ion-label>Pending</ion-label>\n    </ion-segment-button>\n    \n    <ion-segment-button value=\"approved\">\n      <ion-icon name=\"checkmark-circle-outline\"></ion-icon>\n        <ion-label>Approved</ion-label>\n    </ion-segment-button>\n\n  </ion-segment>\n\n  <div *ngIf=\"selectTabs == 'pending'\" >\n    <ion-list>\n      <ion-item color='secondary'>\n        <ion-grid>\n          <ion-row>\n            <ion-col>Name:</ion-col>\n            <ion-col>Type:</ion-col>\n            <ion-col>Date:</ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-item>\n      <ion-item *ngIf=\"pendingList.length==0\">\n        No pending leave found\n      </ion-item>\n      <ion-item *ngFor=\"let item of pendingList\">\n        <ion-grid>\n          <ion-row (click)='openModal(item)'>\n            <ion-col>\n              {{item.staff_name}}\n            </ion-col>\n            <ion-col>\n              {{item.leavetype}}\n            </ion-col>\n            <ion-col>\n              <span *ngIf=\"item.datehalf=='0000-00-00'\">\n              {{item.datefrom}}-{{item.dateend}}\n              </span>\n              <span *ngIf=\"item.datehalf!='0000-00-00'\">\n              {{item.datehalf}}\n              </span>\n            </ion-col>\n          </ion-row>\n          <ion-col>\n            \n          </ion-col>\n        </ion-grid>\n      </ion-item>\n    </ion-list>\n  </div>\n\n  <div *ngIf=\"selectTabs == 'approved'\">\n    <ion-list>\n      <ion-item color='secondary'>\n        <ion-grid>\n          <ion-row>\n            <ion-col>Name:</ion-col>\n            <ion-col>Type:</ion-col>\n            <ion-col>Date:</ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-item>\n      <ion-item *ngIf=\"approvedList.length==0\">\n        No approved leave found\n      </ion-item>\n      <ion-item *ngFor=\"let item of approvedList\">\n        <ion-grid>\n          <ion-row (click)='openModalApprove(item)'>\n            <ion-col>\n              {{item.staff_name}}\n            </ion-col>\n            <ion-col>\n              {{item.leavetype}}\n            </ion-col>\n            <ion-col>\n              <span *ngIf=\"item.datehalf=='0000-00-00'\">\n              {{item.datefrom}}-{{item.dateend}}\n              </span>\n              <span *ngIf=\"item.datehalf!='0000-00-00'\">\n              {{item.datehalf}}\n              </span>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-item>\n    </ion-list>\n  </div>\n\n</ion-content>\n";
       /***/
     },
 

@@ -63,14 +63,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _raw_loader_app_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./app.component.html */ "VzVu");
 /* harmony import */ var _app_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component.scss */ "ynWL");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "ofXK");
 
 
 
 
+
+
+// import {Plugins } from '@capacitor/core';
+// const { App } = Plugins;
 let AppComponent = class AppComponent {
-    constructor() { }
+    constructor(alertCtrl, platform, location) {
+        this.alertCtrl = alertCtrl;
+        this.platform = platform;
+        this.location = location;
+        this.backButtonEvent();
+    }
+    backButtonEvent() {
+        this.platform.backButton.subscribeWithPriority(10, () => {
+            if (!this.routerOutlet.canGoBack()) {
+                this.backButtonAlert();
+            }
+            else {
+                this.location.back();
+            }
+        });
+    }
+    backButtonAlert() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const alert = yield this.alertCtrl.create({
+                message: 'You want to exit the app?',
+                buttons: [{
+                        text: 'Cancel',
+                        role: 'cancel'
+                    }, {
+                        text: 'Close App',
+                        handler: () => {
+                            navigator['app'].exitApp();
+                        }
+                    }]
+            });
+            yield alert.present();
+        });
+    }
 };
-AppComponent.ctorParameters = () => [];
+AppComponent.ctorParameters = () => [
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["AlertController"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["Platform"] },
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_5__["Location"] }
+];
+AppComponent.propDecorators = {
+    routerOutlet: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"], args: [_ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonRouterOutlet"], { static: true },] }]
+};
 AppComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
         selector: 'app-root',
@@ -399,19 +444,23 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: '',
-        loadChildren: () => Promise.all(/*! import() | index-index-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("index-index-module")]).then(__webpack_require__.bind(null, /*! ./index/index.module */ "rSti")).then(m => m.IndexPageModule)
+        loadChildren: () => Promise.all(/*! import() | index-index-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("index-index-module")]).then(__webpack_require__.bind(null, /*! ./index/index.module */ "rSti")).then(m => m.IndexPageModule)
     },
     {
         path: '',
-        loadChildren: () => Promise.all(/*! import() | home-home-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("home-home-module")]).then(__webpack_require__.bind(null, /*! ./home/home.module */ "ct+p")).then(m => m.HomePageModule)
+        loadChildren: () => Promise.all(/*! import() | home-home-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("home-home-module")]).then(__webpack_require__.bind(null, /*! ./home/home.module */ "ct+p")).then(m => m.HomePageModule)
     },
     {
         path: '',
-        loadChildren: () => Promise.all(/*! import() | home-hradmin-home-hradmin-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("home-hradmin-home-hradmin-module")]).then(__webpack_require__.bind(null, /*! ./home-hradmin/home-hradmin.module */ "EUcd")).then(m => m.HomeHRadminPageModule)
+        loadChildren: () => Promise.all(/*! import() | home-hradmin-home-hradmin-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("home-hradmin-home-hradmin-module")]).then(__webpack_require__.bind(null, /*! ./home-hradmin/home-hradmin.module */ "EUcd")).then(m => m.HomeHRadminPageModule)
     },
     {
         path: '',
-        loadChildren: () => Promise.all(/*! import() | home-manager-home-manager-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("home-manager-home-manager-module")]).then(__webpack_require__.bind(null, /*! ./home-manager/home-manager.module */ "gHsv")).then(m => m.HomeManagerPageModule)
+        loadChildren: () => Promise.all(/*! import() | home-manager-home-manager-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("home-manager-home-manager-module")]).then(__webpack_require__.bind(null, /*! ./home-manager/home-manager.module */ "gHsv")).then(m => m.HomeManagerPageModule)
+    },
+    {
+        path: '',
+        loadChildren: () => Promise.all(/*! import() | home-boss-home-boss-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("home-boss-home-boss-module")]).then(__webpack_require__.bind(null, /*! ./home-boss/home-boss.module */ "xbfX")).then(m => m.HomeBossPageModule)
     },
     {
         path: 'welcome',
@@ -419,23 +468,23 @@ const routes = [
     },
     {
         path: 'listattendees',
-        loadChildren: () => Promise.all(/*! import() | pages-listattendees-listattendees-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("pages-listattendees-listattendees-module")]).then(__webpack_require__.bind(null, /*! ./pages/listattendees/listattendees.module */ "NByi")).then(m => m.ListattendeesPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-listattendees-listattendees-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("pages-listattendees-listattendees-module")]).then(__webpack_require__.bind(null, /*! ./pages/listattendees/listattendees.module */ "NByi")).then(m => m.ListattendeesPageModule)
     },
     {
         path: 'leave-modal',
-        loadChildren: () => Promise.all(/*! import() | leave-modal-leave-modal-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("leave-modal-leave-modal-module")]).then(__webpack_require__.bind(null, /*! ./leave-modal/leave-modal.module */ "11sy")).then(m => m.LeaveModalPageModule)
+        loadChildren: () => Promise.all(/*! import() | leave-modal-leave-modal-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("leave-modal-leave-modal-module")]).then(__webpack_require__.bind(null, /*! ./leave-modal/leave-modal.module */ "11sy")).then(m => m.LeaveModalPageModule)
     },
     {
         path: 'approve-modal',
-        loadChildren: () => Promise.all(/*! import() | approve-modal-approve-modal-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("approve-modal-approve-modal-module")]).then(__webpack_require__.bind(null, /*! ./approve-modal/approve-modal.module */ "EDlG")).then(m => m.ApproveModalPageModule)
+        loadChildren: () => Promise.all(/*! import() | approve-modal-approve-modal-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("approve-modal-approve-modal-module")]).then(__webpack_require__.bind(null, /*! ./approve-modal/approve-modal.module */ "EDlG")).then(m => m.ApproveModalPageModule)
     },
     {
         path: 'profile',
-        loadChildren: () => Promise.all(/*! import() | pages-profile-profile-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("pages-profile-profile-module")]).then(__webpack_require__.bind(null, /*! ./pages/profile/profile.module */ "723k")).then(m => m.ProfilePageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-profile-profile-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("pages-profile-profile-module")]).then(__webpack_require__.bind(null, /*! ./pages/profile/profile.module */ "723k")).then(m => m.ProfilePageModule)
     },
     {
         path: 'history',
-        loadChildren: () => Promise.all(/*! import() | pages-history-history-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("pages-history-history-module")]).then(__webpack_require__.bind(null, /*! ./pages/history/history.module */ "6F3i")).then(m => m.HistoryPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-history-history-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("pages-history-history-module")]).then(__webpack_require__.bind(null, /*! ./pages/history/history.module */ "6F3i")).then(m => m.HistoryPageModule)
     },
     {
         path: 'cal-modal',
@@ -443,15 +492,15 @@ const routes = [
     },
     {
         path: 'leave',
-        loadChildren: () => Promise.all(/*! import() | pages-leave-leave-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("pages-leave-leave-module")]).then(__webpack_require__.bind(null, /*! ./pages/leave/leave.module */ "2/E7")).then(m => m.LeavePageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-leave-leave-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("pages-leave-leave-module")]).then(__webpack_require__.bind(null, /*! ./pages/leave/leave.module */ "2/E7")).then(m => m.LeavePageModule)
     },
     {
         path: 'home-hradmin',
-        loadChildren: () => Promise.all(/*! import() | home-hradmin-home-hradmin-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("home-hradmin-home-hradmin-module")]).then(__webpack_require__.bind(null, /*! ./home-hradmin/home-hradmin.module */ "EUcd")).then(m => m.HomeHRadminPageModule)
+        loadChildren: () => Promise.all(/*! import() | home-hradmin-home-hradmin-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("home-hradmin-home-hradmin-module")]).then(__webpack_require__.bind(null, /*! ./home-hradmin/home-hradmin.module */ "EUcd")).then(m => m.HomeHRadminPageModule)
     },
     {
         path: 'applyleave',
-        loadChildren: () => Promise.all(/*! import() | pages-applyleave-applyleave-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("pages-applyleave-applyleave-module")]).then(__webpack_require__.bind(null, /*! ./pages/applyleave/applyleave.module */ "xN67")).then(m => m.ApplyleavePageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-applyleave-applyleave-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("pages-applyleave-applyleave-module")]).then(__webpack_require__.bind(null, /*! ./pages/applyleave/applyleave.module */ "xN67")).then(m => m.ApplyleavePageModule)
     },
     {
         path: 'mukadepan-admin',
@@ -467,7 +516,7 @@ const routes = [
     },
     {
         path: 'home-manager',
-        loadChildren: () => Promise.all(/*! import() | home-manager-home-manager-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("home-manager-home-manager-module")]).then(__webpack_require__.bind(null, /*! ./home-manager/home-manager.module */ "gHsv")).then(m => m.HomeManagerPageModule)
+        loadChildren: () => Promise.all(/*! import() | home-manager-home-manager-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("home-manager-home-manager-module")]).then(__webpack_require__.bind(null, /*! ./home-manager/home-manager.module */ "gHsv")).then(m => m.HomeManagerPageModule)
     },
     {
         path: 'signup',
@@ -475,7 +524,15 @@ const routes = [
     },
     {
         path: 'mukadepan-hod',
-        loadChildren: () => Promise.all(/*! import() | pages-mukadepan-hod-mukadepan-hod-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("pages-mukadepan-hod-mukadepan-hod-module")]).then(__webpack_require__.bind(null, /*! ./pages/mukadepan-hod/mukadepan-hod.module */ "BseU")).then(m => m.MukadepanHodPageModule)
+        loadChildren: () => Promise.all(/*! import() | pages-mukadepan-hod-mukadepan-hod-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("pages-mukadepan-hod-mukadepan-hod-module")]).then(__webpack_require__.bind(null, /*! ./pages/mukadepan-hod/mukadepan-hod.module */ "BseU")).then(m => m.MukadepanHodPageModule)
+    },
+    {
+        path: 'home-boss',
+        loadChildren: () => Promise.all(/*! import() | home-boss-home-boss-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("home-boss-home-boss-module")]).then(__webpack_require__.bind(null, /*! ./home-boss/home-boss.module */ "xbfX")).then(m => m.HomeBossPageModule)
+    },
+    {
+        path: 'leaveapproval',
+        loadChildren: () => Promise.all(/*! import() | pages-leaveapproval-leaveapproval-module */[__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("pages-leaveapproval-leaveapproval-module")]).then(__webpack_require__.bind(null, /*! ./pages/leaveapproval/leaveapproval.module */ "+N/3")).then(m => m.LeaveapprovalPageModule)
     },
 ];
 let AppRoutingModule = class AppRoutingModule {

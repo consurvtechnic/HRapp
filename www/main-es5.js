@@ -1,6 +1,10 @@
 (function () {
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"], {
     /***/
     0:
@@ -108,15 +112,103 @@
       var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/core */
       "fXoL");
+      /* harmony import */
 
-      var AppComponent = function AppComponent() {
-        _classCallCheck(this, AppComponent);
-      };
+
+      var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @ionic/angular */
+      "TEn/");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! @angular/common */
+      "ofXK"); // import {Plugins } from '@capacitor/core';
+      // const { App } = Plugins;
+
+
+      var AppComponent = /*#__PURE__*/function () {
+        function AppComponent(alertCtrl, platform, location) {
+          _classCallCheck(this, AppComponent);
+
+          this.alertCtrl = alertCtrl;
+          this.platform = platform;
+          this.location = location;
+          this.backButtonEvent();
+        }
+
+        _createClass(AppComponent, [{
+          key: "backButtonEvent",
+          value: function backButtonEvent() {
+            var _this = this;
+
+            this.platform.backButton.subscribeWithPriority(10, function () {
+              if (!_this.routerOutlet.canGoBack()) {
+                _this.backButtonAlert();
+              } else {
+                _this.location.back();
+              }
+            });
+          }
+        }, {
+          key: "backButtonAlert",
+          value: function backButtonAlert() {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+              var alert;
+              return regeneratorRuntime.wrap(function _callee$(_context) {
+                while (1) {
+                  switch (_context.prev = _context.next) {
+                    case 0:
+                      _context.next = 2;
+                      return this.alertCtrl.create({
+                        message: 'You want to exit the app?',
+                        buttons: [{
+                          text: 'Cancel',
+                          role: 'cancel'
+                        }, {
+                          text: 'Close App',
+                          handler: function handler() {
+                            navigator['app'].exitApp();
+                          }
+                        }]
+                      });
+
+                    case 2:
+                      alert = _context.sent;
+                      _context.next = 5;
+                      return alert.present();
+
+                    case 5:
+                    case "end":
+                      return _context.stop();
+                  }
+                }
+              }, _callee, this);
+            }));
+          }
+        }]);
+
+        return AppComponent;
+      }();
 
       AppComponent.ctorParameters = function () {
-        return [];
+        return [{
+          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["AlertController"]
+        }, {
+          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["Platform"]
+        }, {
+          type: _angular_common__WEBPACK_IMPORTED_MODULE_5__["Location"]
+        }];
       };
 
+      AppComponent.propDecorators = {
+        routerOutlet: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"],
+          args: [_ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonRouterOutlet"], {
+            "static": true
+          }]
+        }]
+      };
       AppComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
         selector: 'app-root',
         template: _raw_loader_app_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -362,7 +454,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | index-index-module */
-          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("index-index-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("index-index-module")]).then(__webpack_require__.bind(null,
           /*! ./index/index.module */
           "rSti")).then(function (m) {
             return m.IndexPageModule;
@@ -373,7 +465,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | home-home-module */
-          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("home-home-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("home-home-module")]).then(__webpack_require__.bind(null,
           /*! ./home/home.module */
           "ct+p")).then(function (m) {
             return m.HomePageModule;
@@ -384,7 +476,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | home-hradmin-home-hradmin-module */
-          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("home-hradmin-home-hradmin-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("home-hradmin-home-hradmin-module")]).then(__webpack_require__.bind(null,
           /*! ./home-hradmin/home-hradmin.module */
           "EUcd")).then(function (m) {
             return m.HomeHRadminPageModule;
@@ -395,10 +487,21 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | home-manager-home-manager-module */
-          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("home-manager-home-manager-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("home-manager-home-manager-module")]).then(__webpack_require__.bind(null,
           /*! ./home-manager/home-manager.module */
           "gHsv")).then(function (m) {
             return m.HomeManagerPageModule;
+          });
+        }
+      }, {
+        path: '',
+        loadChildren: function loadChildren() {
+          return Promise.all(
+          /*! import() | home-boss-home-boss-module */
+          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("home-boss-home-boss-module")]).then(__webpack_require__.bind(null,
+          /*! ./home-boss/home-boss.module */
+          "xbfX")).then(function (m) {
+            return m.HomeBossPageModule;
           });
         }
       }, {
@@ -417,7 +520,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | pages-listattendees-listattendees-module */
-          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("pages-listattendees-listattendees-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("pages-listattendees-listattendees-module")]).then(__webpack_require__.bind(null,
           /*! ./pages/listattendees/listattendees.module */
           "NByi")).then(function (m) {
             return m.ListattendeesPageModule;
@@ -428,7 +531,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | leave-modal-leave-modal-module */
-          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("leave-modal-leave-modal-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("leave-modal-leave-modal-module")]).then(__webpack_require__.bind(null,
           /*! ./leave-modal/leave-modal.module */
           "11sy")).then(function (m) {
             return m.LeaveModalPageModule;
@@ -439,7 +542,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | approve-modal-approve-modal-module */
-          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("approve-modal-approve-modal-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("approve-modal-approve-modal-module")]).then(__webpack_require__.bind(null,
           /*! ./approve-modal/approve-modal.module */
           "EDlG")).then(function (m) {
             return m.ApproveModalPageModule;
@@ -450,7 +553,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | pages-profile-profile-module */
-          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("pages-profile-profile-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("pages-profile-profile-module")]).then(__webpack_require__.bind(null,
           /*! ./pages/profile/profile.module */
           "723k")).then(function (m) {
             return m.ProfilePageModule;
@@ -461,7 +564,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | pages-history-history-module */
-          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("pages-history-history-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("pages-history-history-module")]).then(__webpack_require__.bind(null,
           /*! ./pages/history/history.module */
           "6F3i")).then(function (m) {
             return m.HistoryPageModule;
@@ -483,7 +586,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | pages-leave-leave-module */
-          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("pages-leave-leave-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("pages-leave-leave-module")]).then(__webpack_require__.bind(null,
           /*! ./pages/leave/leave.module */
           "2/E7")).then(function (m) {
             return m.LeavePageModule;
@@ -494,7 +597,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | home-hradmin-home-hradmin-module */
-          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("home-hradmin-home-hradmin-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("home-hradmin-home-hradmin-module")]).then(__webpack_require__.bind(null,
           /*! ./home-hradmin/home-hradmin.module */
           "EUcd")).then(function (m) {
             return m.HomeHRadminPageModule;
@@ -505,7 +608,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | pages-applyleave-applyleave-module */
-          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("pages-applyleave-applyleave-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("pages-applyleave-applyleave-module")]).then(__webpack_require__.bind(null,
           /*! ./pages/applyleave/applyleave.module */
           "xN67")).then(function (m) {
             return m.ApplyleavePageModule;
@@ -549,7 +652,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | home-manager-home-manager-module */
-          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("home-manager-home-manager-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("home-manager-home-manager-module")]).then(__webpack_require__.bind(null,
           /*! ./home-manager/home-manager.module */
           "gHsv")).then(function (m) {
             return m.HomeManagerPageModule;
@@ -571,10 +674,32 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | pages-mukadepan-hod-mukadepan-hod-module */
-          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-home-module~home-hradmin-home-hradmin-module~home-ma~919c581d"), __webpack_require__.e("common"), __webpack_require__.e("pages-mukadepan-hod-mukadepan-hod-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("pages-mukadepan-hod-mukadepan-hod-module")]).then(__webpack_require__.bind(null,
           /*! ./pages/mukadepan-hod/mukadepan-hod.module */
           "BseU")).then(function (m) {
             return m.MukadepanHodPageModule;
+          });
+        }
+      }, {
+        path: 'home-boss',
+        loadChildren: function loadChildren() {
+          return Promise.all(
+          /*! import() | home-boss-home-boss-module */
+          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("home-boss-home-boss-module")]).then(__webpack_require__.bind(null,
+          /*! ./home-boss/home-boss.module */
+          "xbfX")).then(function (m) {
+            return m.HomeBossPageModule;
+          });
+        }
+      }, {
+        path: 'leaveapproval',
+        loadChildren: function loadChildren() {
+          return Promise.all(
+          /*! import() | pages-leaveapproval-leaveapproval-module */
+          [__webpack_require__.e("default~approve-modal-approve-modal-module~home-boss-home-boss-module~home-home-module~home-hradmin-~5c01b0f9"), __webpack_require__.e("common"), __webpack_require__.e("pages-leaveapproval-leaveapproval-module")]).then(__webpack_require__.bind(null,
+          /*! ./pages/leaveapproval/leaveapproval.module */
+          "+N/3")).then(function (m) {
+            return m.LeaveapprovalPageModule;
           });
         }
       }];

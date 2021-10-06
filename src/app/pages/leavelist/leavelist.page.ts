@@ -7,6 +7,7 @@ import { StorageService } from '../../services/storage.service';
 import { SettingComponent } from 'src/app/setting/setting.component';
 import { PopoverController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { AuthConstants } from 'src/app/config/auth-constant';
 
 @Component({
   selector: 'app-leavelist',
@@ -21,7 +22,9 @@ export class LeavelistPage implements OnInit {
 
   approvedList:any=[];
   pendingList:any=[];
-
+  public displayUserData: any;
+  showBtn: boolean = true;
+  
 
   constructor(
     private authService:AuthService,
@@ -31,9 +34,18 @@ export class LeavelistPage implements OnInit {
     private storage:StorageService,
     private popoverController: PopoverController,
     private router: Router,
+    private storageService: StorageService, 
   ) { }
 
   ngOnInit() {
+    this.authService.userData$.subscribe((res: any) => {
+      this.displayUserData = res;
+      if(this.displayUserData.level === 2) {
+        this.showBtn = false;
+      } else {
+        this.showBtn = true;
+      }
+    })
   }
 
   async ionViewWillEnter()
