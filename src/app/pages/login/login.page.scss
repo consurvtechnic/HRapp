@@ -1,21 +1,22 @@
 .logo{
-  margin-top: 15%;
+  margin-top: 5%;
   img{
   height: 200px;
   }
 }
 
-.form{
-  margin-top: 25px;
-  ion-item{
-    border-radius: 5px;
-    border-color: grey;
-    border-top-width: 2px;
-    border-style: solid;
-    margin-bottom: 10px;
-  }
+.form-container{
+  margin-top: 15px;
+  margin-bottom: 1px;
 }
 
+.main-button {
+  margin-top: 10px;
+}
+
+.myCustomSelect{
+  max-width: 100% !important;
+ }
 
 // This will remove iOS Header Line
 ion-toolbar {
@@ -38,7 +39,7 @@ ion-toolbar {
 }
 
 .form-container {
-  margin-top: 48px;
+  margin-top: 28px;
 }
 
 .form-container ion-item {

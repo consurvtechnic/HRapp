@@ -3,6 +3,11 @@ ion-content {
     --padding-bottom: 16px;
     --padding-start: 26px;
     --padding-end: 26px;
+    --background: none;
+    background-image: url('/assets/images/hr_bg.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .title {
@@ -14,3 +19,4 @@ ion-toolbar {
     --min-height: 50px;
     color: #2C9DDE;
 }
+

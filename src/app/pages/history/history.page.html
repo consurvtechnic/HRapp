@@ -14,6 +14,7 @@
         <ion-row>
           <ion-col>Check In:</ion-col>
           <ion-col>Check Out:</ion-col>
+          <ion-col>Location:</ion-col>
         </ion-row>
       </ion-grid>
     </ion-item>
@@ -21,8 +22,20 @@
   <ion-list>
     <ion-item>
       <ion-grid>
-        <ion-row *ngFor="let a of displayUserData2" ><ion-col>{{a.checkin | date:'EEEE, h:mm a, dd/MM/yyyy '}}</ion-col><ion-col >{{a.checkout | date:'EEEE, h:mm a, dd/MM/yyyy '}}</ion-col>
+        <ion-row *ngFor="let a of displayUserData2" >
+          <ion-col>{{a.checkin | date:'EEEE, h:mm a'}}</ion-col>
+          <ion-col *ngIf = "a.checkout === 'showToast2()'; else noDisplay">
+            {{a.checkout | date:'h:mm a'}}
+          </ion-col>
+          <ng-template #noDisplay>
+            <ion-col>
+              -
+            </ion-col>
+          </ng-template>
+          <ion-col >{{a.location}}</ion-col>
         </ion-row>
+        <!-- <ion-row *ngFor="let a of displayUserData2" ><ion-col>{{a.location}}</ion-col><ion-col >{{a.location}}</ion-col> -->
+        <!-- </ion-row> -->
       </ion-grid>
     </ion-item>
   </ion-list>

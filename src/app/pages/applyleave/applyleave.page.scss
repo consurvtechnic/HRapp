@@ -28,3 +28,15 @@ ion-list {
       display: none;
     }
   }
+
+  .myCustomSelect{
+    max-width: 100% !important;
+   }
+
+  ion-content {
+    --background: none;
+    background-image: url('/assets/images/hr_bg.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

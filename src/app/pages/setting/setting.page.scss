@@ -1,5 +1,9 @@
 ion-content {
-    --background: #F2F2F7;
+    --background: none;
+    background-image: url('/assets/images/hr_bg.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   
   /* Workaround for Ionic bug where Card color is set to gray due to 

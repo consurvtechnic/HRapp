@@ -146,6 +146,33 @@ export class ApplyleavePage implements OnInit {
 
    async applyCuti(){
 
+
+    let pack_data={
+
+
+      staff_id:this.userInfo.staff_id, //ok
+      leavetype:this.leaveType.toString(),//ok
+      reason:this.reason, //ok
+      startdate:this.currentDate, //ok
+      enddate:this.endDate, //ok
+      startdate_type:this.halfday1.toString(),//ok
+      enddate_type:this.halfday2.toString(),//ok
+      image:''//ok
+    }
+
+    console.log('pack_',pack_data);
+
+    this.authService.applyleave(pack_data)
+    .then(res=>{
+      console.log(res);
+      this.changeRef.detectChanges();
+      // this.nav.navigateForward('home/calendar');
+    },err=>{
+      console.log(err);
+    })
+
+  }
+
     // let loader=await this.loading.create({
     //   message:'Loading...',
     //   spinner:'bubbles'
@@ -177,31 +204,6 @@ export class ApplyleavePage implements OnInit {
 
 
 
-    let pack_data={
-
-
-      staff_id:this.userInfo.staff_id, //ok
-      leavetype:this.leaveType.toString(),//ok
-      reason:this.reason, //ok
-      startdate:this.currentDate, //ok
-      enddate:this.endDate, //ok
-      startdate_type:this.halfday1.toString(),//ok
-      enddate_type:this.halfday2.toString(),//ok
-      image:''//ok
-    }
-
-    console.log('pack_',pack_data);
-
-    this.authService.applyleave(pack_data)
-    .then(res=>{
-      console.log(res);
-      this.changeRef.detectChanges();
-      // this.nav.navigateForward('home/calendar');
-    },err=>{
-      console.log(err);
-    })
-
-  }
 
 
 

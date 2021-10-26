@@ -12,11 +12,12 @@ import { Moment } from 'moment';
 })
 export class HistoryPage implements OnInit {
 
-   displayUserData: any;
+  public displayUserData: any;
   public displayUserData2: any[] = [];
+  userInfo:any={};
 
   public postData = {
-    staff_id: 1,
+    staff_id: '',
     action: 2,
   }
   
@@ -25,6 +26,11 @@ export class HistoryPage implements OnInit {
   }
 
   ngOnInit() {
+    this.authService.userData$.subscribe((res: any) => {
+      this.displayUserData = res;
+      this.postData.staff_id = this.displayUserData.staff_id; 
+    });
+
     this.authService.listName(this.postData).subscribe((res: any) => {
       console.log('goHistory',res);
       let temp : any[] = [];
@@ -33,6 +39,7 @@ export class HistoryPage implements OnInit {
         temp.push({staff_name:value.staff_name,
         checkin:new Date(value.checkin),
         checkout:new Date(value.checkout),
+        location:value.location,
         })
       });
       this.displayUserData2 = temp;

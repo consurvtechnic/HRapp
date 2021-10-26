@@ -9,7 +9,7 @@ import { Observable, Subscriber } from 'rxjs';
 import { HttpService } from 'src/app/services/http.service';
 import { PopoverController } from '@ionic/angular';
 import { SettingComponent } from 'src/app/setting/setting.component';
-
+import { ChangeDetectorRef } from '@angular/core';
 
 
 @Component({
@@ -19,9 +19,9 @@ import { SettingComponent } from 'src/app/setting/setting.component';
 })
 export class MukadepanPage implements OnInit {
 
-  public displayUserData: any;
   showStatus: boolean = false;
-  
+  today = new Date();
+  public myimage = 'assets/images/clock_in.png';
 
   public postData = {
     staff_id: '',
@@ -30,10 +30,22 @@ export class MukadepanPage implements OnInit {
     checkin: '',
     checkout: '',
     id: '',
+    location: '',
   }
 
+  public displayUserData: any;
+  public displayUserData2: any[] = [];
   userInfo:any={};
+  sid:any;
+
+  public checkData = {
+    staff_id: '',
+    action: 2,
+  }
+  
+
   leaveDetail:any={}
+  location:any;
 
   async settingsPopover(ev: any) {
     const siteInfo = { id: 1, name: 'edupala' };
@@ -60,70 +72,73 @@ export class MukadepanPage implements OnInit {
     private authService: AuthService,
     private storageService: StorageService,
     private nav:NavController,
-    private popoverController: PopoverController
+    private popoverController: PopoverController,
+    private changeRef: ChangeDetectorRef,
     ) { 
-
+      this.startTime();
       
     
   }
 
-  ionViewWillEnter()
-  {
-    this.authService.getUserDataPromise()
-    .then((res:any={})=>{
-      // console.log(res);
-      this.userInfo=res;
-
-
-      this.authService.leavedetailPromise({staffid:this.userInfo.staff_id})
-      .then(res=>{
-        console.log(res);
-        this.leaveDetail=res[0]
-        
-      },err=>{
-        console.log(err);
-      })
-
-
-    },err=>{
-      this.nav.navigateBack('login')
-    })
-
-  }
-
   ngOnInit() {
-    this.authService.userData$.subscribe((res: any) => {
+    this.authService.getUserDataPromise().then((res: any) => {
       this.displayUserData = res;
-    })
+      // this.checkData.staff_id = this.displayUserData.staff_id; 
+      this.sid = this.displayUserData.staff_id;
+ 
+    this.authService.listName({staff_id: this.sid, action: 2}).subscribe((res: any) => {
+      console.log('goChecking',res);
+      let temp : any[] = [];
+      (res.results).forEach(function (value) {
+        console.log(value)
+        temp.push({staff_name:value.staff_name,
+        checkin:new Date(value.checkin),
+        checkout:new Date(value.checkout),
+        location:value.location,
+        })
+      });
+      this.displayUserData2 = temp;
+      console.log(this.displayUserData2);} )
 
+    });
   }
 
-  /*this.authService.login(this.postData).subscribe((res: any) => {
-        console.log('here',res)
-        if(Array.isArray(res)) {
-          this.storageService.store(AuthConstants.AUTH, res[0]);
-          this.router.navigate(['./home/mukadepan']);
-        } else {
-          this.toastService.presentToast('Incorrect Name or Password');
+  startTime() {
+    var intervalVar = setInterval(function () {
+    this.today = new Date().toISOString();
+  }.bind(this),500)}
 
-        } 
-
-      }*/
+  addEvent(){
+  	if(this.myimage=='assets/images/clock_in.png')
+  	{
+      this.showToast1();
+      this.checkInAction();
+  		this.myimage='assets/images/clock_out.png';
+  	}else{
+      this.showToast2();
+      this.checkOutAction();
+		  this.myimage = 'assets/images/clock_in.png';
+  	}
+  	
+  }
 
  checkInAction(){
-    //let data = this.authService.getUserData();
-    //console.log('i am clicked',this.displayUserData.staff_id);
     this.postData.staff_id = this.displayUserData.staff_id;
     this.postData.action = 0;
+    this.postData.location= this.location;
     this.authService.checkIn(this.postData).subscribe((res: any) => {
+      this.authService.getUserData();
+      // this.changeRef.detectChanges();
       console.log('checkin',res)} )  
 }
 
   checkOutAction(){
-    this.postData.staff_id = this.displayUserData.staff_id;
-    this.postData.action = 1;
+     this.postData.staff_id = this.displayUserData.staff_id;
+     this.postData.action = 1;
+     this.postData.location = this.location.data;
     this.authService.checkOut(this.postData).subscribe((res: any) => {
       this.authService.getUserData();
+      this.changeRef.detectChanges();
       console.log('checkout',res)} )
   }
 
@@ -136,7 +151,7 @@ export class MukadepanPage implements OnInit {
         text: 'OK'
       }]
     }).then( res => res.present());
-    document.getElementById("status").innerHTML = "You've Checked-In!";
+    // document.getElementById("status").innerHTML = "You've Checked-In!";
   }
 
   async showToast2(){
@@ -148,7 +163,7 @@ export class MukadepanPage implements OnInit {
         text: 'OK'
       }]
     }).then( res => res.present());
-    document.getElementById("status").innerHTML = "You've Checked-Out!";
+    // document.getElementById("status").innerHTML = "You've Checked-Out!";
   }
 
  async showToast3(){
@@ -169,6 +184,5 @@ export class MukadepanPage implements OnInit {
     this.authService.listName(this.postData).subscribe((res: any) => {
       console.log('golist',res)} )
   }
-
   
 }

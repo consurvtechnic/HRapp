@@ -4,12 +4,14 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-content>
+
 <ion-card>
     <ion-card-content style="overflow: scroll;">
       <form [formGroup]="myform" (ngSubmit)="onSubmit()">
         <ion-item>
           <ion-label>Type of leave:</ion-label>
-            <ion-select required slot="end" [(ngModel)]='leaveType'>
+            <ion-select class= "myCustomSelect" required slot="end" [(ngModel)]='leaveType'>
               <ion-select-option *ngFor="let item of leaveTypeChoices" [value]="item.typeid">{{item.leavetype}}</ion-select-option>
             </ion-select>
         </ion-item>
@@ -59,9 +61,9 @@
 
 <div lines="none" class="cuti">
   <ion-card color='light'>
-    <ion-card-header></ion-card-header>
+    <ion-card-header>Leave Balance for Year 2021:</ion-card-header>
     <ion-card-content>
-      <ion-card-subtitle color="primary-contrast">Leave Balance for year 2021:</ion-card-subtitle>
+      <!-- <ion-card-subtitle color="primary-contrast">Leave Balance for year 2021:</ion-card-subtitle> -->
       <ion-card-title color="primary-contrast" style="font-size:70px" >
         {{leaveBalance.data}}
       </ion-card-title>
@@ -69,3 +71,5 @@
     </ion-card-content>
   </ion-card>
 </div>
+
+</ion-content>
