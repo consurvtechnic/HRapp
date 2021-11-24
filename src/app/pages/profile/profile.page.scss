@@ -74,3 +74,10 @@ ion-back-button {
     display: block;
  }
 
+ ion-content {
+    --background: none;
+    background-image: url('/assets/images/hr_bg.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

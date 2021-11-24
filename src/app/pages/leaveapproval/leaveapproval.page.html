@@ -33,8 +33,14 @@
     <p>{{item.datefrom}} - {{item.dateend}}<p>
     <p style="font-weight: bold;">{{item.leaveday}} days<p>
   </ion-label>
-  <ion-toggle [disabled]='false' [checked]="toggleValue" (ionChange)="presentAlert()" style='zoom:0.8;' (click)="approveLeave()" color="secondary" ></ion-toggle>
+  <ion-checkbox (ionChange)="checkboxClick($event)" checked></ion-checkbox>
+  <!-- <ion-toggle [disabled]='false' [checked]="toggleValue" (ionChange)="presentAlert()" style='zoom:0.8;' (click)="approveLeave()" color="secondary" ></ion-toggle> -->
   <!-- <ion-icon name="chevron-forward-outline" slot="end"></ion-icon> -->
 </ion-item>
+<div class="ion-text-right">
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button (ionChange)="checkboxClick($event)" type="submit" shape="round" size="large">Submit</ion-fab-button>
+  </ion-fab>
+</div>
 </ion-list>
 </ion-content>

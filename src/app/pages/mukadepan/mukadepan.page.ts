@@ -1,6 +1,6 @@
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { Component, OnInit } from '@angular/core';
-import { NavController, ToastController } from '@ionic/angular';
+import { LoadingController, NavController, ToastController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { Router } from '@angular/router';
@@ -74,6 +74,7 @@ export class MukadepanPage implements OnInit {
     private nav:NavController,
     private popoverController: PopoverController,
     private changeRef: ChangeDetectorRef,
+    private loading:LoadingController,
     ) { 
       this.startTime();
       
@@ -81,6 +82,19 @@ export class MukadepanPage implements OnInit {
   }
 
   ngOnInit() {
+    this.nav.navigateRoot('home/mukadepan');
+  }
+
+  async ionViewWillEnter()
+  {
+
+    let loader=await this.loading.create({
+      message:'Loading...',
+      spinner:'bubbles'
+    })
+
+    loader.present();
+
     this.authService.getUserDataPromise().then((res: any) => {
       this.displayUserData = res;
       // this.checkData.staff_id = this.displayUserData.staff_id; 
@@ -98,9 +112,11 @@ export class MukadepanPage implements OnInit {
         })
       });
       this.displayUserData2 = temp;
+      loader.dismiss();
       console.log(this.displayUserData2);} )
 
     });
+
   }
 
   startTime() {
@@ -108,15 +124,31 @@ export class MukadepanPage implements OnInit {
     this.today = new Date().toISOString();
   }.bind(this),500)}
 
+  doRefresh(event) {
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
+    
+    // location.reload();     //// this serves the purpose by reloading the entire app but its not what i want
+
+    // this.navCtrl.navigateRoot('/tabs/tab2');  //// I tried this but not able to update 
+  }
+
   addEvent(){
   	if(this.myimage=='assets/images/clock_in.png')
   	{
       this.showToast1();
       this.checkInAction();
+      this.changeRef.detectChanges();
   		this.myimage='assets/images/clock_out.png';
+      this.nav.navigateRoot('home/mukadepan');
   	}else{
       this.showToast2();
       this.checkOutAction();
+      this.changeRef.detectChanges();
 		  this.myimage = 'assets/images/clock_in.png';
   	}
   	
@@ -128,7 +160,7 @@ export class MukadepanPage implements OnInit {
     this.postData.location= this.location;
     this.authService.checkIn(this.postData).subscribe((res: any) => {
       this.authService.getUserData();
-      // this.changeRef.detectChanges();
+      this.changeRef.detectChanges();
       console.log('checkin',res)} )  
 }
 
@@ -183,6 +215,10 @@ export class MukadepanPage implements OnInit {
     this.router.navigate(['listattendees']);
     this.authService.listName(this.postData).subscribe((res: any) => {
       console.log('golist',res)} )
+  }
+
+  refresh() {
+    this.changeRef.detectChanges();
   }
   
 }

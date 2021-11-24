@@ -48,11 +48,12 @@ export class CalendarPage implements OnInit {
   halfday1:any;
   halfday2:any;
 
-  event={
-    leavetype:'',
-    reason:'',
-    currentDate:'',
-    endDate:'',
+    event={
+    title:'',
+    desc:'',
+    startTime:'',
+    endTime:'',
+    allDay:false
   };
   
   minDate=new Date().toISOString();
@@ -81,7 +82,7 @@ export class CalendarPage implements OnInit {
       .then(res=>{
         console.log(res);
         this.leaveDetail=res[0];
-        event=this.leaveDetail;
+        this.eventSource=this.leaveDetail;
       },err=>{
         console.log(err);
       })
@@ -111,28 +112,27 @@ export class CalendarPage implements OnInit {
     this.calendar.currentDate= new Date();
   }
 
-  async onEventSelected(leaveDetail){
-    let start = formatDate(leaveDetail.currentDate,'medium',this.locale);
-    let end= formatDate(leaveDetail.endDate,'medium',this.locale);
+  async onEventSelected(event){
+    let start = formatDate(event.startTime,'medium',this.locale);
+    let end= formatDate(event.endTime,'medium',this.locale);
 
     const alert = await this.alertCtrl.create({
-        header: this.leaveDetail.leavetype,
-        subHeader: this.leaveDetail.reason,
+        header: event.title ,
+        subHeader: event.desc,
         message :'From:'+ start +' <br><br>To: '+end,
         buttons:['OK']
     });
     alert.present();
   }
-  
-  onViewTitleChanged(title){
+
+    onViewTitleChanged(title){
     this.viewTitle=title;    
   }
-  
-  onTimeSelected(ev){
+    onTimeSelected(ev){
     let selected = new Date(ev.selectedTime);
-    this.event.currentDate = selected.toISOString();
+    this.event.startTime = selected.toISOString();
     selected.setHours(selected.getHours()+1);
-    this.event.endDate = (selected.toISOString());
+    this.event.endTime = (selected.toISOString());
 
   }
 

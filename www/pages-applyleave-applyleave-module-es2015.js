@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".apply-button {\n  float: right;\n}\n\n.applyButton {\n  margin-left: auto;\n  margin-right: auto;\n  padding-top: 20px;\n  padding-bottom: 20px;\n}\n\nion-toolbar {\n  --min-height: 50px;\n  color: #2C9DDE;\n}\n\nion-card {\n  color: #2C9DDE;\n  max-height: 100%;\n  display: flex;\n  flex-direction: column;\n}\n\nion-list {\n  overflow: hidden;\n  overflow-y: auto;\n}\n\nion-list ::-webkit-scrollbar {\n  display: none;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL2FwcGx5bGVhdmUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksWUFBWTtBQUNoQjs7QUFFQTtFQUNJLGlCQUFpQjtFQUNqQixrQkFBa0I7RUFDbEIsaUJBQWlCO0VBQ2pCLG9CQUFvQjtBQUN4Qjs7QUFFQTtFQUNJLGtCQUFhO0VBQ2IsY0FBYztBQUNsQjs7QUFFQTtFQUNJLGNBQWM7RUFDZCxnQkFBZ0I7RUFDbEIsYUFBYTtFQUNiLHNCQUFzQjtBQUN4Qjs7QUFFQTtFQUNJLGdCQUFnQjtFQUNoQixnQkFBZ0I7QUFDcEI7O0FBSEE7RUFJTSxhQUFhO0FBR25CIiwiZmlsZSI6ImFwcGx5bGVhdmUucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmFwcGx5LWJ1dHRvbntcbiAgICBmbG9hdDogcmlnaHQ7XG59XG5cbi5hcHBseUJ1dHRvbiB7XG4gICAgbWFyZ2luLWxlZnQ6IGF1dG87XG4gICAgbWFyZ2luLXJpZ2h0OiBhdXRvO1xuICAgIHBhZGRpbmctdG9wOiAyMHB4O1xuICAgIHBhZGRpbmctYm90dG9tOiAyMHB4O1xufVxuXG5pb24tdG9vbGJhciB7XG4gICAgLS1taW4taGVpZ2h0OiA1MHB4O1xuICAgIGNvbG9yOiAjMkM5RERFO1xuICB9XG5cbmlvbi1jYXJkIHtcbiAgICBjb2xvcjogIzJDOURERTtcbiAgICBtYXgtaGVpZ2h0OiAxMDAlO1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xufVxuXG5pb24tbGlzdCB7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgICBvdmVyZmxvdy15OiBhdXRvO1xuICAgIDo6LXdlYmtpdC1zY3JvbGxiYXIge1xuICAgICAgZGlzcGxheTogbm9uZTtcbiAgICB9XG4gIH0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".apply-button {\n  float: right;\n}\n\n.applyButton {\n  margin-left: auto;\n  margin-right: auto;\n  padding-top: 20px;\n  padding-bottom: 20px;\n}\n\nion-toolbar {\n  --min-height: 50px;\n  color: #2C9DDE;\n}\n\nion-card {\n  color: #2C9DDE;\n  max-height: 100%;\n  display: flex;\n  flex-direction: column;\n}\n\nion-list {\n  overflow: hidden;\n  overflow-y: auto;\n}\n\nion-list ::-webkit-scrollbar {\n  display: none;\n}\n\n.myCustomSelect {\n  max-width: 100% !important;\n}\n\nion-content {\n  --background: none;\n  background-image: url(\"/assets/images/hr_bg.png\");\n  background-position: center top;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL2FwcGx5bGVhdmUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksWUFBWTtBQUNoQjs7QUFFQTtFQUNJLGlCQUFpQjtFQUNqQixrQkFBa0I7RUFDbEIsaUJBQWlCO0VBQ2pCLG9CQUFvQjtBQUN4Qjs7QUFFQTtFQUNJLGtCQUFhO0VBQ2IsY0FBYztBQUNsQjs7QUFFQTtFQUNJLGNBQWM7RUFDZCxnQkFBZ0I7RUFDbEIsYUFBYTtFQUNiLHNCQUFzQjtBQUN4Qjs7QUFFQTtFQUNJLGdCQUFnQjtFQUNoQixnQkFBZ0I7QUFDcEI7O0FBSEE7RUFJTSxhQUFhO0FBR25COztBQUNFO0VBQ0UsMEJBQTBCO0FBRTlCOztBQUNFO0VBQ0Usa0JBQWE7RUFDYixpREFBaUQ7RUFDakQsK0JBQStCO0VBQy9CLDRCQUE0QjtFQUM1QixzQkFBc0I7QUFFMUIiLCJmaWxlIjoiYXBwbHlsZWF2ZS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYXBwbHktYnV0dG9ue1xuICAgIGZsb2F0OiByaWdodDtcbn1cblxuLmFwcGx5QnV0dG9uIHtcbiAgICBtYXJnaW4tbGVmdDogYXV0bztcbiAgICBtYXJnaW4tcmlnaHQ6IGF1dG87XG4gICAgcGFkZGluZy10b3A6IDIwcHg7XG4gICAgcGFkZGluZy1ib3R0b206IDIwcHg7XG59XG5cbmlvbi10b29sYmFyIHtcbiAgICAtLW1pbi1oZWlnaHQ6IDUwcHg7XG4gICAgY29sb3I6ICMyQzlEREU7XG4gIH1cblxuaW9uLWNhcmQge1xuICAgIGNvbG9yOiAjMkM5RERFO1xuICAgIG1heC1oZWlnaHQ6IDEwMCU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG59XG5cbmlvbi1saXN0IHtcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xuICAgIG92ZXJmbG93LXk6IGF1dG87XG4gICAgOjotd2Via2l0LXNjcm9sbGJhciB7XG4gICAgICBkaXNwbGF5OiBub25lO1xuICAgIH1cbiAgfVxuXG4gIC5teUN1c3RvbVNlbGVjdHtcbiAgICBtYXgtd2lkdGg6IDEwMCUgIWltcG9ydGFudDtcbiAgIH1cblxuICBpb24tY29udGVudCB7XG4gICAgLS1iYWNrZ3JvdW5kOiBub25lO1xuICAgIGJhY2tncm91bmQtaW1hZ2U6IHVybCgnL2Fzc2V0cy9pbWFnZXMvaHJfYmcucG5nJyk7XG4gICAgYmFja2dyb3VuZC1wb3NpdGlvbjogY2VudGVyIHRvcDtcbiAgICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xuICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XG4gIH0iXX0= */");
 
 /***/ }),
 
@@ -146,30 +146,6 @@ let ApplyleavePage = class ApplyleavePage {
     }
     applyCuti() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            // let loader=await this.loading.create({
-            //   message:'Loading...',
-            //   spinner:'bubbles'
-            // })
-            // loader.present();
-            // this.postData.staff_id;
-            // this.postData.currentDate;
-            // this.postData.endDate;
-            // this.postData.halfday1;
-            // this.postData.halfday2;
-            // this.postData.leavetype;
-            // this.postData.reason;
-            //   this.authService.applyleave(this.postData).subscribe((res: any) => {
-            //     console.log('apply',res)} )
-            // let startDate= this.getCorrectDateFormat(this.currentDate);
-            // let endDate= this.getCorrectDateFormat(this.endDate);
-            // staff_id(from user data),
-            // leavetype(typeid from HRAppGetLeaveType),
-            // reason(user input string),
-            // currentDate(in string),
-            // endDate(in string),
-            // image(leave it null),
-            // halfday1( 1=full day, 2=morning, 3=evening )
-            // halfday2( 1=full day, 2=morning, 3=evening )
             let pack_data = {
                 staff_id: this.userInfo.staff_id,
                 leavetype: this.leaveType.toString(),
@@ -191,6 +167,30 @@ let ApplyleavePage = class ApplyleavePage {
             });
         });
     }
+    // let loader=await this.loading.create({
+    //   message:'Loading...',
+    //   spinner:'bubbles'
+    // })
+    // loader.present();
+    // this.postData.staff_id;
+    // this.postData.currentDate;
+    // this.postData.endDate;
+    // this.postData.halfday1;
+    // this.postData.halfday2;
+    // this.postData.leavetype;
+    // this.postData.reason;
+    //   this.authService.applyleave(this.postData).subscribe((res: any) => {
+    //     console.log('apply',res)} )
+    // let startDate= this.getCorrectDateFormat(this.currentDate);
+    // let endDate= this.getCorrectDateFormat(this.endDate);
+    // staff_id(from user data),
+    // leavetype(typeid from HRAppGetLeaveType),
+    // reason(user input string),
+    // currentDate(in string),
+    // endDate(in string),
+    // image(leave it null),
+    // halfday1( 1=full day, 2=morning, 3=evening )
+    // halfday2( 1=full day, 2=morning, 3=evening )
     getCorrectDateFormat(dateTemp) {
         const theDate = new Date(dateTemp);
         const fullYear = theDate.getFullYear();
@@ -254,7 +254,7 @@ ApplyleavePage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\n  <ion-toolbar color='light'>\n    <ion-title>Apply Leave</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-card>\n    <ion-card-content style=\"overflow: scroll;\">\n      <form [formGroup]=\"myform\" (ngSubmit)=\"onSubmit()\">\n        <ion-item>\n          <ion-label>Type of leave:</ion-label>\n            <ion-select required slot=\"end\" [(ngModel)]='leaveType'>\n              <ion-select-option *ngFor=\"let item of leaveTypeChoices\" [value]=\"item.typeid\">{{item.leavetype}}</ion-select-option>\n            </ion-select>\n        </ion-item>\n      \n        <ion-item lines=\"none\">\n          <ion-label>Reason:</ion-label>\n            <ion-input required type=\"text\" type=\"text\" [(ngModel)]='reason'> </ion-input>\n        </ion-item>\n      \n        <ion-list>\n          <ion-item-divider></ion-item-divider>\n          <ion-item color=\"secondary\" lines=\"none\">\n            <ion-label>Start Date</ion-label>\n            <ion-datetime [(ngModel)]=\"currentDate\" color=\"light\" placeholder=\"Select Date\"></ion-datetime>\n          </ion-item>\n          <ion-item>\n            <ion-label>Duration</ion-label>\n                  <ion-select slot=\"end\" [(ngModel)]='halfday1'>\n                    <ion-select-option value=\"1\">Full day</ion-select-option>\n                    <ion-select-option value=\"2\">Morning Only</ion-select-option>\n                    <ion-select-option value=\"3\">Evening Only</ion-select-option>\n              </ion-select>\n          </ion-item>\n          <ion-item color=\"secondary\" lines=\"none\">\n            <ion-label>Ends</ion-label>\n            <ion-datetime [(ngModel)]=\"endDate\" placeholder=\"Select Date\"></ion-datetime>\n          </ion-item>\n          <ion-item>\n            <ion-label>Duration</ion-label>\n                  <ion-select slot=\"end\" [(ngModel)]='halfday2'>\n                    <ion-select-option value=\"1\">Full day</ion-select-option>\n                    <ion-select-option value=\"2\">Morning Only</ion-select-option>\n                    <ion-select-option value=\"3\">Evening Only</ion-select-option>\n              </ion-select>\n          </ion-item>\n        </ion-list>\n      </form>\n     \n    </ion-card-content>\n</ion-card>\n\n<ion-item style=\"overflow: scroll;\" lines=\"none\">\n  <div class=\"applyButton\">\n    <ion-button (ionClear)=\"ionClear($event)\" type=\"ngSubmit\" (click)=\"showAlert()\" (click)=\"applyCuti()\" class=\"apply-button\" color=\"secondary\">Apply Leave</ion-button>\n  </div>\n</ion-item>\n\n<div lines=\"none\" class=\"cuti\">\n  <ion-card color='light'>\n    <ion-card-header></ion-card-header>\n    <ion-card-content>\n      <ion-card-subtitle color=\"primary-contrast\">Leave Balance for year 2021:</ion-card-subtitle>\n      <ion-card-title color=\"primary-contrast\" style=\"font-size:70px\" >\n        {{leaveBalance.data}}\n      </ion-card-title>\n      <ion-card-subtitle color=\"primary-contrast\" style=\"font-size:20px\">Days</ion-card-subtitle>\n    </ion-card-content>\n  </ion-card>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\n  <ion-toolbar color='light'>\n    <ion-title>Apply Leave</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n<ion-card>\n    <ion-card-content style=\"overflow: scroll;\">\n      <form [formGroup]=\"myform\" (ngSubmit)=\"onSubmit()\">\n        <ion-item>\n          <ion-label>Type of leave:</ion-label>\n            <ion-select class= \"myCustomSelect\" required slot=\"end\" [(ngModel)]='leaveType'>\n              <ion-select-option *ngFor=\"let item of leaveTypeChoices\" [value]=\"item.typeid\">{{item.leavetype}}</ion-select-option>\n            </ion-select>\n        </ion-item>\n      \n        <ion-item lines=\"none\">\n          <ion-label>Reason:</ion-label>\n            <ion-input required type=\"text\" type=\"text\" [(ngModel)]='reason'> </ion-input>\n        </ion-item>\n      \n        <ion-list>\n          <ion-item-divider></ion-item-divider>\n          <ion-item color=\"secondary\" lines=\"none\">\n            <ion-label>Start Date</ion-label>\n            <ion-datetime [(ngModel)]=\"currentDate\" color=\"light\" placeholder=\"Select Date\"></ion-datetime>\n          </ion-item>\n          <ion-item>\n            <ion-label>Duration</ion-label>\n                  <ion-select slot=\"end\" [(ngModel)]='halfday1'>\n                    <ion-select-option value=\"1\">Full day</ion-select-option>\n                    <ion-select-option value=\"2\">Morning Only</ion-select-option>\n                    <ion-select-option value=\"3\">Evening Only</ion-select-option>\n              </ion-select>\n          </ion-item>\n          <ion-item color=\"secondary\" lines=\"none\">\n            <ion-label>Ends</ion-label>\n            <ion-datetime [(ngModel)]=\"endDate\" placeholder=\"Select Date\"></ion-datetime>\n          </ion-item>\n          <ion-item>\n            <ion-label>Duration</ion-label>\n                  <ion-select slot=\"end\" [(ngModel)]='halfday2'>\n                    <ion-select-option value=\"1\">Full day</ion-select-option>\n                    <ion-select-option value=\"2\">Morning Only</ion-select-option>\n                    <ion-select-option value=\"3\">Evening Only</ion-select-option>\n              </ion-select>\n          </ion-item>\n        </ion-list>\n      </form>\n     \n    </ion-card-content>\n</ion-card>\n\n<ion-item style=\"overflow: scroll;\" lines=\"none\">\n  <div class=\"applyButton\">\n    <ion-button (ionClear)=\"ionClear($event)\" type=\"ngSubmit\" (click)=\"showAlert()\" (click)=\"applyCuti()\" class=\"apply-button\" color=\"secondary\">Apply Leave</ion-button>\n  </div>\n</ion-item>\n\n<div lines=\"none\" class=\"cuti\">\n  <ion-card color='light'>\n    <ion-card-header>Leave Balance for Year 2021:</ion-card-header>\n    <ion-card-content>\n      <!-- <ion-card-subtitle color=\"primary-contrast\">Leave Balance for year 2021:</ion-card-subtitle> -->\n      <ion-card-title color=\"primary-contrast\" style=\"font-size:70px\" >\n        {{leaveBalance.data}}\n      </ion-card-title>\n      <ion-card-subtitle color=\"primary-contrast\" style=\"font-size:20px\">Days</ion-card-subtitle>\n    </ion-card-content>\n  </ion-card>\n</div>\n\n</ion-content>");
 
 /***/ }),
 

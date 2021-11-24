@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, ToastController } from '@ionic/angular';
+import { LoadingController,NavController, ToastController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { StorageService } from 'src/app/services/storage.service';
 import { Router } from '@angular/router';
@@ -68,6 +68,7 @@ export class MukadepanHodPage implements OnInit {
     private authService: AuthService,
     private storageService: StorageService,
     private nav:NavController,
+    private loading:LoadingController,
     private popoverController: PopoverController,
     private changeRef: ChangeDetectorRef,
     ) { 
@@ -75,8 +76,25 @@ export class MukadepanHodPage implements OnInit {
       
   }
 
-  ionViewWillEnter()
+  doRefresh(event) {
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      event.target.complete();
+    }, 2000);
+  }
+  
+  async ionViewWillEnter()
   {
+
+    let loader=await this.loading.create({
+      message:'Loading...',
+      spinner:'bubbles'
+    })
+
+    loader.present();
+
     this.authService.getUserDataPromise()
     .then((res:any={})=>{
       // console.log(res);
@@ -87,16 +105,18 @@ export class MukadepanHodPage implements OnInit {
       .then(res=>{
         console.log(res);
         this.leaveDetail=res[0]
-        
+        loader.dismiss();
       },err=>{
+        loader.dismiss();
         console.log(err);
       })
 
 
     },err=>{
       this.nav.navigateBack('login')
+      loader.dismiss();
     })
-
+    loader.dismiss();
   }
 
   ngOnInit() {

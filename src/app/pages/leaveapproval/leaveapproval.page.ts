@@ -135,6 +135,13 @@ export class LeaveapprovalPage implements OnInit {
     })
   }
 
+  checkboxClick(item) {
+    if(item.checked) {
+      this.approveLeave(),
+      this.presentAlert()
+    }
+  }
+
  async presentAlert() {
     let alert = this.alertCtrl.create({
       subHeader: "Leave Pending for Approval",

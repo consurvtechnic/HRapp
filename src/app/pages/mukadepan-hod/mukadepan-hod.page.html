@@ -3,7 +3,7 @@
     <ion-title>Home</ion-title>
     <ion-buttons slot="end" (click)="GotoNotityPage()">
       <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
-      <ion-badge color="danger" style="position: absolute; right: -5px; top: -3px;">?</ion-badge>
+      <!-- <ion-badge color="danger" style="position: absolute; right: -5px; top: -3px;">?</ion-badge> -->
     </ion-buttons>
 
         <!-- <span>&nbsp;</span> -->
@@ -17,7 +17,15 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content style="overflow: scroll;">
+<ion-content >
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
   <div class="container">
     <ion-text color="primary" style="margin-top: 10px;">
       <h1 style="text-align:center">DynaConsurv</h1>
@@ -39,12 +47,12 @@
       <ion-row style="text-align:center" *ngFor="let a of displayUserData2">
         <ion-col>
           <ion-icon name="enter-outline"></ion-icon>
-          <p style="font-weight: bolder;">{{a.checkin | date:'h:mm a'}}</p>
+          <p style="font-weight: bolder; color: mediumblue;">{{a.checkin | date:'h:mm a'}}</p>
           <p class="rowBawah">Clock In</p>
         </ion-col>
         <ion-col *ngIf = "a.checkout === 'showToast2()'; else noDisplay">
           <ion-icon name="log-out-outline"></ion-icon>
-          <p style="font-weight: bolder;">{{a.checkout | date:'h:mm a'}}</p>
+          <p style="font-weight: bolder; color: mediumblue;">{{a.checkout | date:'h:mm a'}}</p>
           <p class="rowBawah">Clock Out</p>
         </ion-col>
         <ng-template #noDisplay>
@@ -56,7 +64,7 @@
         </ng-template>
         <ion-col>
           <ion-icon name="location-outline"></ion-icon>
-          <p style="font-weight: bolder;">{{ a.location }}</p>
+          <p style="font-weight: bolder; color: mediumblue;">{{ a.location }}</p>
           <p class="rowBawah" >Location</p>
         </ion-col>
       </ion-row>

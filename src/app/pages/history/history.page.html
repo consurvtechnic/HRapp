@@ -24,14 +24,9 @@
       <ion-grid>
         <ion-row *ngFor="let a of displayUserData2" >
           <ion-col>{{a.checkin | date:'EEEE, h:mm a'}}</ion-col>
-          <ion-col *ngIf = "a.checkout === 'showToast2()'; else noDisplay">
+          <ion-col>
             {{a.checkout | date:'h:mm a'}}
           </ion-col>
-          <ng-template #noDisplay>
-            <ion-col>
-              -
-            </ion-col>
-          </ng-template>
           <ion-col >{{a.location}}</ion-col>
         </ion-row>
         <!-- <ion-row *ngFor="let a of displayUserData2" ><ion-col>{{a.location}}</ion-col><ion-col >{{a.location}}</ion-col> -->

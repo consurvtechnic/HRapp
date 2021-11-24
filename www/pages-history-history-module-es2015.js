@@ -27,12 +27,17 @@ let HistoryPage = class HistoryPage {
         this.authService = authService;
         this.router = router;
         this.displayUserData2 = [];
+        this.userInfo = {};
         this.postData = {
-            staff_id: 1,
+            staff_id: '',
             action: 2,
         };
     }
     ngOnInit() {
+        this.authService.userData$.subscribe((res) => {
+            this.displayUserData = res;
+            this.postData.staff_id = this.displayUserData.staff_id;
+        });
         this.authService.listName(this.postData).subscribe((res) => {
             console.log('goHistory', res);
             let temp = [];
@@ -41,6 +46,7 @@ let HistoryPage = class HistoryPage {
                 temp.push({ staff_name: value.staff_name,
                     checkin: new Date(value.checkin),
                     checkout: new Date(value.checkout),
+                    location: value.location,
                 });
             });
             this.displayUserData2 = temp;
@@ -170,7 +176,7 @@ HistoryPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar color=\"light\">\n    <ion-title>History</ion-title>\n    <ion-buttons slot=\"start\">\n     <ion-back-button></ion-back-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-item color=\"secondary\">\n      <ion-grid>\n        <ion-row>\n          <ion-col>Check In:</ion-col>\n          <ion-col>Check Out:</ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-item>\n  </ion-list>\n  <ion-list>\n    <ion-item>\n      <ion-grid>\n        <ion-row *ngFor=\"let a of displayUserData2\" ><ion-col>{{a.checkin | date:'EEEE, h:mm a, dd/MM/yyyy '}}</ion-col><ion-col >{{a.checkout | date:'EEEE, h:mm a, dd/MM/yyyy '}}</ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-item>\n  </ion-list>\n  \n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar color=\"light\">\n    <ion-title>History</ion-title>\n    <ion-buttons slot=\"start\">\n     <ion-back-button></ion-back-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-item color=\"secondary\">\n      <ion-grid>\n        <ion-row>\n          <ion-col>Check In:</ion-col>\n          <ion-col>Check Out:</ion-col>\n          <ion-col>Location:</ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-item>\n  </ion-list>\n  <ion-list>\n    <ion-item>\n      <ion-grid>\n        <ion-row *ngFor=\"let a of displayUserData2\" >\n          <ion-col>{{a.checkin | date:'EEEE, h:mm a'}}</ion-col>\n          <ion-col *ngIf = \"a.checkout else noDisplay\">\n            {{a.checkout | date:'h:mm a'}}\n          </ion-col>\n          <ng-template #noDisplay>\n            <ion-col>\n              -\n            </ion-col>\n          </ng-template>\n          <ion-col >{{a.location}}</ion-col>\n        </ion-row>\n        <!-- <ion-row *ngFor=\"let a of displayUserData2\" ><ion-col>{{a.location}}</ion-col><ion-col >{{a.location}}</ion-col> -->\n        <!-- </ion-row> -->\n      </ion-grid>\n    </ion-item>\n  </ion-list>\n  \n</ion-content>\n");
 
 /***/ })
 

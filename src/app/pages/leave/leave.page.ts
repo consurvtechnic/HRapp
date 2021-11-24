@@ -52,6 +52,18 @@ export class LeavePage implements OnInit {
      this.authService.userData$.subscribe((res: any) => {
       this.displayUserData = res;
     })
+
+    this.leaveDetail.sort((a, b) => {
+    //sort by date
+    if (new Date(b.lastDate) > new Date(a.lastDate))
+        return 1;
+
+    if (new Date(b.lastDate) < new Date(a.lastDate))
+        return -1;
+
+    return 0;
+});
+    
   }
 
   ionViewWillEnter()

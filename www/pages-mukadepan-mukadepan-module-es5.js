@@ -82,7 +82,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\n  <ion-toolbar color=\"light\">\n    <ion-title>Home</ion-title>\n    <ion-buttons slot=\"end\" (click)=\"GotoNotityPage()\">\n      <ion-icon slot=\"icon-only\" name=\"notifications-outline\"></ion-icon>\n      <ion-badge color=\"danger\" style=\"position: absolute; right: -5px; top: -3px;\">?</ion-badge>\n    </ion-buttons>\n\n        <!-- <span>&nbsp;</span> -->\n\n      <ion-buttons slot=\"end\">\n        <ion-button (click)=\"settingsPopover()\">\n          <ion-icon slot=\"icon-only\" ios=\"ellipsis-vertical\" md=\"ellipsis-vertical\"></ion-icon>\n        </ion-button>\n      </ion-buttons>\n  \n  </ion-toolbar>\n</ion-header>\n\n\n\n\n<ion-content style=\"overflow: scroll;\">\n  <div class=\"container\">\n    <ion-text color=\"primary\">\n      <h1 class=\"titledepan\" style=\"text-align:center\">DynaConsurv</h1>\n    </ion-text>\n   \n    <h2 style=\"text-align:center\">Welcome Back, {{displayUserData?.staff_name}}!</h2>\n    <img src=\"assets/images/home1.png\"  class=\"smalllogo\"/>\n    <ion-grid>\n      <ion-row>\n        <ion-col col-6>\n          <ion-button (click)=\"showToast1()\" expand=\"block\" (click)=\"checkInAction()\" color=\"secondary\">Check In</ion-button>\n        </ion-col>\n        <ion-col col-6>\n          <ion-button (click)=\"showToast2()\" expand=\"block\" (click)=\"checkOutAction()\"color=\"secondary\">Check Out</ion-button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n    <ion-text color=\"dark\">\n      <p style=\"text-align:center\">STATUS:</p>\n    </ion-text>\n    <ion-text color=\"success\">\n      <h1 style=\"text-align:center\" id=\"status\">None</h1>\n    </ion-text>\n      \n\n      <ion-list>\n        <ion-item *ngFor=\"let a of transactions\">      \n          <p *ngIf=\" a.checkInAction == 'showToast1'\" > You have redeemed  {{a.checkin | date:'EEEE, h:mm a, dd/MM/yyyy '}} points.  </p>\n          <p *ngIf=\" a.checkOutAction == 'showToast2'\" > You have earned  {{a.checkout | date:'EEEE, h:mm a, dd/MM/yyyy '}}} points.  </p>  \n        </ion-item>\n      </ion-list>\n  \n    <!-- <p><ion-button (click)=\"goToList()\" expand=\"block\" >List of Attendees</ion-button></p> -->\n    <!-- <p><ion-button (click)=\"showToast3()\" expand=\"block\" >Leave</ion-button></p> -->\n  </div>\n</ion-content>\n";
+      __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\n  <ion-toolbar color=\"light\">\n    <ion-title>Home</ion-title>\n    <ion-buttons slot=\"end\" (click)=\"GotoNotityPage()\">\n      <ion-icon slot=\"icon-only\" name=\"notifications-outline\"></ion-icon>\n      <ion-badge color=\"danger\" style=\"position: absolute; right: -5px; top: -3px;\">?</ion-badge>\n    </ion-buttons>\n\n        <!-- <span>&nbsp;</span> -->\n\n      <ion-buttons slot=\"end\">\n        <ion-button (click)=\"settingsPopover()\">\n          <ion-icon slot=\"icon-only\" ios=\"ellipsis-vertical\" md=\"ellipsis-vertical\"></ion-icon>\n        </ion-button>\n      </ion-buttons>\n  \n  </ion-toolbar>\n</ion-header>\n\n\n\n\n<ion-content style=\"overflow: scroll;\">\n  <div class=\"container\">\n    <ion-text color=\"primary\">\n      <h1 class=\"titledepan\" style=\"text-align:center\">DynaConsurv</h1>\n    </ion-text>\n   \n    <h2 style=\"text-align:center\">Welcome Back, {{displayUserData?.staff_name}}!</h2>\n    <br>\n    <p id=\"realTime\" style=\"text-align:center; font-family: 'Georama'!important; font-size:2.1em;\" size=\"big\">{{ today | date: \"HH:mm a\" }}</p>\n    <!-- <ion-datetime disabled=\"disabled\" style=\"text-align:center; font-family: 'Georama'!important; font-size:1.8em;\" size=\"medium\" display-format= \"DDDD\" [(ngModel)]=\"today\" (ionChange)=\"startTime()\"></ion-datetime> -->\n    <img (click)=\"addEvent()\" expand=\"block\" style=\"text-align:center;\" src=\"{{myimage}}\" height=\"150 px\" width=\"150 px\" class=\"smalllogo\" />\n \n    <ion-item color=\"light\" class=\"location\">\n      <ion-label>Location:</ion-label>\n      <ion-select [(ngModel)]=\"location\" interface=\"popover\">\n        <ion-select-option value=\"WFH\">WFH</ion-select-option>\n        <ion-select-option value=\"Office\">OFFICE</ion-select-option>\n        <ion-select-option value=\"Site\">SITE</ion-select-option>\n      </ion-select>\n    </ion-item>\n\n      <!-- <ion-list>\n        <ion-item *ngFor=\"let a of transactions\">      \n          <p *ngIf=\" a.checkInAction == 'showToast1'\" > You have redeemed  {{a.checkin | date:'EEEE, h:mm a, dd/MM/yyyy '}} points.  </p>\n          <p *ngIf=\" a.checkOutAction == 'showToast2'\" > You have earned  {{a.checkout | date:'EEEE, h:mm a, dd/MM/yyyy '}}} points.  </p>  \n        </ion-item>\n      </ion-list> -->\n  \n    <!-- <p><ion-button (click)=\"goToList()\" expand=\"block\" >List of Attendees</ion-button></p> -->\n    <!-- <p><ion-button (click)=\"showToast3()\" expand=\"block\" >Leave</ion-button></p> -->\n\n    <ion-grid >\n    <ion-row style=\"text-align:center\" *ngFor=\"let a of displayUserData2\">\n      <ion-col>\n        <ion-icon name=\"enter-outline\"></ion-icon>\n        <p style=\"font-weight: bolder; color: mediumblue;\">{{a.checkin | date:'h:mm a'}}</p>\n        <p class=\"rowBawah\">Clock In</p>\n      </ion-col>\n      <ion-col *ngIf = \"a.checkout === 'showToast2()'; else noDisplay\">\n        <ion-icon name=\"log-out-outline\"></ion-icon>\n        <p style=\"font-weight: bolder; color: mediumblue;\">{{a.checkout | date:'h:mm a'}}</p>\n        <p class=\"rowBawah\">Clock Out</p>\n      </ion-col>\n      <ng-template #noDisplay>\n        <ion-col>\n          <ion-icon name=\"log-out-outline\"></ion-icon>\n          <p style=\"font-weight: bolder;\">-</p>\n          <p class=\"rowBawah\">Clock Out</p>\n        </ion-col>\n      </ng-template>\n      <ion-col>\n        <ion-icon name=\"location-outline\"></ion-icon>\n        <p style=\"font-weight: bolder; color: mediumblue;\">{{ a.location }}</p>\n        <p class=\"rowBawah\" >Location</p>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <p style=\"text-align:center; color: brown;\">Check Out Time: before 6.30PM</p>\n  </div>\n\n  \n</ion-content>\n";
       /***/
     },
 
@@ -161,7 +161,7 @@
       "l7Ag");
 
       var MukadepanPage = /*#__PURE__*/function () {
-        function MukadepanPage(router, toastCtrl, authService, storageService, nav, popoverController) {
+        function MukadepanPage(router, toastCtrl, authService, storageService, nav, popoverController, changeRef) {
           _classCallCheck(this, MukadepanPage);
 
           this.router = router;
@@ -170,17 +170,27 @@
           this.storageService = storageService;
           this.nav = nav;
           this.popoverController = popoverController;
+          this.changeRef = changeRef;
           this.showStatus = false;
+          this.today = new Date();
+          this.myimage = 'assets/images/clock_in.png';
           this.postData = {
             staff_id: '',
             action: 0,
             staff_name: '',
             checkin: '',
             checkout: '',
-            id: ''
+            id: '',
+            location: ''
           };
+          this.displayUserData2 = [];
           this.userInfo = {};
+          this.checkData = {
+            staff_id: '',
+            action: 2
+          };
           this.leaveDetail = {};
+          this.startTime();
         }
 
         _createClass(MukadepanPage, [{
@@ -227,54 +237,83 @@
             }));
           }
         }, {
-          key: "ionViewWillEnter",
-          value: function ionViewWillEnter() {
+          key: "ngOnInit",
+          value: function ngOnInit() {
             var _this = this;
 
-            this.authService.getUserDataPromise().then(function () {
-              var res = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-              // console.log(res);
-              _this.userInfo = res;
+            this.authService.getUserDataPromise().then(function (res) {
+              _this.displayUserData = res; // this.checkData.staff_id = this.displayUserData.staff_id; 
 
-              _this.authService.leavedetailPromise({
-                staffid: _this.userInfo.staff_id
-              }).then(function (res) {
-                console.log(res);
-                _this.leaveDetail = res[0];
-              }, function (err) {
-                console.log(err);
+              _this.sid = _this.displayUserData.staff_id;
+
+              _this.authService.listName({
+                staff_id: _this.sid,
+                action: 2
+              }).subscribe(function (res) {
+                console.log('goChecking', res);
+                var temp = [];
+                res.results.forEach(function (value) {
+                  console.log(value);
+                  temp.push({
+                    staff_name: value.staff_name,
+                    checkin: new Date(value.checkin),
+                    checkout: new Date(value.checkout),
+                    location: value.location
+                  });
+                });
+                _this.displayUserData2 = temp;
+                console.log(_this.displayUserData2);
               });
-            }, function (err) {
-              _this.nav.navigateBack('login');
             });
           }
         }, {
-          key: "ngOnInit",
-          value: function ngOnInit() {
-            var _this2 = this;
-
-            this.authService.userData$.subscribe(function (res) {
-              _this2.displayUserData = res;
-            });
+          key: "ionViewWillEnter",
+          value: function ionViewWillEnter() {
+            this.myDefaultMethodToFetchData();
           }
-          /*this.authService.login(this.postData).subscribe((res: any) => {
-                console.log('here',res)
-                if(Array.isArray(res)) {
-                  this.storageService.store(AuthConstants.AUTH, res[0]);
-                  this.router.navigate(['./home/mukadepan']);
-                } else {
-                  this.toastService.presentToast('Incorrect Name or Password');
-                   }
-                 }*/
-
+        }, {
+          key: "refreshPage",
+          value: function refreshPage() {
+            this.ionViewWillEnter();
+          }
+        }, {
+          key: "myDefaultMethodToFetchData",
+          value: function myDefaultMethodToFetchData() {}
+        }, {
+          key: "startTime",
+          value: function startTime() {
+            var intervalVar = setInterval(function () {
+              this.today = new Date().toISOString();
+            }.bind(this), 500);
+          }
+        }, {
+          key: "addEvent",
+          value: function addEvent() {
+            if (this.myimage == 'assets/images/clock_in.png') {
+              this.showToast1();
+              this.checkInAction();
+              this.changeRef.detectChanges();
+              this.myimage = 'assets/images/clock_out.png';
+            } else {
+              this.showToast2();
+              this.checkOutAction();
+              this.changeRef.detectChanges();
+              this.myimage = 'assets/images/clock_in.png';
+            }
+          }
         }, {
           key: "checkInAction",
           value: function checkInAction() {
-            //let data = this.authService.getUserData();
-            //console.log('i am clicked',this.displayUserData.staff_id);
+            var _this2 = this;
+
             this.postData.staff_id = this.displayUserData.staff_id;
             this.postData.action = 0;
+            this.postData.location = this.location;
             this.authService.checkIn(this.postData).subscribe(function (res) {
+              _this2.authService.getUserData();
+
+              _this2.changeRef.detectChanges();
+
               console.log('checkin', res);
             });
           }
@@ -285,8 +324,11 @@
 
             this.postData.staff_id = this.displayUserData.staff_id;
             this.postData.action = 1;
+            this.postData.location = this.location.data;
             this.authService.checkOut(this.postData).subscribe(function (res) {
               _this3.authService.getUserData();
+
+              _this3.changeRef.detectChanges();
 
               console.log('checkout', res);
             });
@@ -312,9 +354,6 @@
                       });
 
                     case 2:
-                      document.getElementById("status").innerHTML = "You've Checked-In!";
-
-                    case 3:
                     case "end":
                       return _context2.stop();
                   }
@@ -343,9 +382,6 @@
                       });
 
                     case 2:
-                      document.getElementById("status").innerHTML = "You've Checked-Out!";
-
-                    case 3:
                     case "end":
                       return _context3.stop();
                   }
@@ -391,6 +427,11 @@
               console.log('golist', res);
             });
           }
+        }, {
+          key: "refresh",
+          value: function refresh() {
+            this.changeRef.detectChanges();
+          }
         }]);
 
         return MukadepanPage;
@@ -409,6 +450,8 @@
           type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["NavController"]
         }, {
           type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["PopoverController"]
+        }, {
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"]
         }];
       };
 
@@ -509,7 +552,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = ".container {\n  position: relative;\n  left: 0;\n  bottom: 10vh;\n  right: 0;\n  top: 2vh;\n}\n\n@media screen and (max-width: 1200px) and (min-width: 450px) {\n  .container {\n    background: white;\n  }\n}\n\nion-toolbar {\n  --min-height: 50px;\n  color: #2C9DDE;\n}\n\nion-button {\n  --border-radius: 30px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL211a2FkZXBhbi5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBa0I7RUFDbEIsT0FBTztFQUNQLFlBQVk7RUFDWixRQUFRO0VBQ1IsUUFBUTtBQUNaOztBQUFJO0VBTko7SUFPUSxpQkFBaUI7RUFJdkI7QUFDRjs7QUFEQTtFQUNJLGtCQUFhO0VBQ2IsY0FBYztBQUlsQjs7QUFEQztFQUNLLHFCQUFnQjtBQUl0QiIsImZpbGUiOiJtdWthZGVwYW4ucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbnRhaW5lciB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xuICAgIGxlZnQ6IDA7XG4gICAgYm90dG9tOiAxMHZoO1xuICAgIHJpZ2h0OiAwO1xuICAgIHRvcDogMnZoO1xuICAgIEBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6MTIwMHB4KSBhbmQgKG1pbi13aWR0aDogNDUwcHgpIHtcbiAgICAgICAgYmFja2dyb3VuZDogd2hpdGU7XG4gICAgfVxufVxuXG5pb24tdG9vbGJhciB7XG4gICAgLS1taW4taGVpZ2h0OiA1MHB4O1xuICAgIGNvbG9yOiAjMkM5RERFO1xuICB9XG5cbiBpb24tYnV0dG9uIHtcbiAgICAgIC0tYm9yZGVyLXJhZGl1czogMzBweDtcbiAgfSJdfQ== */";
+      __webpack_exports__["default"] = ".container {\n  position: relative;\n  left: 0;\n  bottom: 10vh;\n  right: 0;\n  top: 2vh;\n}\n\n@media screen and (max-width: 1200px) and (min-width: 450px) {\n  .container {\n    background: white;\n  }\n}\n\nion-toolbar {\n  --min-height: 50px;\n  color: #2C9DDE;\n}\n\nion-button {\n  --border-radius: 30px;\n}\n\n.smalllogo {\n  -webkit-animation: scale-up-center 1s cubic-bezier(0.39, 0.575, 0.565, 1) infinite alternate-reverse both;\n  animation: scale-up-center 1s cubic-bezier(0.39, 0.575, 0.565, 1) infinite alternate-reverse both;\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n}\n\nion-content {\n  --background: none;\n  background-image: url(\"/assets/images/hr_bg.png\");\n  background-position: center top;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n#realTime {\n  margin-bottom: 0px;\n}\n\nion-datetime {\n  padding-top: 0%;\n}\n\n.location {\n  width: 60%;\n  margin-left: auto;\n  margin-right: auto;\n}\n\nion-icon {\n  font-size: 35px;\n  color: #2C9DDE;\n}\n\nion-grid {\n  position: relative;\n  margin-top: 40px;\n  margin-bottom: auto;\n}\n\n.rowBawah {\n  font-size: 10px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL211a2FkZXBhbi5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBa0I7RUFDbEIsT0FBTztFQUNQLFlBQVk7RUFDWixRQUFRO0VBQ1IsUUFBUTtBQUNaOztBQUFJO0VBTko7SUFPUSxpQkFBaUI7RUFJdkI7QUFDRjs7QUFEQTtFQUNJLGtCQUFhO0VBQ2IsY0FBYztBQUlsQjs7QUFEQztFQUNLLHFCQUFnQjtBQUl0Qjs7QUFERTtFQUNFLHlHQUE4RztFQUM5RyxpR0FBc0c7RUFDdEcsY0FBYztFQUNkLGlCQUFpQjtFQUNqQixrQkFBa0I7QUFJdEI7O0FBREU7RUFDRSxrQkFBYTtFQUNiLGlEQUFpRDtFQUNqRCwrQkFBK0I7RUFDL0IsNEJBQTRCO0VBQzVCLHNCQUFzQjtBQUkxQjs7QUFEQTtFQUNFLGtCQUFrQjtBQUlwQjs7QUFEQTtFQUNFLGVBQWU7QUFJakI7O0FBREE7RUFDRSxVQUFVO0VBQ1YsaUJBQWlCO0VBQ2pCLGtCQUFrQjtBQUlwQjs7QUFEQTtFQUNFLGVBQWU7RUFDZixjQUFjO0FBSWhCOztBQURBO0VBQ0Usa0JBQWtCO0VBQ2xCLGdCQUFnQjtFQUNoQixtQkFBbUI7QUFJckI7O0FBREE7RUFDRSxlQUFlO0FBSWpCIiwiZmlsZSI6Im11a2FkZXBhbi5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY29udGFpbmVyIHtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgbGVmdDogMDtcbiAgICBib3R0b206IDEwdmg7XG4gICAgcmlnaHQ6IDA7XG4gICAgdG9wOiAydmg7XG4gICAgQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDoxMjAwcHgpIGFuZCAobWluLXdpZHRoOiA0NTBweCkge1xuICAgICAgICBiYWNrZ3JvdW5kOiB3aGl0ZTtcbiAgICB9XG59XG5cbmlvbi10b29sYmFyIHtcbiAgICAtLW1pbi1oZWlnaHQ6IDUwcHg7XG4gICAgY29sb3I6ICMyQzlEREU7XG4gIH1cblxuIGlvbi1idXR0b24ge1xuICAgICAgLS1ib3JkZXItcmFkaXVzOiAzMHB4O1xuICB9XG5cbiAgLnNtYWxsbG9nbyB7XG4gICAgLXdlYmtpdC1hbmltYXRpb246IHNjYWxlLXVwLWNlbnRlciAxcyBjdWJpYy1iZXppZXIoMC4zOTAsIDAuNTc1LCAwLjU2NSwgMS4wMDApIGluZmluaXRlIGFsdGVybmF0ZS1yZXZlcnNlIGJvdGg7XG4gICAgYW5pbWF0aW9uOiBzY2FsZS11cC1jZW50ZXIgMXMgY3ViaWMtYmV6aWVyKDAuMzkwLCAwLjU3NSwgMC41NjUsIDEuMDAwKSBpbmZpbml0ZSBhbHRlcm5hdGUtcmV2ZXJzZSBib3RoO1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgIG1hcmdpbi1sZWZ0OiBhdXRvO1xuICAgIG1hcmdpbi1yaWdodDogYXV0bztcbiAgfVxuXG4gIGlvbi1jb250ZW50IHtcbiAgICAtLWJhY2tncm91bmQ6IG5vbmU7XG4gICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKCcvYXNzZXRzL2ltYWdlcy9ocl9iZy5wbmcnKTtcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXIgdG9wO1xuICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XG4gICAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcbiAgfVxuICBcbiNyZWFsVGltZSB7XG4gIG1hcmdpbi1ib3R0b206IDBweDtcbn1cblxuaW9uLWRhdGV0aW1lIHtcbiAgcGFkZGluZy10b3A6IDAlO1xufVxuXG4ubG9jYXRpb24ge1xuICB3aWR0aDogNjAlO1xuICBtYXJnaW4tbGVmdDogYXV0bztcbiAgbWFyZ2luLXJpZ2h0OiBhdXRvO1xufVxuXG5pb24taWNvbiB7XG4gIGZvbnQtc2l6ZTogMzVweDtcbiAgY29sb3I6ICMyQzlEREU7XG59XG5cbmlvbi1ncmlkIHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBtYXJnaW4tdG9wOiA0MHB4O1xuICBtYXJnaW4tYm90dG9tOiBhdXRvO1xufVxuXG4ucm93QmF3YWgge1xuICBmb250LXNpemU6IDEwcHg7XG59Il19 */";
       /***/
     }
   }]);

@@ -28,10 +28,18 @@ ion-toolbar {
 
   ion-content {
     --background: none;
+    // --background: url('/assets/images/hr_bg.png') no-repeat center/cover fixed;
     background-image: url('/assets/images/hr_bg.png');
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
+
+    ion-refresher-content {
+      color: red;
+      position: relative;
+      align-content: center;
+    }
+
   }
   
 #realTime {
@@ -62,3 +70,4 @@ ion-grid {
 .rowBawah {
   font-size: 10px;
 }
+
