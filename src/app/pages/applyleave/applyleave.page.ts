@@ -44,6 +44,7 @@ export class ApplyleavePage implements OnInit {
   halfday2:any;
   image='';
   myform:any;
+  dateTime;
 
 
   constructor(private toastCtrl: ToastController, 
@@ -84,12 +85,16 @@ export class ApplyleavePage implements OnInit {
   ngOnInit() {
     this.authService.userData$.subscribe((res: any) => {
       this.displayUserData = res;
-    })
+    });
+    setTimeout(() => {
+      this.dateTime = new Date().toISOString();
+    });
 
   }
 
   ionViewWillEnter()
   {
+    //this.leaveBalance.data.AL=0;
     this.authService.getUserDataPromise()
     .then((res:any={})=>{
       // console.log(res);
@@ -116,7 +121,7 @@ export class ApplyleavePage implements OnInit {
   {
     this.http.get('http://consurv.no-ip.biz/leave/leavetype')
     .then(res=>{
-      console.log(res);
+      console.log("type",res);
       this.leaveTypeChoices=res;
     })
   }
@@ -125,7 +130,7 @@ export class ApplyleavePage implements OnInit {
   {
     this.http.get('http://consurv.no-ip.biz:3000/api/leavesummary/' + `${this.userInfo.staff_id}`)
     .then(res=>{
-      console.log(res);
+      console.log("balance",res);
       this.leaveBalance=res;
     })
   }

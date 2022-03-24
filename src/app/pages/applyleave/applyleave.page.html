@@ -61,11 +61,12 @@
 
 <div lines="none" class="cuti">
   <ion-card color='light'>
-    <ion-card-header>Leave Balance for Year 2021:</ion-card-header>
+    <ion-card-header>Leave Balance for Year <ion-datetime [value]="dateTime" displayFormat="YYYY" ></ion-datetime>
+    </ion-card-header>
     <ion-card-content>
       <!-- <ion-card-subtitle color="primary-contrast">Leave Balance for year 2021:</ion-card-subtitle> -->
       <ion-card-title color="primary-contrast" style="font-size:70px" >
-        {{leaveBalance.data}}
+        {{leaveBalance.data?.AL}}
       </ion-card-title>
       <ion-card-subtitle color="primary-contrast" style="font-size:20px">Days</ion-card-subtitle>
     </ion-card-content>
