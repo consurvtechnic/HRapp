@@ -39,7 +39,7 @@
       <ion-item *ngIf="pendingList.length==0">
         No pending leave found
       </ion-item>
-      <ion-item *ngFor="let item of pendingList">
+      <ion-item *ngFor="let item of pendingList.sort(sortFunc)">
         <ion-grid>
           <ion-row (click)='openModal(item)'>
             <ion-col>

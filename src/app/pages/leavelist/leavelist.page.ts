@@ -124,18 +124,20 @@ export class LeavelistPage implements OnInit {
     }
   }
 
+  sortFunc (a, b) {
+    return new Date(b.datefrom).getTime() - new Date(a.datefrom).getTime();
+  }
+
   segList(list)
   {
     for(var x=0;x<list.length;x++)
     {
       if(Number(list[x].approved)==2)
       {
-        this.approvedList.sort((a, b) => new Date(b.datefrom).getTime() - new Date(a.datefrom).getTime());
         this.approvedList.push(list[x]);
       }
       else if(Number(list[x].approved)<2)
       {
-        this.pendingList.sort((a, b) => new Date(b.datefrom).getTime() - <any>new Date(a.datefrom).getTime());
         this.pendingList.push(list[x]);
         
       }
