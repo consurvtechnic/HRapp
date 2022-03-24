@@ -73,7 +73,7 @@ export class LeavelistPage implements OnInit {
 
       this.authService.leavedetailPromise({staffid:this.userInfo.staff_id})
       .then(res=>{
-        console.log('abc',res[0]);
+        console.log('staffinfo',res[0]);
         this.leaveMaster=res[0]
 
         this.segList(res[0]);
@@ -124,19 +124,20 @@ export class LeavelistPage implements OnInit {
     }
   }
 
-
-
   segList(list)
   {
     for(var x=0;x<list.length;x++)
     {
       if(Number(list[x].approved)==2)
       {
+        this.approvedList.sort((a, b) => new Date(b.datefrom).getTime() - new Date(a.datefrom).getTime());
         this.approvedList.push(list[x]);
       }
       else if(Number(list[x].approved)<2)
       {
+        this.pendingList.sort((a, b) => new Date(b.datefrom).getTime() - <any>new Date(a.datefrom).getTime());
         this.pendingList.push(list[x]);
+        
       }
     }
   }
