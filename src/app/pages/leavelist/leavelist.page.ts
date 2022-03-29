@@ -132,11 +132,11 @@ export class LeavelistPage implements OnInit {
   {
     for(var x=0;x<list.length;x++)
     {
-      if(Number(list[x].approved)==2)
+      if(Number(list[x].approved)==2 && Number(list[x].hod) !== 0)
       {
         this.approvedList.push(list[x]);
       }
-      else if(Number(list[x].approved)<2)
+      else if(Number(list[x].approved)<2 && Number(list[x].hod) !== 0)
       {
         this.pendingList.push(list[x]);
         
