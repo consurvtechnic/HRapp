@@ -3,6 +3,7 @@ import { Component, ViewChild, OnInit, Inject, LOCALE_ID } from '@angular/core';
 import { AlertController, ModalController, PopoverController, NavController } from '@ionic/angular';
 import { formatDate } from '@angular/common';
 import { CalModalPage } from 'src/app/pages/cal-modal/cal-modal.page';
+import { CalendarMode, Step } from 'ionic2-calendar/calendar';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -20,6 +21,7 @@ export class CalendarPage implements OnInit {
   ) {}
 
   viewTitle="";
+  //viewTitle: string;
   
   @ViewChild(CalendarComponent) myCal:CalendarComponent;
   
@@ -60,8 +62,9 @@ export class CalendarPage implements OnInit {
   
   eventSource=[];
   
-  calendar={
-    mode:'month',
+  calendar = {
+    //mode:'month',
+    mode: 'month' as CalendarMode,
     currentDate: new Date(),
   }
   
@@ -71,7 +74,15 @@ export class CalendarPage implements OnInit {
     })
   }
 
-  ionViewWillEnter()
+  next() {
+    this.myCal.slideNext();
+  }
+
+  back() {
+    this.myCal.slidePrev();
+  }
+
+  ionViewWillEnter(title)
   {
     this.authService.getUserDataPromise()
     .then((res:any={})=>{
@@ -92,13 +103,15 @@ export class CalendarPage implements OnInit {
       this.nav.navigateBack('login')
     })
 
+    this.viewTitle = title;
+
   }
 
   changeMode(mode){
     this.calendar.mode=mode;
   }
 
-  back(){
+  /*back(){
     var swiper = document.querySelector('.swiper-container')['swiper']
     swiper.slidePrev();
   }
@@ -106,7 +119,8 @@ export class CalendarPage implements OnInit {
   next(){
     var swiper = document.querySelector('.swiper-container')['swiper']
     swiper.slideNext();
-  }
+  }*/
+
 
   today(){
     this.calendar.currentDate= new Date();

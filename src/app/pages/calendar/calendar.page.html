@@ -14,11 +14,43 @@
 </ion-header>
 
 <ion-content>
+  <ion-segment [(ngModel)]="calendar.mode">
+    <ion-segment-button value="month">
+      <ion-label>Month</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="week">
+      <ion-label>Week</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="day">
+      <ion-label>Day</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-row>
+    <!-- Move back one screen of the slides -->
+    <ion-col size="2">
+      <ion-button fill="clear" (click)="back()">
+        <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-col>
+ 
+    <ion-col size="8" class="ion-text-center">
+      <h2>{{ viewTitle }}</h2>
+    </ion-col>
+ 
+    <!-- Move forward one screen of the slides -->
+    <ion-col size="2">
+      <ion-button fill="clear" (click)="next()">
+        <ion-icon name="arrow-forward" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+<!--
   <ion-title style="text-align: center; font-size: x-large; color: azure; background-color: #2C9DDE;">
     {{ viewTitle }}
-  </ion-title>
+  </ion-title>-->
    <!-- Change the display calendar -->
-   <ion-row> 
+   <!--<ion-row> 
     <ion-col size="4">
       <ion-button expand="block" size="small" [color]="calendar.mode == 'month' ? 'primary' : 'secondary'" 
       (click)="changeMode('month')">Month</ion-button>
@@ -33,31 +65,34 @@
       <ion-button expand="block" size="small" [color]="calendar.mode == 'day' ? 'primary' : 'secondary'" 
       (click)="changeMode('day')">Day</ion-button>
     </ion-col>
+  -->
     
-    
-    <!-- Move back one screen -->
+    <!-- Move back one screen 
     <ion-col size="6" style="text-align: start;">
         <ion-button fill="clear" size="small" (click)="back()">
             <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
         </ion-button>
-    </ion-col>
-    <!-- Move forward -->
+    </ion-col>-->
+    <!-- Move forward 
     <ion-col size="6" style="text-align: end;">
         <ion-button fill="clear" size="small" (click)="next()">
             <ion-icon name="arrow-forward" slot="icon-only"></ion-icon>
         </ion-button>
     </ion-col> 
 
-  </ion-row>   
+  </ion-row>   -->
 
   <!--(onCurrentDateChanged)="onCurrentDateChanged($event)"-->
   
   <calendar [eventSource]="eventSource"
     [calendarMode]="calendar.mode"
     [currentDate]="calendar.currentDate"
+    (onCurrentDateChanged)="onCurrentDateChanged($event)"
     (onRangeChanged)="reloadSource(startTime, endTime)"
     (onEventSelected)="onEventSelected($leaveDetail)"
     (onTitleChanged)="onViewTitleChanged($event)"
+    (onTimeSelected)="onTimeSelected($event)"
+    [step]="calendar.step"
     
     startHour="6"
     endHour="20"
@@ -65,6 +100,7 @@
     startingDayWeek="1"
     startingDayMonth="1">
   </calendar>
+
   <!-- <ion-segment [(ngModel)]="calendar.mode">
     <ion-segment-button value="month">
       <ion-label>Month</ion-label>
