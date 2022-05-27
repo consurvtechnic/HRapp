@@ -11,6 +11,7 @@ import { CalendarPage } from './calendar.page';
 import { NgCalendarModule  } from 'ionic2-calendar';
 import { CalModalPageModule } from 'src/app/pages/cal-modal/cal-modal.module';
  
+import { DatePipe } from '@angular/common';
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
@@ -26,7 +27,7 @@ registerLocaleData(localeDe);
     CalModalPageModule
   ],
   declarations: [CalendarPage],
-  providers: [
+  providers: [ DatePipe,
     { provide: LOCALE_ID, useValue: 'en-US' }
   ]
 })

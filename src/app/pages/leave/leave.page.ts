@@ -75,7 +75,7 @@ export class LeavePage implements OnInit {
 
       this.authService.leavedetailPromise({staffid:this.userInfo.staff_id})
       .then(res=>{
-        console.log(res);
+        console.log("leave detail",res);
         this.leaveDetail=res[0]
       },err=>{
         console.log(err);
