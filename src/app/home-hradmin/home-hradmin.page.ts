@@ -14,14 +14,9 @@ export class HomeHRadminPage implements OnInit {
 
   public postData = {
     staff_id: '',
-    leavetype: '',
-    reason: '',
-    currentDate: '',
-    endDate: '',
-    image: '',
-    halfday1: '',
-    halfday2: '',
-    
+    staff_name: '',
+    password: '',
+    status: '',
   }
 
   constructor(
@@ -34,12 +29,9 @@ export class HomeHRadminPage implements OnInit {
    
   }
 
-  mintakCuti(){
-
-  }
    async navigateToDashboard() {
     await this.router.navigate(['./mukadepan-admin']);
-    console.log('button is clicked');
+    console.log('home button is clicked');
   }
 
    async navigateToStaff() {
@@ -48,8 +40,8 @@ export class HomeHRadminPage implements OnInit {
   }
 
    async navigateToAddStaff() {
-    await this.router.navigate(['./signup']);
-    console.log('button is clicked');
+    //await this.router.navigate(['./signup']);
+    console.log('add staff button is clicked');
   }
 
    async navigateToLeaveRules() {

@@ -13,37 +13,37 @@ const routes: Routes = [
 
     children: [
         {
-        path: 'mukadepan',
-        loadChildren: () =>
-        import('../pages/mukadepan/mukadepan.module').then(m => m.MukadepanPageModule)
+          path: 'mukadepan',
+          loadChildren: () =>
+          import('../pages/mukadepan/mukadepan.module').then(m => m.MukadepanPageModule)
         },
         {
-        path: 'mukadepanadmin',
-        loadChildren: () =>
-        import('../pages/mukadepan-admin/mukadepan-admin.module').then(m => m.MukadepanAdminPageModule)
+          path: 'mukadepanadmin',
+          loadChildren: () =>
+          import('../pages/mukadepan-admin/mukadepan-admin.module').then(m => m.MukadepanAdminPageModule)
         },
         {
-        path: 'applyleave',
-        loadChildren: () =>
-        import('../pages/applyleave/applyleave.module').then(m => m.ApplyleavePageModule)
-        },
-
-        {
-        path: 'leavelist',
-        loadChildren: () =>
-        import('../pages/leavelist/leavelist.module').then(m => m.LeavelistPageModule)
+          path: 'applyleave',
+          loadChildren: () =>
+          import('../pages/applyleave/applyleave.module').then(m => m.ApplyleavePageModule)
         },
 
         {
-        path: 'calendar',
-        loadChildren: () =>
-        import('../pages/calendar/calendar.module').then(m => m.CalendarPageModule)
+          path: 'leavelist',
+          loadChildren: () =>
+          import('../pages/leavelist/leavelist.module').then(m => m.LeavelistPageModule)
         },
 
         {
-        path: 'setting',
-        loadChildren: () =>
-        import('../pages/setting/setting.module').then(m => m.SettingPageModule)
+          path: 'calendar',
+          loadChildren: () =>
+          import('../pages/calendar/calendar.module').then(m => m.CalendarPageModule)
+        },
+
+        {
+          path: 'setting',
+          loadChildren: () =>
+          import('../pages/setting/setting.module').then(m => m.SettingPageModule)
         },
         ]
   }

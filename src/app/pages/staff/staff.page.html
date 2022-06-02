@@ -1,7 +1,7 @@
 <ion-header class="ion-no-border">
   <ion-toolbar color="primary">
     <ion-title class="ion-text-left">
-    STAFF
+    Staff Database
     </ion-title>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
@@ -11,10 +11,10 @@
   <div class="ion-padding" (ionChange)="segmentChanged($event)">
     <ion-segment mode="ios" [value]="segmentValue">
       <ion-segment-button value="1">
-        <ion-label>Manager</ion-label>
+        <ion-label>Staff</ion-label>
       </ion-segment-button>
       <ion-segment-button value="2">
-        <ion-label>Staff</ion-label>
+        <ion-label>Intern</ion-label>
       </ion-segment-button>
     </ion-segment>
   </div>
@@ -24,8 +24,8 @@
 
   <ion-list lines="none">
     <ion-item color="light">
-      <ion-label class="heading">List of Registered{{segmentValue == '1' ? ' Manager' : ' Staff'}}</ion-label>
-      <!-- <ion-button slot="end" fill="clear" size="small">
+      <!--<ion-label class="heading">List of Registered{{segmentValue == '1' ? ' Manager' : ' Staff'}}</ion-label>
+       <ion-button slot="end" fill="clear" size="small">
         <ion-icon slot="icon-only" name="options"></ion-icon>
       </ion-button> -->
     </ion-item>
