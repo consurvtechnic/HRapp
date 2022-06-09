@@ -17,7 +17,7 @@
     /***/
     function _(module, exports, __webpack_require__) {
       module.exports = __webpack_require__(
-      /*! /Users/haziqamir/Documents/GitHub/HRapp/src/main.ts */
+      /*! C:\Users\User\Desktop\HRapp\src\main.ts */
       "zUnb");
       /***/
     },
@@ -233,7 +233,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<ion-app>\n  <ion-router-outlet></ion-router-outlet>\n</ion-app>\n";
+      __webpack_exports__["default"] = "<ion-app>\r\n  <ion-router-outlet></ion-router-outlet>\r\n</ion-app>\r\n";
       /***/
     },
 

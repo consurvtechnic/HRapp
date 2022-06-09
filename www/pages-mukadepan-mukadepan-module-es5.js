@@ -82,7 +82,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\n  <ion-toolbar color=\"light\">\n    <ion-title>Home</ion-title>\n    <ion-buttons slot=\"end\" (click)=\"GotoNotityPage()\">\n      <ion-icon slot=\"icon-only\" name=\"notifications-outline\"></ion-icon>\n      <ion-badge color=\"danger\" style=\"position: absolute; right: -5px; top: -3px;\">?</ion-badge>\n    </ion-buttons>\n\n        <!-- <span>&nbsp;</span> -->\n\n      <ion-buttons slot=\"end\">\n        <ion-button (click)=\"settingsPopover()\">\n          <ion-icon slot=\"icon-only\" ios=\"ellipsis-vertical\" md=\"ellipsis-vertical\"></ion-icon>\n        </ion-button>\n      </ion-buttons>\n  \n  </ion-toolbar>\n</ion-header>\n\n\n\n\n<ion-content style=\"overflow: scroll;\">\n  <div class=\"container\">\n    <ion-text color=\"primary\">\n      <h1 class=\"titledepan\" style=\"text-align:center\">DynaConsurv</h1>\n    </ion-text>\n   \n    <h2 style=\"text-align:center\">Welcome Back, {{displayUserData?.staff_name}}!</h2>\n    <br>\n    <p id=\"realTime\" style=\"text-align:center; font-family: 'Georama'!important; font-size:2.1em;\" size=\"big\">{{ today | date: \"HH:mm a\" }}</p>\n    <!-- <ion-datetime disabled=\"disabled\" style=\"text-align:center; font-family: 'Georama'!important; font-size:1.8em;\" size=\"medium\" display-format= \"DDDD\" [(ngModel)]=\"today\" (ionChange)=\"startTime()\"></ion-datetime> -->\n    <img (click)=\"addEvent()\" expand=\"block\" style=\"text-align:center;\" src=\"{{myimage}}\" height=\"150 px\" width=\"150 px\" class=\"smalllogo\" />\n \n    <ion-item color=\"light\" class=\"location\">\n      <ion-label>Location:</ion-label>\n      <ion-select [(ngModel)]=\"location\" interface=\"popover\">\n        <ion-select-option value=\"WFH\">WFH</ion-select-option>\n        <ion-select-option value=\"Office\">OFFICE</ion-select-option>\n        <ion-select-option value=\"Site\">SITE</ion-select-option>\n      </ion-select>\n    </ion-item>\n\n      <!-- <ion-list>\n        <ion-item *ngFor=\"let a of transactions\">      \n          <p *ngIf=\" a.checkInAction == 'showToast1'\" > You have redeemed  {{a.checkin | date:'EEEE, h:mm a, dd/MM/yyyy '}} points.  </p>\n          <p *ngIf=\" a.checkOutAction == 'showToast2'\" > You have earned  {{a.checkout | date:'EEEE, h:mm a, dd/MM/yyyy '}}} points.  </p>  \n        </ion-item>\n      </ion-list> -->\n  \n    <!-- <p><ion-button (click)=\"goToList()\" expand=\"block\" >List of Attendees</ion-button></p> -->\n    <!-- <p><ion-button (click)=\"showToast3()\" expand=\"block\" >Leave</ion-button></p> -->\n\n    <ion-grid >\n    <ion-row style=\"text-align:center\" *ngFor=\"let a of displayUserData2\">\n      <ion-col>\n        <ion-icon name=\"enter-outline\"></ion-icon>\n        <p style=\"font-weight: bolder; color: mediumblue;\">{{a.checkin | date:'h:mm a'}}</p>\n        <p class=\"rowBawah\">Clock In</p>\n      </ion-col>\n      <ion-col *ngIf = \"a.checkout === 'showToast2()'; else noDisplay\">\n        <ion-icon name=\"log-out-outline\"></ion-icon>\n        <p style=\"font-weight: bolder; color: mediumblue;\">{{a.checkout | date:'h:mm a'}}</p>\n        <p class=\"rowBawah\">Clock Out</p>\n      </ion-col>\n      <ng-template #noDisplay>\n        <ion-col>\n          <ion-icon name=\"log-out-outline\"></ion-icon>\n          <p style=\"font-weight: bolder;\">-</p>\n          <p class=\"rowBawah\">Clock Out</p>\n        </ion-col>\n      </ng-template>\n      <ion-col>\n        <ion-icon name=\"location-outline\"></ion-icon>\n        <p style=\"font-weight: bolder; color: mediumblue;\">{{ a.location }}</p>\n        <p class=\"rowBawah\" >Location</p>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <p style=\"text-align:center; color: brown;\">Check Out Time: before 6.30PM</p>\n  </div>\n\n  \n</ion-content>\n";
+      __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar color=\"light\">\r\n    <ion-title>Home</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content style=\"overflow: scroll;\">\r\n  <div class=\"container\">\r\n    <ion-text color=\"primary\">\r\n      <h1 class=\"titledepan\" style=\"text-align:center\">DynaConsurv</h1>\r\n    </ion-text>\r\n   \r\n    <h2 style=\"text-align:center\">Welcome Back, {{displayUserData?.staff_name}}!</h2>\r\n    <br>\r\n    <p id=\"realTime\" style=\"text-align:center; font-family: 'Georama'!important; font-size:2.1em;\" size=\"big\">{{ today | date: \"HH:mm a\" }}</p>\r\n    <ion-datetime disabled=\"disabled\" style=\"text-align:center; font-family: 'Georama'!important; font-size:1.8em;\" size=\"medium\" display-format= \"DDDD\" [(ngModel)]=\"today\" (ionChange)=\"startTime()\"></ion-datetime>\r\n    <img (click)=\"addEvent()\" expand=\"block\" style=\"text-align:center;\" src=\"{{myimage}}\" height=\"150 px\" width=\"150 px\" class=\"smalllogo\" />\r\n    \r\n    <ion-item color=\"light\" class=\"location\">\r\n      <ion-label>Location:</ion-label>\r\n      <ion-select [(ngModel)]=\"location\" interface=\"popover\">\r\n        <ion-select-option value=\"WFH\">WFH</ion-select-option>\r\n        <ion-select-option value=\"Office\">OFFICE</ion-select-option>\r\n        <ion-select-option value=\"Site\">SITE</ion-select-option>\r\n      </ion-select>\r\n    </ion-item>\r\n\r\n    <ion-grid >\r\n      <ion-row style=\"text-align:center\" *ngFor=\"let a of displayUserData2\">\r\n        <ion-col>\r\n          <ion-icon name=\"enter-outline\"></ion-icon>\r\n          <p style=\"font-weight: bolder; color: mediumblue;\">{{a.checkin | date:'h:mm a'}}</p>\r\n          <p class=\"rowBawah\">Clock In</p>\r\n        </ion-col>\r\n        <ion-col>\r\n          <ion-icon name=\"log-out-outline\"></ion-icon>\r\n          <p style=\"font-weight: bolder; color: mediumblue;\">{{a.checkout | date:'h:mm a'}}</p>\r\n          <p class=\"rowBawah\">Clock Out</p>\r\n        </ion-col>\r\n        <ion-col>\r\n          <ion-icon name=\"location-outline\"></ion-icon>\r\n          <p style=\"font-weight: bolder; color: mediumblue;\">{{ a.location }}</p>\r\n          <p class=\"rowBawah\" >Location</p>\r\n        </ion-col>\r\n      </ion-row>\r\n    </ion-grid>\r\n    <p style=\"text-align:center; color: brown;\">Check Out Time: before 6.30PM</p>\r\n\r\n  </div>\r\n\r\n</ion-content>\r\n\r\n<!-- \r\n<ion-header [translucent]=\"true\">\r\n  <ion-toolbar color=\"light\">\r\n    <ion-title>Home</ion-title>\r\n    <ion-buttons slot=\"end\" (click)=\"GotoNotityPage()\">\r\n      <ion-icon slot=\"icon-only\" name=\"notifications-outline\"></ion-icon>\r\n      <ion-badge color=\"danger\" style=\"position: absolute; right: -5px; top: -3px;\">?</ion-badge> \r\n    </ion-buttons>\r\n\r\n      <ion-buttons slot=\"end\">\r\n        <ion-button (click)=\"settingsPopover()\">\r\n          <ion-icon slot=\"icon-only\" ios=\"ellipsis-vertical\" md=\"ellipsis-vertical\"></ion-icon>\r\n        </ion-button>\r\n      </ion-buttons>\r\n  \r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content style=\"overflow: scroll;\">\r\n  <div class=\"container\">\r\n    <ion-text color=\"primary\">\r\n      <h1 class=\"titledepan\" style=\"text-align:center\">DynaConsurv</h1>\r\n    </ion-text>\r\n   \r\n    <h2 style=\"text-align:center\">Welcome Back, {{displayUserData?.staff_name}}!</h2>\r\n    <br>\r\n    <p id=\"realTime\" style=\"text-align:center; font-family: 'Georama'!important; font-size:2.1em;\" size=\"big\">{{ today | date: \"HH:mm a\" }}</p>\r\n    <ion-datetime disabled=\"disabled\" style=\"text-align:center; font-family: 'Georama'!important; font-size:1.8em;\" size=\"medium\" display-format= \"DDDD\" [(ngModel)]=\"today\" (ionChange)=\"startTime()\"></ion-datetime>\r\n    <img (click)=\"addEvent()\" expand=\"block\" style=\"text-align:center;\" src=\"{{myimage}}\" height=\"150 px\" width=\"150 px\" class=\"smalllogo\" />\r\n \r\n    <ion-item color=\"light\" class=\"location\">\r\n      <ion-label>Location:</ion-label>\r\n      <ion-select [(ngModel)]=\"location\" interface=\"popover\">\r\n        <ion-select-option value=\"WFH\">WFH</ion-select-option>\r\n        <ion-select-option value=\"Office\">OFFICE</ion-select-option>\r\n        <ion-select-option value=\"Site\">SITE</ion-select-option>\r\n      </ion-select>\r\n    </ion-item>\r\n\r\n       <ion-list>\r\n        <ion-item *ngFor=\"let a of transactions\">      \r\n          <p *ngIf=\" a.checkInAction == 'showToast1'\" > You have redeemed  {{a.checkin | date:'EEEE, h:mm a, dd/MM/yyyy '}} points.  </p>\r\n          <p *ngIf=\" a.checkOutAction == 'showToast2'\" > You have earned  {{a.checkout | date:'EEEE, h:mm a, dd/MM/yyyy '}}} points.  </p>  \r\n        </ion-item>\r\n      </ion-list> \r\n  \r\n     <p><ion-button (click)=\"goToList()\" expand=\"block\" >List of Attendees</ion-button></p> \r\n     <p><ion-button (click)=\"showToast3()\" expand=\"block\" >Leave</ion-button></p> \r\n\r\n    <ion-grid >\r\n    <ion-row style=\"text-align:center\" *ngFor=\"let a of displayUserData2\">\r\n      <ion-col>\r\n        <ion-icon name=\"enter-outline\"></ion-icon>\r\n        <p style=\"font-weight: bolder; color: mediumblue;\">{{a.checkin | date:'h:mm a'}}</p>\r\n        <p class=\"rowBawah\">Clock In</p>\r\n      </ion-col>\r\n       <ion-col *ngIf = \"a.checkout === 'showToast2()'; else noDisplay\"> \r\n      <ion-col>\r\n        <ion-icon name=\"log-out-outline\"></ion-icon>\r\n        <p style=\"font-weight: bolder; color: mediumblue;\">{{a.checkout | date:'h:mm a'}}</p>\r\n        <p class=\"rowBawah\">Clock Out</p>\r\n      </ion-col>\r\n      <ng-template #noDisplay>\r\n        <ion-col>\r\n          <ion-icon name=\"log-out-outline\"></ion-icon>\r\n          <p style=\"font-weight: bolder;\">-</p>\r\n           <p class=\"rowBawah\">Clock Out</p> \r\n        </ion-col>\r\n      </ng-template>\r\n      <ion-col>\r\n        <ion-icon name=\"location-outline\"></ion-icon>\r\n        <p style=\"font-weight: bolder; color: mediumblue;\">{{ a.location }}</p>\r\n        <p class=\"rowBawah\" >Location</p>\r\n      </ion-col>\r\n    </ion-row>\r\n  </ion-grid>\r\n  <p style=\"text-align:center; color: brown;\">Check Out Time: before 6.30PM</p>\r\n  </div>\r\n\r\n  \r\n</ion-content>\r\n-->";
       /***/
     },
 
@@ -161,7 +161,7 @@
       "l7Ag");
 
       var MukadepanPage = /*#__PURE__*/function () {
-        function MukadepanPage(router, toastCtrl, authService, storageService, nav, popoverController, changeRef) {
+        function MukadepanPage(router, toastCtrl, authService, storageService, nav, popoverController, changeRef, loading) {
           _classCallCheck(this, MukadepanPage);
 
           this.router = router;
@@ -171,7 +171,7 @@
           this.nav = nav;
           this.popoverController = popoverController;
           this.changeRef = changeRef;
-          this.showStatus = false;
+          this.loading = loading;
           this.today = new Date();
           this.myimage = 'assets/images/clock_in.png';
           this.postData = {
@@ -189,7 +189,6 @@
             staff_id: '',
             action: 2
           };
-          this.leaveDetail = {};
           this.startTime();
         }
 
@@ -204,7 +203,7 @@
                     case 0:
                       siteInfo = {
                         id: 1,
-                        name: 'edupala'
+                        name: 'hrapps dynaconsurv'
                       };
                       _context.next = 3;
                       return this.popoverController.create({
@@ -239,52 +238,84 @@
         }, {
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this = this;
-
-            this.authService.getUserDataPromise().then(function (res) {
-              _this.displayUserData = res; // this.checkData.staff_id = this.displayUserData.staff_id; 
-
-              _this.sid = _this.displayUserData.staff_id;
-
-              _this.authService.listName({
-                staff_id: _this.sid,
-                action: 2
-              }).subscribe(function (res) {
-                console.log('goChecking', res);
-                var temp = [];
-                res.results.forEach(function (value) {
-                  console.log(value);
-                  temp.push({
-                    staff_name: value.staff_name,
-                    checkin: new Date(value.checkin),
-                    checkout: new Date(value.checkout),
-                    location: value.location
-                  });
-                });
-                _this.displayUserData2 = temp;
-                console.log(_this.displayUserData2);
-              });
-            });
+            this.nav.navigateRoot('home/mukadepan');
           }
         }, {
           key: "ionViewWillEnter",
           value: function ionViewWillEnter() {
-            this.myDefaultMethodToFetchData();
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+              var _this = this;
+
+              var loader;
+              return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                while (1) {
+                  switch (_context2.prev = _context2.next) {
+                    case 0:
+                      _context2.next = 2;
+                      return this.loading.create({
+                        message: 'Loading...',
+                        spinner: 'bubbles'
+                      });
+
+                    case 2:
+                      loader = _context2.sent;
+                      loader.present();
+                      this.authService.getUserDataPromise().then(function (res) {
+                        _this.displayUserData = res; // this.checkData.staff_id = this.displayUserData.staff_id; 
+
+                        _this.sid = _this.displayUserData.staff_id;
+                        _this.sname = _this.displayUserData.staff_name;
+
+                        _this.authService.listName({
+                          staff_id: _this.sid,
+                          action: 2
+                        }).subscribe(function (res) {
+                          console.log('goChecking', res);
+                          var temp = [];
+                          res.results.forEach(function (value) {
+                            console.log('value', value);
+                            var dt = new Date(value.checkin); //console.log("checkin time 1",dt)
+
+                            var checkoutTime = dt.setMinutes(dt.getMinutes() + 540);
+                            var checkout = new Date(checkoutTime).toISOString();
+                            temp.push({
+                              staff_name: value.staff_name,
+                              staff_id: value.staff_id,
+                              checkin: new Date(value.checkin),
+                              checkout: new Date(checkout),
+                              location: value.location
+                            });
+                          });
+                          _this.displayUserData2 = temp;
+                          loader.dismiss();
+                          console.log("user data 2", _this.displayUserData2);
+                        });
+                      });
+
+                    case 5:
+                    case "end":
+                      return _context2.stop();
+                  }
+                }
+              }, _callee2, this);
+            }));
           }
-        }, {
-          key: "refreshPage",
-          value: function refreshPage() {
-            this.ionViewWillEnter();
-          }
-        }, {
-          key: "myDefaultMethodToFetchData",
-          value: function myDefaultMethodToFetchData() {}
         }, {
           key: "startTime",
           value: function startTime() {
             var intervalVar = setInterval(function () {
               this.today = new Date().toISOString();
             }.bind(this), 500);
+          }
+        }, {
+          key: "doRefresh",
+          value: function doRefresh(event) {
+            console.log('Begin async operation');
+            setTimeout(function () {
+              console.log('Async operation has ended');
+              event.target.complete();
+            }, 2000); // location.reload();     //// this serves the purpose by reloading the entire app but its not what i want
+            // this.navCtrl.navigateRoot('/tabs/tab2');  //// I tried this but not able to update 
           }
         }, {
           key: "addEvent",
@@ -294,6 +325,7 @@
               this.checkInAction();
               this.changeRef.detectChanges();
               this.myimage = 'assets/images/clock_out.png';
+              this.nav.navigateRoot('home/mukadepan');
             } else {
               this.showToast2();
               this.checkOutAction();
@@ -307,6 +339,7 @@
             var _this2 = this;
 
             this.postData.staff_id = this.displayUserData.staff_id;
+            this.postData.staff_name = this.displayUserData.staff_name;
             this.postData.action = 0;
             this.postData.location = this.location;
             this.authService.checkIn(this.postData).subscribe(function (res) {
@@ -323,6 +356,7 @@
             var _this3 = this;
 
             this.postData.staff_id = this.displayUserData.staff_id;
+            this.postData.staff_name = this.displayUserData.staff_name;
             this.postData.action = 1;
             this.postData.location = this.location.data;
             this.authService.checkOut(this.postData).subscribe(function (res) {
@@ -336,34 +370,6 @@
         }, {
           key: "showToast1",
           value: function showToast1() {
-            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-              return regeneratorRuntime.wrap(function _callee2$(_context2) {
-                while (1) {
-                  switch (_context2.prev = _context2.next) {
-                    case 0:
-                      _context2.next = 2;
-                      return this.toastCtrl.create({
-                        message: "You've Check-In!",
-                        duration: 2000,
-                        position: 'middle',
-                        buttons: [{
-                          text: 'OK'
-                        }]
-                      }).then(function (res) {
-                        return res.present();
-                      });
-
-                    case 2:
-                    case "end":
-                      return _context2.stop();
-                  }
-                }
-              }, _callee2, this);
-            }));
-          }
-        }, {
-          key: "showToast2",
-          value: function showToast2() {
             return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
               return regeneratorRuntime.wrap(function _callee3$(_context3) {
                 while (1) {
@@ -371,7 +377,7 @@
                     case 0:
                       _context3.next = 2;
                       return this.toastCtrl.create({
-                        message: "You've Check-Out!",
+                        message: "You've Check-In!",
                         duration: 2000,
                         position: 'middle',
                         buttons: [{
@@ -390,8 +396,8 @@
             }));
           }
         }, {
-          key: "showToast3",
-          value: function showToast3() {
+          key: "showToast2",
+          value: function showToast2() {
             return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
               return regeneratorRuntime.wrap(function _callee4$(_context4) {
                 while (1) {
@@ -399,7 +405,7 @@
                     case 0:
                       _context4.next = 2;
                       return this.toastCtrl.create({
-                        message: "You're on Leave!",
+                        message: "You've Check-Out!",
                         duration: 2000,
                         position: 'middle',
                         buttons: [{
@@ -415,6 +421,34 @@
                   }
                 }
               }, _callee4, this);
+            }));
+          }
+        }, {
+          key: "showToast3",
+          value: function showToast3() {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
+              return regeneratorRuntime.wrap(function _callee5$(_context5) {
+                while (1) {
+                  switch (_context5.prev = _context5.next) {
+                    case 0:
+                      _context5.next = 2;
+                      return this.toastCtrl.create({
+                        message: "You're on Leave!",
+                        duration: 2000,
+                        position: 'middle',
+                        buttons: [{
+                          text: 'OK'
+                        }]
+                      }).then(function (res) {
+                        return res.present();
+                      });
+
+                    case 2:
+                    case "end":
+                      return _context5.stop();
+                  }
+                }
+              }, _callee5, this);
             }));
           }
         }, {
@@ -452,6 +486,8 @@
           type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["PopoverController"]
         }, {
           type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"]
+        }, {
+          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["LoadingController"]
         }];
       };
 
@@ -460,6 +496,44 @@
         template: _raw_loader_mukadepan_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_mukadepan_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
       })], MukadepanPage);
+      /***
+        showStatus: boolean = false;
+        async ionViewWillEnter()
+        {
+      
+          let loader=await this.loading.create({
+            message:'Loading...',
+            spinner:'bubbles'
+          })
+      
+          loader.present();
+      
+          this.authService.getUserDataPromise().then((res: any) => {
+            this.displayUserData = res;
+            // this.checkData.staff_id = this.displayUserData.staff_id;
+            this.sid = this.displayUserData.staff_id;
+       
+          this.authService.listName({staff_id: this.sid, action: 2}).subscribe((res: any) => {
+            console.log('goChecking',res);
+            let temp : any[] = [];
+            (res.results).forEach(function (value) {
+              console.log(value)
+              temp.push({staff_name:value.staff_name,
+              checkin:new Date(value.checkin),
+              checkout:new Date(value.checkout),
+              location:value.location,
+              })
+            });
+            this.displayUserData2 = temp;
+            loader.dismiss();
+            console.log(this.displayUserData2);} )
+      
+          });
+      
+        }
+      }
+        ***/
+
       /***/
     },
 
@@ -552,7 +626,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = ".container {\n  position: relative;\n  left: 0;\n  bottom: 10vh;\n  right: 0;\n  top: 2vh;\n}\n\n@media screen and (max-width: 1200px) and (min-width: 450px) {\n  .container {\n    background: white;\n  }\n}\n\nion-toolbar {\n  --min-height: 50px;\n  color: #2C9DDE;\n}\n\nion-button {\n  --border-radius: 30px;\n}\n\n.smalllogo {\n  -webkit-animation: scale-up-center 1s cubic-bezier(0.39, 0.575, 0.565, 1) infinite alternate-reverse both;\n  animation: scale-up-center 1s cubic-bezier(0.39, 0.575, 0.565, 1) infinite alternate-reverse both;\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n}\n\nion-content {\n  --background: none;\n  background-image: url(\"/assets/images/hr_bg.png\");\n  background-position: center top;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n#realTime {\n  margin-bottom: 0px;\n}\n\nion-datetime {\n  padding-top: 0%;\n}\n\n.location {\n  width: 60%;\n  margin-left: auto;\n  margin-right: auto;\n}\n\nion-icon {\n  font-size: 35px;\n  color: #2C9DDE;\n}\n\nion-grid {\n  position: relative;\n  margin-top: 40px;\n  margin-bottom: auto;\n}\n\n.rowBawah {\n  font-size: 10px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL211a2FkZXBhbi5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBa0I7RUFDbEIsT0FBTztFQUNQLFlBQVk7RUFDWixRQUFRO0VBQ1IsUUFBUTtBQUNaOztBQUFJO0VBTko7SUFPUSxpQkFBaUI7RUFJdkI7QUFDRjs7QUFEQTtFQUNJLGtCQUFhO0VBQ2IsY0FBYztBQUlsQjs7QUFEQztFQUNLLHFCQUFnQjtBQUl0Qjs7QUFERTtFQUNFLHlHQUE4RztFQUM5RyxpR0FBc0c7RUFDdEcsY0FBYztFQUNkLGlCQUFpQjtFQUNqQixrQkFBa0I7QUFJdEI7O0FBREU7RUFDRSxrQkFBYTtFQUNiLGlEQUFpRDtFQUNqRCwrQkFBK0I7RUFDL0IsNEJBQTRCO0VBQzVCLHNCQUFzQjtBQUkxQjs7QUFEQTtFQUNFLGtCQUFrQjtBQUlwQjs7QUFEQTtFQUNFLGVBQWU7QUFJakI7O0FBREE7RUFDRSxVQUFVO0VBQ1YsaUJBQWlCO0VBQ2pCLGtCQUFrQjtBQUlwQjs7QUFEQTtFQUNFLGVBQWU7RUFDZixjQUFjO0FBSWhCOztBQURBO0VBQ0Usa0JBQWtCO0VBQ2xCLGdCQUFnQjtFQUNoQixtQkFBbUI7QUFJckI7O0FBREE7RUFDRSxlQUFlO0FBSWpCIiwiZmlsZSI6Im11a2FkZXBhbi5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY29udGFpbmVyIHtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgbGVmdDogMDtcbiAgICBib3R0b206IDEwdmg7XG4gICAgcmlnaHQ6IDA7XG4gICAgdG9wOiAydmg7XG4gICAgQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDoxMjAwcHgpIGFuZCAobWluLXdpZHRoOiA0NTBweCkge1xuICAgICAgICBiYWNrZ3JvdW5kOiB3aGl0ZTtcbiAgICB9XG59XG5cbmlvbi10b29sYmFyIHtcbiAgICAtLW1pbi1oZWlnaHQ6IDUwcHg7XG4gICAgY29sb3I6ICMyQzlEREU7XG4gIH1cblxuIGlvbi1idXR0b24ge1xuICAgICAgLS1ib3JkZXItcmFkaXVzOiAzMHB4O1xuICB9XG5cbiAgLnNtYWxsbG9nbyB7XG4gICAgLXdlYmtpdC1hbmltYXRpb246IHNjYWxlLXVwLWNlbnRlciAxcyBjdWJpYy1iZXppZXIoMC4zOTAsIDAuNTc1LCAwLjU2NSwgMS4wMDApIGluZmluaXRlIGFsdGVybmF0ZS1yZXZlcnNlIGJvdGg7XG4gICAgYW5pbWF0aW9uOiBzY2FsZS11cC1jZW50ZXIgMXMgY3ViaWMtYmV6aWVyKDAuMzkwLCAwLjU3NSwgMC41NjUsIDEuMDAwKSBpbmZpbml0ZSBhbHRlcm5hdGUtcmV2ZXJzZSBib3RoO1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgIG1hcmdpbi1sZWZ0OiBhdXRvO1xuICAgIG1hcmdpbi1yaWdodDogYXV0bztcbiAgfVxuXG4gIGlvbi1jb250ZW50IHtcbiAgICAtLWJhY2tncm91bmQ6IG5vbmU7XG4gICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKCcvYXNzZXRzL2ltYWdlcy9ocl9iZy5wbmcnKTtcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXIgdG9wO1xuICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XG4gICAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcbiAgfVxuICBcbiNyZWFsVGltZSB7XG4gIG1hcmdpbi1ib3R0b206IDBweDtcbn1cblxuaW9uLWRhdGV0aW1lIHtcbiAgcGFkZGluZy10b3A6IDAlO1xufVxuXG4ubG9jYXRpb24ge1xuICB3aWR0aDogNjAlO1xuICBtYXJnaW4tbGVmdDogYXV0bztcbiAgbWFyZ2luLXJpZ2h0OiBhdXRvO1xufVxuXG5pb24taWNvbiB7XG4gIGZvbnQtc2l6ZTogMzVweDtcbiAgY29sb3I6ICMyQzlEREU7XG59XG5cbmlvbi1ncmlkIHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBtYXJnaW4tdG9wOiA0MHB4O1xuICBtYXJnaW4tYm90dG9tOiBhdXRvO1xufVxuXG4ucm93QmF3YWgge1xuICBmb250LXNpemU6IDEwcHg7XG59Il19 */";
+      __webpack_exports__["default"] = ".container {\n  position: relative;\n  left: 0;\n  bottom: 10vh;\n  right: 0;\n  top: 2vh;\n}\n@media screen and (max-width: 1200px) and (min-width: 450px) {\n  .container {\n    background: white;\n  }\n}\nion-toolbar {\n  --min-height: 50px;\n  color: #2C9DDE;\n}\nion-button {\n  --border-radius: 30px;\n}\n.smalllogo {\n  -webkit-animation: scale-up-center 1s cubic-bezier(0.39, 0.575, 0.565, 1) infinite alternate-reverse both;\n  animation: scale-up-center 1s cubic-bezier(0.39, 0.575, 0.565, 1) infinite alternate-reverse both;\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n}\nion-content {\n  --background: none;\n  background-image: url(\"/assets/images/hr_bg.png\");\n  background-position: center top;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n#realTime {\n  margin-bottom: 0px;\n}\nion-datetime {\n  padding-top: 0%;\n}\n.location {\n  width: 60%;\n  margin-left: auto;\n  margin-right: auto;\n}\nion-icon {\n  font-size: 35px;\n  color: #2C9DDE;\n}\nion-grid {\n  position: relative;\n  margin-top: 40px;\n  margin-bottom: auto;\n}\n.rowBawah {\n  font-size: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxtdWthZGVwYW4ucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQUE7RUFDQSxPQUFBO0VBQ0EsWUFBQTtFQUNBLFFBQUE7RUFDQSxRQUFBO0FBQ0o7QUFBSTtFQU5KO0lBT1EsaUJBQUE7RUFHTjtBQUNGO0FBQUE7RUFDSSxrQkFBQTtFQUNBLGNBQUE7QUFHSjtBQUFDO0VBQ0sscUJBQUE7QUFHTjtBQUFFO0VBQ0UseUdBQUE7RUFDQSxpR0FBQTtFQUNBLGNBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0FBR0o7QUFBRTtFQUNFLGtCQUFBO0VBQ0EsaURBQUE7RUFDQSwrQkFBQTtFQUNBLDRCQUFBO0VBQ0Esc0JBQUE7QUFHSjtBQUFBO0VBQ0Usa0JBQUE7QUFHRjtBQUFBO0VBQ0UsZUFBQTtBQUdGO0FBQUE7RUFDRSxVQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtBQUdGO0FBQUE7RUFDRSxlQUFBO0VBQ0EsY0FBQTtBQUdGO0FBQUE7RUFDRSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7QUFHRjtBQUFBO0VBQ0UsZUFBQTtBQUdGIiwiZmlsZSI6Im11a2FkZXBhbi5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY29udGFpbmVyIHtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIGxlZnQ6IDA7XHJcbiAgICBib3R0b206IDEwdmg7XHJcbiAgICByaWdodDogMDtcclxuICAgIHRvcDogMnZoO1xyXG4gICAgQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDoxMjAwcHgpIGFuZCAobWluLXdpZHRoOiA0NTBweCkge1xyXG4gICAgICAgIGJhY2tncm91bmQ6IHdoaXRlO1xyXG4gICAgfVxyXG59XHJcblxyXG5pb24tdG9vbGJhciB7XHJcbiAgICAtLW1pbi1oZWlnaHQ6IDUwcHg7XHJcbiAgICBjb2xvcjogIzJDOURERTtcclxuICB9XHJcblxyXG4gaW9uLWJ1dHRvbiB7XHJcbiAgICAgIC0tYm9yZGVyLXJhZGl1czogMzBweDtcclxuICB9XHJcblxyXG4gIC5zbWFsbGxvZ28ge1xyXG4gICAgLXdlYmtpdC1hbmltYXRpb246IHNjYWxlLXVwLWNlbnRlciAxcyBjdWJpYy1iZXppZXIoMC4zOTAsIDAuNTc1LCAwLjU2NSwgMS4wMDApIGluZmluaXRlIGFsdGVybmF0ZS1yZXZlcnNlIGJvdGg7XHJcbiAgICBhbmltYXRpb246IHNjYWxlLXVwLWNlbnRlciAxcyBjdWJpYy1iZXppZXIoMC4zOTAsIDAuNTc1LCAwLjU2NSwgMS4wMDApIGluZmluaXRlIGFsdGVybmF0ZS1yZXZlcnNlIGJvdGg7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIG1hcmdpbi1sZWZ0OiBhdXRvO1xyXG4gICAgbWFyZ2luLXJpZ2h0OiBhdXRvO1xyXG4gIH1cclxuXHJcbiAgaW9uLWNvbnRlbnQge1xyXG4gICAgLS1iYWNrZ3JvdW5kOiBub25lO1xyXG4gICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKCcvYXNzZXRzL2ltYWdlcy9ocl9iZy5wbmcnKTtcclxuICAgIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlciB0b3A7XHJcbiAgICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xyXG4gICAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcclxuICB9XHJcbiAgXHJcbiNyZWFsVGltZSB7XHJcbiAgbWFyZ2luLWJvdHRvbTogMHB4O1xyXG59XHJcblxyXG5pb24tZGF0ZXRpbWUge1xyXG4gIHBhZGRpbmctdG9wOiAwJTtcclxufVxyXG5cclxuLmxvY2F0aW9uIHtcclxuICB3aWR0aDogNjAlO1xyXG4gIG1hcmdpbi1sZWZ0OiBhdXRvO1xyXG4gIG1hcmdpbi1yaWdodDogYXV0bztcclxufVxyXG5cclxuaW9uLWljb24ge1xyXG4gIGZvbnQtc2l6ZTogMzVweDtcclxuICBjb2xvcjogIzJDOURERTtcclxufVxyXG5cclxuaW9uLWdyaWQge1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICBtYXJnaW4tdG9wOiA0MHB4O1xyXG4gIG1hcmdpbi1ib3R0b206IGF1dG87XHJcbn1cclxuXHJcbi5yb3dCYXdhaCB7XHJcbiAgZm9udC1zaXplOiAxMHB4O1xyXG59Il19 */";
       /***/
     }
   }]);

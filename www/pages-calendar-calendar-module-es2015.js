@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("#container {\n  text-align: center;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n#container strong {\n  font-size: 20px;\n  line-height: 26px;\n}\n\n#container p {\n  font-size: 16px;\n  line-height: 22px;\n  color: #8c8c8c;\n  margin: 0;\n}\n\n#container a {\n  text-decoration: none;\n}\n\nion-toolbar {\n  --min-height: 50px;\n  color: #2C9DDE;\n}\n\nion-content {\n  --background: none;\n  background-image: url(\"/assets/images/hr_bg.png\");\n  background-position: center top;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL2NhbGVuZGFyLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFrQjtFQUVsQixrQkFBa0I7RUFDbEIsT0FBTztFQUNQLFFBQVE7RUFDUixRQUFRO0VBQ1IsMkJBQTJCO0FBQTdCOztBQUdBO0VBQ0UsZUFBZTtFQUNmLGlCQUFpQjtBQUFuQjs7QUFHQTtFQUNFLGVBQWU7RUFDZixpQkFBaUI7RUFFakIsY0FBYztFQUVkLFNBQVM7QUFGWDs7QUFLQTtFQUNFLHFCQUFxQjtBQUZ2Qjs7QUFLRTtFQUNFLGtCQUFhO0VBQ2IsY0FBYztBQUZsQjs7QUFLRTtFQUNFLGtCQUFhO0VBQ2IsaURBQWlEO0VBQ2pELCtCQUErQjtFQUMvQiw0QkFBNEI7RUFDNUIsc0JBQXNCO0FBRjFCIiwiZmlsZSI6ImNhbGVuZGFyLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiNjb250YWluZXIge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG5cbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBsZWZ0OiAwO1xuICByaWdodDogMDtcbiAgdG9wOiA1MCU7XG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNTAlKTtcbn1cblxuI2NvbnRhaW5lciBzdHJvbmcge1xuICBmb250LXNpemU6IDIwcHg7XG4gIGxpbmUtaGVpZ2h0OiAyNnB4O1xufVxuXG4jY29udGFpbmVyIHAge1xuICBmb250LXNpemU6IDE2cHg7XG4gIGxpbmUtaGVpZ2h0OiAyMnB4O1xuXG4gIGNvbG9yOiAjOGM4YzhjO1xuXG4gIG1hcmdpbjogMDtcbn1cblxuI2NvbnRhaW5lciBhIHtcbiAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xufVxuXG4gIGlvbi10b29sYmFyIHtcbiAgICAtLW1pbi1oZWlnaHQ6IDUwcHg7XG4gICAgY29sb3I6ICMyQzlEREU7XG4gIH1cblxuICBpb24tY29udGVudCB7XG4gICAgLS1iYWNrZ3JvdW5kOiBub25lO1xuICAgIGJhY2tncm91bmQtaW1hZ2U6IHVybCgnL2Fzc2V0cy9pbWFnZXMvaHJfYmcucG5nJyk7XG4gICAgYmFja2dyb3VuZC1wb3NpdGlvbjogY2VudGVyIHRvcDtcbiAgICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xuICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XG4gIH0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("#container {\n  text-align: center;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n#container strong {\n  font-size: 20px;\n  line-height: 26px;\n}\n\n#container p {\n  font-size: 16px;\n  line-height: 22px;\n  color: #8c8c8c;\n  margin: 0;\n}\n\n#container a {\n  text-decoration: none;\n}\n\nion-toolbar {\n  --min-height: 50px;\n  color: #2C9DDE;\n}\n\nion-content {\n  --background: none;\n  background-image: url(\"/assets/images/hr_bg.png\");\n  background-position: center top;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxjYWxlbmRhci5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBQTtFQUVBLGtCQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxRQUFBO0VBQ0EsMkJBQUE7QUFBRjs7QUFHQTtFQUNFLGVBQUE7RUFDQSxpQkFBQTtBQUFGOztBQUdBO0VBQ0UsZUFBQTtFQUNBLGlCQUFBO0VBRUEsY0FBQTtFQUVBLFNBQUE7QUFGRjs7QUFLQTtFQUNFLHFCQUFBO0FBRkY7O0FBS0U7RUFDRSxrQkFBQTtFQUNBLGNBQUE7QUFGSjs7QUFLRTtFQUNFLGtCQUFBO0VBQ0EsaURBQUE7RUFDQSwrQkFBQTtFQUNBLDRCQUFBO0VBQ0Esc0JBQUE7QUFGSiIsImZpbGUiOiJjYWxlbmRhci5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjY29udGFpbmVyIHtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcblxyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBsZWZ0OiAwO1xyXG4gIHJpZ2h0OiAwO1xyXG4gIHRvcDogNTAlO1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNTAlKTtcclxufVxyXG5cclxuI2NvbnRhaW5lciBzdHJvbmcge1xyXG4gIGZvbnQtc2l6ZTogMjBweDtcclxuICBsaW5lLWhlaWdodDogMjZweDtcclxufVxyXG5cclxuI2NvbnRhaW5lciBwIHtcclxuICBmb250LXNpemU6IDE2cHg7XHJcbiAgbGluZS1oZWlnaHQ6IDIycHg7XHJcblxyXG4gIGNvbG9yOiAjOGM4YzhjO1xyXG5cclxuICBtYXJnaW46IDA7XHJcbn1cclxuXHJcbiNjb250YWluZXIgYSB7XHJcbiAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xyXG59XHJcblxyXG4gIGlvbi10b29sYmFyIHtcclxuICAgIC0tbWluLWhlaWdodDogNTBweDtcclxuICAgIGNvbG9yOiAjMkM5RERFO1xyXG4gIH1cclxuXHJcbiAgaW9uLWNvbnRlbnQge1xyXG4gICAgLS1iYWNrZ3JvdW5kOiBub25lO1xyXG4gICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKCcvYXNzZXRzL2ltYWdlcy9ocl9iZy5wbmcnKTtcclxuICAgIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlciB0b3A7XHJcbiAgICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xyXG4gICAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcclxuICB9Il19 */");
 
 /***/ }),
 
@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar color='light'>\n    <ion-title>Calendar</ion-title>\n    \n    <ion-buttons slot=\"end\" style=\"margin-right: 20px;\">\n        <ion-button (click)=\"today()\">Today</ion-button>\n    </ion-buttons>  \n    <!-- <ion-buttons slot=\"end\">\n      <ion-button (click)=\"openCalModal()\">\n        <ion-icon name=\"add\" slot=\"icon-only\"></ion-icon>\n      </ion-button>\n    </ion-buttons> -->\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-title style=\"text-align: center; font-size: x-large; color: azure; background-color: #2C9DDE;\">\n    {{ viewTitle }}\n  </ion-title>\n   <!-- Change the display calendar -->\n   <ion-row> \n    <ion-col size=\"4\">\n      <ion-button expand=\"block\" size=\"small\" [color]=\"calendar.mode == 'month' ? 'primary' : 'secondary'\" \n      (click)=\"changeMode('month')\">Month</ion-button>\n    </ion-col>\n    \n    <ion-col size=\"4\">\n      <ion-button expand=\"block\" size=\"small\" [color]=\"calendar.mode == 'week' ? 'primary' : 'secondary'\" \n      (click)=\"changeMode('week')\">Week</ion-button>\n    </ion-col>\n    \n    <ion-col size=\"4\">\n      <ion-button expand=\"block\" size=\"small\" [color]=\"calendar.mode == 'day' ? 'primary' : 'secondary'\" \n      (click)=\"changeMode('day')\">Day</ion-button>\n    </ion-col>\n    \n    \n    <!-- Move back one screen -->\n    <ion-col size=\"6\" style=\"text-align: start;\">\n        <ion-button fill=\"clear\" size=\"small\" (click)=\"back()\">\n            <ion-icon name=\"arrow-back\" slot=\"icon-only\"></ion-icon>\n        </ion-button>\n    </ion-col>\n    <!-- Move forward -->\n    <ion-col size=\"6\" style=\"text-align: end;\">\n        <ion-button fill=\"clear\" size=\"small\" (click)=\"next()\">\n            <ion-icon name=\"arrow-forward\" slot=\"icon-only\"></ion-icon>\n        </ion-button>\n    </ion-col> \n\n  </ion-row>   \n\n  <!--(onCurrentDateChanged)=\"onCurrentDateChanged($event)\"-->\n  \n  <calendar [eventSource]=\"eventSource\"\n    [calendarMode]=\"calendar.mode\"\n    [currentDate]=\"calendar.currentDate\"\n    (onRangeChanged)=\"reloadSource(startTime, endTime)\"\n    (onEventSelected)=\"onEventSelected($leaveDetail)\"\n    (onTitleChanged)=\"onViewTitleChanged($event)\"\n    \n    startHour=\"6\"\n    endHour=\"20\"\n    step=\"30\"\n    startingDayWeek=\"1\"\n    startingDayMonth=\"1\">\n  </calendar>\n  <!-- <ion-segment [(ngModel)]=\"calendar.mode\">\n    <ion-segment-button value=\"month\">\n      <ion-label>Month</ion-label>\n    </ion-segment-button>\n    <ion-segment-button value=\"week\">\n      <ion-label>Week</ion-label>\n    </ion-segment-button>\n    <ion-segment-button value=\"day\">\n      <ion-label>Day</ion-label>\n    </ion-segment-button>\n  </ion-segment>\n \n  <ion-row>\n    <ion-col size=\"6\">\n      <ion-button (click)=\"createRandomEvents()\" expand=\"block\" fill=\"outline\">\n        Add random events\n      </ion-button>\n    </ion-col>\n    <ion-col size=\"6\">\n      <ion-button (click)=\"removeEvents()\" expand=\"block\" fill=\"outline\">\n        Remove all events\n      </ion-button>\n    </ion-col>\n  </ion-row> -->\n \n  <!-- <ion-row> -->\n    <!-- Move back one screen of the slides -->\n    <!-- <ion-col size=\"2\">\n      <ion-button fill=\"clear\" (click)=\"back()\">\n        <ion-icon name=\"arrow-back\" slot=\"icon-only\"></ion-icon>\n      </ion-button>\n    </ion-col>\n \n    <ion-col size=\"8\" class=\"ion-text-center\">\n      <h2>{{ viewTitle }}</h2>\n    </ion-col> -->\n \n    <!-- Move forward one screen of the slides -->\n    <!-- <ion-col size=\"2\">\n      <ion-button fill=\"clear\" (click)=\"next()\">\n        <ion-icon name=\"arrow-forward\" slot=\"icon-only\"></ion-icon>\n      </ion-button>\n    </ion-col>\n  </ion-row> -->\n\n  <!-- <calendar\n  [eventSource]=\"eventSource\"\n  [calendarMode]=\"calendar.mode\"\n  [currentDate]=\"calendar.currentDate\"\n  (onEventSelected)=\"onEventSelected($event)\"\n  (onTitleChanged)=\"onViewTitleChanged($event)\"\n  startHour=\"6\"\n  endHour=\"20\"\n  step=\"30\"\n  startingDayWeek=\"1\"\n  [monthviewDisplayEventTemplate]=\"template\"\n>\n</calendar> -->\n \n<!-- <ng-template #template let-view=\"view\" let-row=\"row\" let-col=\"col\">\n  <div [class.with-event]=\"view.dates[row*7+col].events.length\">\n    {{view.dates[row*7+col].label}}\n    <div class=\"indicator-container\">\n      <div class=\"event-indicator\" *ngFor=\"let e of view.dates[row*7+col].events\"></div>\n    </div>\n  </div>\n</ng-template> -->\n  \n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\r\n  <ion-toolbar color='light'>\r\n    <ion-title>Calendar</ion-title>\r\n    \r\n    <ion-buttons slot=\"end\" style=\"margin-right: 20px;\">\r\n        <ion-button (click)=\"today()\">Today</ion-button>\r\n    </ion-buttons>  \r\n   <!-- <ion-buttons slot=\"end\">\r\n      <ion-button (click)=\"openCalModal()\">\r\n        <ion-icon name=\"add\" slot=\"icon-only\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons> -->\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-segment [(ngModel)]=\"calendar.mode\">\r\n    <ion-segment-button value=\"month\">\r\n      <ion-label>Month</ion-label>\r\n    </ion-segment-button>\r\n   <!-- <ion-segment-button value=\"week\">\r\n      <ion-label>Week</ion-label>\r\n    </ion-segment-button>\r\n    <ion-segment-button value=\"day\">\r\n      <ion-label>Day</ion-label>\r\n    </ion-segment-button> -->\r\n  </ion-segment>\r\n\r\n  <ion-row>\r\n    <!-- Move back one screen of the slides -->\r\n    <ion-col size=\"2\">\r\n      <ion-button fill=\"clear\" (click)=\"back()\">\r\n        <ion-icon name=\"arrow-back\" slot=\"icon-only\"></ion-icon>\r\n      </ion-button>\r\n    </ion-col>\r\n \r\n    <ion-col size=\"8\" class=\"ion-text-center\">\r\n      <h2>{{ viewTitle }}</h2>\r\n    </ion-col>\r\n \r\n    <!-- Move forward one screen of the slides -->\r\n    <ion-col size=\"2\">\r\n      <ion-button fill=\"clear\" (click)=\"next()\">\r\n        <ion-icon name=\"arrow-forward\" slot=\"icon-only\"></ion-icon>\r\n      </ion-button>\r\n    </ion-col>\r\n  </ion-row>\r\n\r\n<calendar\r\n  [eventSource]=\"eventSource\"\r\n  [calendarMode]=\"calendar.mode\"\r\n  [currentDate]=\"calendar.currentDate\"\r\n  (onEventSelected)=\"onEventSelected($event)\"\r\n  (onTitleChanged)=\"onViewTitleChanged($event)\"\r\n  (onEventSelected)=\"onEventSelected($event)\"\r\n  (onTitleChanged)=\"onViewTitleChanged($event)\"\r\n  (onTimeSelected)=\"onTimeSelected($event)\">\r\n</calendar>\r\n  \r\n</ion-content>");
 
 /***/ }),
 
@@ -187,6 +187,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "ofXK");
 /* harmony import */ var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/app/services/auth.service */ "lGQG");
+/* harmony import */ var _services_storage_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../services/storage.service */ "n90K");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ "tyNb");
+
+
 
 
 
@@ -196,18 +200,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let CalendarPage = class CalendarPage {
-    constructor(alertCtrl, locale, popoverController, authService, nav) {
+    constructor(alertCtrl, datePipe, locale, popoverController, authService, router, storageService, nav) {
         this.alertCtrl = alertCtrl;
+        this.datePipe = datePipe;
         this.locale = locale;
         this.popoverController = popoverController;
         this.authService = authService;
+        this.router = router;
+        this.storageService = storageService;
         this.nav = nav;
-        this.viewTitle = "";
+        this.eventSource = [];
+        this.calendar = {
+            mode: 'month',
+            //mode: 'month' as CalendarMode,
+            currentDate: new Date(),
+            queryMode: 'remote'
+        };
         this.postData = {
             staff_id: '',
             leavetype: '',
             reason: '',
-            currentDate: '',
+            currentDate: Date,
             endDate: '',
             image: '',
             halfday1: '',
@@ -226,60 +239,75 @@ let CalendarPage = class CalendarPage {
             allDay: false
         };
         this.minDate = new Date().toISOString();
-        this.eventSource = [];
-        this.calendar = {
-            mode: 'month',
-            currentDate: new Date(),
-        };
     }
     ngOnInit() {
         this.authService.userData$.subscribe((res) => {
             this.displayUserData = res;
         });
     }
-    ionViewWillEnter() {
-        this.authService.getUserDataPromise()
-            .then((res = {}) => {
-            // console.log(res);
-            this.userInfo = res;
-            this.authService.leavedetailPromise({ staffid: this.userInfo.staff_id })
-                .then(res => {
-                console.log(res);
-                this.leaveDetail = res[0];
-                this.eventSource = this.leaveDetail;
-            }, err => {
-                console.log(err);
-            });
-        }, err => {
-            this.nav.navigateBack('login');
+    ngAfterViewInit() {
+        this.getEvents('2022-04-01', '2022-04-30');
+    }
+    getEvents(start, end) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            //console.log('get events');
+            let events = [];
+            let startDate = this.datePipe.transform(start, 'yyyy-MM-dd');
+            let endDate = this.datePipe.transform(end, 'yyyy-MM-dd');
+            const holidays = yield this.getLeave(startDate, endDate);
+            console.log('holidays: ', holidays);
+            if (holidays) {
+                //map() method creates a new array populated with the results of calling a provided function
+                holidays.map(item => {
+                    //new Date(getField("dob").value);
+                    var datestart = new Date(item.datefrom);
+                    let startTime = new Date(Date.UTC(datestart.getUTCFullYear(), datestart.getUTCMonth(), datestart.getUTCDate()));
+                    var dateend = new Date(item.dateend);
+                    let endTime = new Date(Date.UTC(dateend.getUTCFullYear(), dateend.getUTCMonth(), dateend.getUTCDate()));
+                    //let endTime = new Date(Date.UTC(dateend.getUTCFullYear(), dateend.getUTCMonth(), dateend.getUTCDate()));
+                    events.push({
+                        title: item.reason,
+                        startTime: startTime,
+                        endTime: endTime,
+                        allDay: false,
+                    });
+                });
+                this.eventSource = events;
+            }
+            console.log('event source: ', this.eventSource);
         });
     }
-    changeMode(mode) {
-        this.calendar.mode = mode;
-    }
-    back() {
-        var swiper = document.querySelector('.swiper-container')['swiper'];
-        swiper.slidePrev();
+    getLeave(startDate, endDate) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            yield this.authService.getUserDataPromise()
+                .then((res = {}) => {
+                console.log(1);
+                this.userInfo = this.displayUserData;
+            }, err => {
+                this.nav.navigateBack('login');
+            });
+            yield this.authService.leavedetailPromise({ staffid: this.userInfo.staff_id })
+                .then(res => {
+                console.log("leave detail", res);
+                this.leaveDetail = res[0];
+                //this.eventSource=this.leaveDetail;
+            }, err => {
+                console.log("leave detail err", err);
+                return this.leaveDetail;
+            });
+            return this.leaveDetail;
+            //this.viewTitle = title;
+            //console.log("leave detail",res);
+        });
     }
     next() {
-        var swiper = document.querySelector('.swiper-container')['swiper'];
-        swiper.slideNext();
+        this.myCal.slideNext();
+    }
+    back() {
+        this.myCal.slidePrev();
     }
     today() {
         this.calendar.currentDate = new Date();
-    }
-    onEventSelected(event) {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            let start = Object(_angular_common__WEBPACK_IMPORTED_MODULE_6__["formatDate"])(event.startTime, 'medium', this.locale);
-            let end = Object(_angular_common__WEBPACK_IMPORTED_MODULE_6__["formatDate"])(event.endTime, 'medium', this.locale);
-            const alert = yield this.alertCtrl.create({
-                header: event.title,
-                subHeader: event.desc,
-                message: 'From:' + start + ' <br><br>To: ' + end,
-                buttons: ['OK']
-            });
-            alert.present();
-        });
     }
     onViewTitleChanged(title) {
         this.viewTitle = title;
@@ -290,12 +318,24 @@ let CalendarPage = class CalendarPage {
         selected.setHours(selected.getHours() + 1);
         this.event.endTime = (selected.toISOString());
     }
+    onCurrentDateChanged(event) {
+        var today = new Date();
+        today.setHours(0, 0, 0, 0);
+        event.setHours(0, 0, 0, 0);
+        this.isToday = today.getTime() === event.getTime();
+    }
+    onEventSelected(event) {
+        console.log('Event selected:' + event.startTime + '-' + event.endTime + ',' + event.title);
+    }
 };
 CalendarPage.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["AlertController"] },
+    { type: _angular_common__WEBPACK_IMPORTED_MODULE_6__["DatePipe"] },
     { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Inject"], args: [_angular_core__WEBPACK_IMPORTED_MODULE_4__["LOCALE_ID"],] }] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["PopoverController"] },
     { type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_7__["AuthService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"] },
+    { type: _services_storage_service__WEBPACK_IMPORTED_MODULE_8__["StorageService"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["NavController"] }
 ];
 CalendarPage.propDecorators = {
@@ -309,6 +349,129 @@ CalendarPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     })
 ], CalendarPage);
 
+/*
+
+  public postData = {
+    staff_id: '',
+    leavetype: '',
+    reason: '',
+    currentDate: '',
+    endDate: '',
+    image: '',
+    halfday1: '',
+    halfday2: '',
+    data: '',
+    status: ''
+  }
+
+  public displayUserData: any;
+
+  userInfo:any={};
+  leaveDetail:any=[];
+  leave:any={};
+
+  reason:any;
+  currentDate:any;
+  endDate:any;
+  halfday1:any;
+  halfday2:any;
+
+    event={
+      title:'',
+      desc:'',
+      startTime:'',
+      endTime:'',
+      allDay:false
+  };
+
+  minDate=new Date().toISOString();
+  
+  eventSource = [];
+  viewTitle;
+
+  calendar = {
+    mode:'month',
+    //mode: 'month' as CalendarMode,
+    currentDate: new Date(),
+    queryMode: 'remote'
+  }
+    
+    ionViewWillEnter(title)
+    {
+      this.leaveDetail=[];
+      this.authService.getUserDataPromise()
+      .then((res:any={})=>{
+        // console.log(res);
+        this.userInfo=res;
+
+        this.authService.leavedetailPromise({staffid:this.userInfo.staff_id})
+        .then(res=>{
+          console.log("leave detail",res);
+          this.leaveDetail=res[0];
+          this.eventSource=this.leaveDetail;
+        },err=>{
+          console.log("leave detail",err);
+        })
+  
+      },err=>{
+        this.nav.navigateBack('login')
+      })
+  
+      //this.viewTitle = title;
+  
+    }
+    
+    
+
+    changeMode(mode) {
+      this.calendar.mode = mode;
+    }
+
+    today(){
+      this.calendar.currentDate= new Date();
+    }
+
+    onViewTitleChanged(title){
+      this.viewTitle=title;
+    }
+
+    loadEvents() {
+      this.eventSource = this.leaveDetail;
+    }
+
+    // Calendar event was clicked
+    async onEventSelected(event) {
+      // Use Angular date pipe for conversion
+      let start = formatDate(event.startTime, 'medium', this.locale);
+      let end = formatDate(event.endTime, 'medium', this.locale);
+      
+      const alert = await this.alertCtrl.create({
+        header: event.title,
+        subHeader: event.desc,
+        message: 'From: ' + start + '<br><br>To: ' + end,
+        buttons: ['OK'],
+      });
+      alert.present();
+    }
+
+  
+    
+    onTimeSelected(ev){
+      let selected = new Date(ev.selectedTime);
+      this.event.startTime = selected.toISOString();
+      selected.setHours(selected.getHours()+1);
+      this.event.endTime = (selected.toISOString());
+  
+    }
+
+   onRangeChanged = (ev: { startTime: Date, endTime: Date }) => {
+      this.event.query(ev, (events) => {
+          this.eventSource = events;
+      });
+    }
+
+
+} */ 
 
 
 /***/ }),
@@ -346,6 +509,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 Object(_angular_common__WEBPACK_IMPORTED_MODULE_2__["registerLocaleData"])(_angular_common_locales_de__WEBPACK_IMPORTED_MODULE_9___default.a);
 let CalendarPageModule = class CalendarPageModule {
 };
@@ -360,7 +524,7 @@ CalendarPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
             src_app_pages_cal_modal_cal_modal_module__WEBPACK_IMPORTED_MODULE_8__["CalModalPageModule"]
         ],
         declarations: [_calendar_page__WEBPACK_IMPORTED_MODULE_6__["CalendarPage"]],
-        providers: [
+        providers: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["DatePipe"],
             { provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__["LOCALE_ID"], useValue: 'en-US' }
         ]
     })

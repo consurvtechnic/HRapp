@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-content >\n  <app-slides></app-slides>\n  <app-start></app-start>\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-content >\r\n  <app-slides></app-slides>\r\n  <app-start></app-start>\r\n</ion-content>");
 
 /***/ }),
 

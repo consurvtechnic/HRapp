@@ -155,7 +155,7 @@
                         _this2.authService.leavedetailPromise({
                           staffid: _this2.userInfo.staff_id
                         }).then(function (res) {
-                          console.log('abc', res[0]);
+                          console.log('staffinfo', res[0]);
                           _this2.leaveMaster = res[0];
 
                           _this2.segList(res[0]);
@@ -252,12 +252,17 @@
             }));
           }
         }, {
+          key: "sortFunc",
+          value: function sortFunc(a, b) {
+            return new Date(b.datefrom).getTime() - new Date(a.datefrom).getTime();
+          }
+        }, {
           key: "segList",
           value: function segList(list) {
             for (var x = 0; x < list.length; x++) {
-              if (Number(list[x].approved) == 2) {
+              if (Number(list[x].approved) == 2 && Number(list[x].hod) !== 0) {
                 this.approvedList.push(list[x]);
-              } else if (Number(list[x].approved) < 2) {
+              } else if (Number(list[x].approved) < 2 && Number(list[x].hod) !== 0) {
                 this.pendingList.push(list[x]);
               }
             }
@@ -337,7 +342,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "ion-toolbar {\n  --min-height: 50px;\n}\n\nion-toolbar {\n  --min-height: 50px;\n  color: #2C9DDE;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL2xlYXZlbGlzdC5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBYTtBQUNqQjs7QUFFRTtFQUNFLGtCQUFhO0VBQ2IsY0FBYztBQUNsQiIsImZpbGUiOiJsZWF2ZWxpc3QucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLXRvb2xiYXIge1xuICAgIC0tbWluLWhlaWdodDogNTBweDtcbiAgfVxuXG4gIGlvbi10b29sYmFyIHtcbiAgICAtLW1pbi1oZWlnaHQ6IDUwcHg7XG4gICAgY29sb3I6ICMyQzlEREU7XG59Il19 */";
+      __webpack_exports__["default"] = "ion-toolbar {\n  --min-height: 50px;\n}\n\nion-toolbar {\n  --min-height: 50px;\n  color: #2C9DDE;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxsZWF2ZWxpc3QucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQUE7QUFDSjs7QUFFRTtFQUNFLGtCQUFBO0VBQ0EsY0FBQTtBQUNKIiwiZmlsZSI6ImxlYXZlbGlzdC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tdG9vbGJhciB7XHJcbiAgICAtLW1pbi1oZWlnaHQ6IDUwcHg7XHJcbiAgfVxyXG5cclxuICBpb24tdG9vbGJhciB7XHJcbiAgICAtLW1pbi1oZWlnaHQ6IDUwcHg7XHJcbiAgICBjb2xvcjogIzJDOURERTtcclxufSJdfQ== */";
       /***/
     },
 
@@ -357,7 +362,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\n  <ion-toolbar color=\"light\">\n    <ion-title>Leave List</ion-title>\n    <ion-buttons *ngIf=\"showBtn\" slot=\"end\" (click)=\"goToLeaveHistory()\">\n      <ion-button>\n        <ion-icon slot=\"icon-only\" name=\"clipboard-outline\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n\n<ion-content>\n  <ion-segment [(ngModel)]=\"selectTabs\" mode=\"md\">\n\n    <ion-segment-button value=\"pending\">\n      <ion-icon name=\"hourglass-outline\"></ion-icon>\n        <ion-label>Pending</ion-label>\n    </ion-segment-button>\n    \n    <ion-segment-button value=\"approved\">\n      <ion-icon name=\"checkmark-circle-outline\"></ion-icon>\n        <ion-label>Approved</ion-label>\n    </ion-segment-button>\n\n  </ion-segment>\n\n  <div *ngIf=\"selectTabs == 'pending'\" >\n    <ion-list>\n      <ion-item color='secondary'>\n        <ion-grid>\n          <ion-row>\n            <ion-col>Name:</ion-col>\n            <ion-col>Type:</ion-col>\n            <ion-col>Date:</ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-item>\n      <ion-item *ngIf=\"pendingList.length==0\">\n        No pending leave found\n      </ion-item>\n      <ion-item *ngFor=\"let item of pendingList\">\n        <ion-grid>\n          <ion-row (click)='openModal(item)'>\n            <ion-col>\n              {{item.staff_name}}\n            </ion-col>\n            <ion-col>\n              {{item.leavetype}}\n            </ion-col>\n            <ion-col>\n              <span *ngIf=\"item.datehalf=='0000-00-00'\">\n              {{item.datefrom}}-{{item.dateend}}\n              </span>\n              <span *ngIf=\"item.datehalf!='0000-00-00'\">\n              {{item.datehalf}}\n              </span>\n            </ion-col>\n          </ion-row>\n          <ion-col>\n            \n          </ion-col>\n        </ion-grid>\n      </ion-item>\n    </ion-list>\n  </div>\n\n  <div *ngIf=\"selectTabs == 'approved'\">\n    <ion-list>\n      <ion-item color='secondary'>\n        <ion-grid>\n          <ion-row>\n            <ion-col>Name:</ion-col>\n            <ion-col>Type:</ion-col>\n            <ion-col>Date:</ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-item>\n      <ion-item *ngIf=\"approvedList.length==0\">\n        No approved leave found\n      </ion-item>\n      <ion-item *ngFor=\"let item of approvedList\">\n        <ion-grid>\n          <ion-row (click)='openModalApprove(item)'>\n            <ion-col>\n              {{item.staff_name}}\n            </ion-col>\n            <ion-col>\n              {{item.leavetype}}\n            </ion-col>\n            <ion-col>\n              <span *ngIf=\"item.datehalf=='0000-00-00'\">\n              {{item.datefrom}}-{{item.dateend}}\n              </span>\n              <span *ngIf=\"item.datehalf!='0000-00-00'\">\n              {{item.datehalf}}\n              </span>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-item>\n    </ion-list>\n  </div>\n\n</ion-content>\n";
+      __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar color=\"light\">\r\n    <ion-title>Leave List</ion-title>\r\n    <ion-buttons *ngIf=\"showBtn\" slot=\"end\" (click)=\"goToLeaveHistory()\">\r\n      <ion-button>\r\n        <ion-icon slot=\"icon-only\" name=\"clipboard-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n\r\n<ion-content>\r\n  <ion-segment [(ngModel)]=\"selectTabs\" mode=\"md\">\r\n\r\n    <ion-segment-button value=\"pending\">\r\n      <ion-icon name=\"hourglass-outline\"></ion-icon>\r\n        <ion-label>Pending</ion-label>\r\n    </ion-segment-button>\r\n    \r\n    <ion-segment-button value=\"approved\">\r\n      <ion-icon name=\"checkmark-circle-outline\"></ion-icon>\r\n        <ion-label>Approved</ion-label>\r\n    </ion-segment-button>\r\n\r\n  </ion-segment>\r\n\r\n  <div *ngIf=\"selectTabs == 'pending'\" >\r\n    <ion-list>\r\n      <ion-item color='secondary'>\r\n        <ion-grid>\r\n          <ion-row>\r\n            <ion-col>Name:</ion-col>\r\n            <ion-col>Type:</ion-col>\r\n            <ion-col>Date:</ion-col>\r\n          </ion-row>\r\n        </ion-grid>\r\n      </ion-item>\r\n      <ion-item *ngIf=\"pendingList.length==0\">\r\n        No pending leave found\r\n      </ion-item>\r\n      <ion-item *ngFor=\"let item of pendingList.sort(sortFunc)\">\r\n        <ion-grid>\r\n          <ion-row (click)='openModal(item)'>\r\n            <ion-col>\r\n              {{item.staff_name}}\r\n            </ion-col>\r\n            <ion-col>\r\n              {{item.leavetype}}\r\n            </ion-col>\r\n            <ion-col>\r\n              <span *ngIf=\"item.datehalf=='0000-00-00'\">\r\n              {{item.datefrom}}-{{item.dateend}}\r\n              </span>\r\n              <span *ngIf=\"item.datehalf!='0000-00-00'\">\r\n              {{item.datehalf}}\r\n              </span>\r\n            </ion-col>\r\n          </ion-row>\r\n          <ion-col>\r\n            \r\n          </ion-col>\r\n        </ion-grid>\r\n      </ion-item>\r\n    </ion-list>\r\n  </div>\r\n\r\n  <div *ngIf=\"selectTabs == 'approved'\">\r\n    <ion-list>\r\n      <ion-item color='secondary'>\r\n        <ion-grid>\r\n          <ion-row>\r\n            <ion-col>Name:</ion-col>\r\n            <ion-col>Type:</ion-col>\r\n            <ion-col>Date:</ion-col>\r\n          </ion-row>\r\n        </ion-grid>\r\n      </ion-item>\r\n      <ion-item *ngIf=\"approvedList.length==0\">\r\n        No approved leave found\r\n      </ion-item>\r\n      <ion-item *ngFor=\"let item of approvedList\">\r\n        <ion-grid>\r\n          <ion-row (click)='openModalApprove(item)'>\r\n            <ion-col>\r\n              {{item.staff_name}}\r\n            </ion-col>\r\n            <ion-col>\r\n              {{item.leavetype}}\r\n            </ion-col>\r\n            <ion-col>\r\n              <span *ngIf=\"item.datehalf=='0000-00-00'\">\r\n              {{item.datefrom}}-{{item.dateend}}\r\n              </span>\r\n              <span *ngIf=\"item.datehalf!='0000-00-00'\">\r\n              {{item.datehalf}}\r\n              </span>\r\n            </ion-col>\r\n          </ion-row>\r\n        </ion-grid>\r\n      </ion-item>\r\n    </ion-list>\r\n  </div>\r\n\r\n</ion-content>\r\n";
       /***/
     },
 

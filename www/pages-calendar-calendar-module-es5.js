@@ -22,7 +22,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "#container {\n  text-align: center;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n#container strong {\n  font-size: 20px;\n  line-height: 26px;\n}\n\n#container p {\n  font-size: 16px;\n  line-height: 22px;\n  color: #8c8c8c;\n  margin: 0;\n}\n\n#container a {\n  text-decoration: none;\n}\n\nion-toolbar {\n  --min-height: 50px;\n  color: #2C9DDE;\n}\n\nion-content {\n  --background: none;\n  background-image: url(\"/assets/images/hr_bg.png\");\n  background-position: center top;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL2NhbGVuZGFyLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFrQjtFQUVsQixrQkFBa0I7RUFDbEIsT0FBTztFQUNQLFFBQVE7RUFDUixRQUFRO0VBQ1IsMkJBQTJCO0FBQTdCOztBQUdBO0VBQ0UsZUFBZTtFQUNmLGlCQUFpQjtBQUFuQjs7QUFHQTtFQUNFLGVBQWU7RUFDZixpQkFBaUI7RUFFakIsY0FBYztFQUVkLFNBQVM7QUFGWDs7QUFLQTtFQUNFLHFCQUFxQjtBQUZ2Qjs7QUFLRTtFQUNFLGtCQUFhO0VBQ2IsY0FBYztBQUZsQjs7QUFLRTtFQUNFLGtCQUFhO0VBQ2IsaURBQWlEO0VBQ2pELCtCQUErQjtFQUMvQiw0QkFBNEI7RUFDNUIsc0JBQXNCO0FBRjFCIiwiZmlsZSI6ImNhbGVuZGFyLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiNjb250YWluZXIge1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG5cbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBsZWZ0OiAwO1xuICByaWdodDogMDtcbiAgdG9wOiA1MCU7XG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNTAlKTtcbn1cblxuI2NvbnRhaW5lciBzdHJvbmcge1xuICBmb250LXNpemU6IDIwcHg7XG4gIGxpbmUtaGVpZ2h0OiAyNnB4O1xufVxuXG4jY29udGFpbmVyIHAge1xuICBmb250LXNpemU6IDE2cHg7XG4gIGxpbmUtaGVpZ2h0OiAyMnB4O1xuXG4gIGNvbG9yOiAjOGM4YzhjO1xuXG4gIG1hcmdpbjogMDtcbn1cblxuI2NvbnRhaW5lciBhIHtcbiAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xufVxuXG4gIGlvbi10b29sYmFyIHtcbiAgICAtLW1pbi1oZWlnaHQ6IDUwcHg7XG4gICAgY29sb3I6ICMyQzlEREU7XG4gIH1cblxuICBpb24tY29udGVudCB7XG4gICAgLS1iYWNrZ3JvdW5kOiBub25lO1xuICAgIGJhY2tncm91bmQtaW1hZ2U6IHVybCgnL2Fzc2V0cy9pbWFnZXMvaHJfYmcucG5nJyk7XG4gICAgYmFja2dyb3VuZC1wb3NpdGlvbjogY2VudGVyIHRvcDtcbiAgICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xuICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XG4gIH0iXX0= */";
+      __webpack_exports__["default"] = "#container {\n  text-align: center;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n#container strong {\n  font-size: 20px;\n  line-height: 26px;\n}\n\n#container p {\n  font-size: 16px;\n  line-height: 22px;\n  color: #8c8c8c;\n  margin: 0;\n}\n\n#container a {\n  text-decoration: none;\n}\n\nion-toolbar {\n  --min-height: 50px;\n  color: #2C9DDE;\n}\n\nion-content {\n  --background: none;\n  background-image: url(\"/assets/images/hr_bg.png\");\n  background-position: center top;\n  background-repeat: no-repeat;\n  background-size: cover;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxjYWxlbmRhci5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxrQkFBQTtFQUVBLGtCQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxRQUFBO0VBQ0EsMkJBQUE7QUFBRjs7QUFHQTtFQUNFLGVBQUE7RUFDQSxpQkFBQTtBQUFGOztBQUdBO0VBQ0UsZUFBQTtFQUNBLGlCQUFBO0VBRUEsY0FBQTtFQUVBLFNBQUE7QUFGRjs7QUFLQTtFQUNFLHFCQUFBO0FBRkY7O0FBS0U7RUFDRSxrQkFBQTtFQUNBLGNBQUE7QUFGSjs7QUFLRTtFQUNFLGtCQUFBO0VBQ0EsaURBQUE7RUFDQSwrQkFBQTtFQUNBLDRCQUFBO0VBQ0Esc0JBQUE7QUFGSiIsImZpbGUiOiJjYWxlbmRhci5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjY29udGFpbmVyIHtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcblxyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBsZWZ0OiAwO1xyXG4gIHJpZ2h0OiAwO1xyXG4gIHRvcDogNTAlO1xyXG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNTAlKTtcclxufVxyXG5cclxuI2NvbnRhaW5lciBzdHJvbmcge1xyXG4gIGZvbnQtc2l6ZTogMjBweDtcclxuICBsaW5lLWhlaWdodDogMjZweDtcclxufVxyXG5cclxuI2NvbnRhaW5lciBwIHtcclxuICBmb250LXNpemU6IDE2cHg7XHJcbiAgbGluZS1oZWlnaHQ6IDIycHg7XHJcblxyXG4gIGNvbG9yOiAjOGM4YzhjO1xyXG5cclxuICBtYXJnaW46IDA7XHJcbn1cclxuXHJcbiNjb250YWluZXIgYSB7XHJcbiAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xyXG59XHJcblxyXG4gIGlvbi10b29sYmFyIHtcclxuICAgIC0tbWluLWhlaWdodDogNTBweDtcclxuICAgIGNvbG9yOiAjMkM5RERFO1xyXG4gIH1cclxuXHJcbiAgaW9uLWNvbnRlbnQge1xyXG4gICAgLS1iYWNrZ3JvdW5kOiBub25lO1xyXG4gICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKCcvYXNzZXRzL2ltYWdlcy9ocl9iZy5wbmcnKTtcclxuICAgIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlciB0b3A7XHJcbiAgICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xyXG4gICAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcclxuICB9Il19 */";
       /***/
     },
 
@@ -42,7 +42,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<ion-header>\n  <ion-toolbar color='light'>\n    <ion-title>Calendar</ion-title>\n    \n    <ion-buttons slot=\"end\" style=\"margin-right: 20px;\">\n        <ion-button (click)=\"today()\">Today</ion-button>\n    </ion-buttons>  \n    <!-- <ion-buttons slot=\"end\">\n      <ion-button (click)=\"openCalModal()\">\n        <ion-icon name=\"add\" slot=\"icon-only\"></ion-icon>\n      </ion-button>\n    </ion-buttons> -->\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-title style=\"text-align: center; font-size: x-large; color: azure; background-color: #2C9DDE;\">\n    {{ viewTitle }}\n  </ion-title>\n   <!-- Change the display calendar -->\n   <ion-row> \n    <ion-col size=\"4\">\n      <ion-button expand=\"block\" size=\"small\" [color]=\"calendar.mode == 'month' ? 'primary' : 'secondary'\" \n      (click)=\"changeMode('month')\">Month</ion-button>\n    </ion-col>\n    \n    <ion-col size=\"4\">\n      <ion-button expand=\"block\" size=\"small\" [color]=\"calendar.mode == 'week' ? 'primary' : 'secondary'\" \n      (click)=\"changeMode('week')\">Week</ion-button>\n    </ion-col>\n    \n    <ion-col size=\"4\">\n      <ion-button expand=\"block\" size=\"small\" [color]=\"calendar.mode == 'day' ? 'primary' : 'secondary'\" \n      (click)=\"changeMode('day')\">Day</ion-button>\n    </ion-col>\n    \n    \n    <!-- Move back one screen -->\n    <ion-col size=\"6\" style=\"text-align: start;\">\n        <ion-button fill=\"clear\" size=\"small\" (click)=\"back()\">\n            <ion-icon name=\"arrow-back\" slot=\"icon-only\"></ion-icon>\n        </ion-button>\n    </ion-col>\n    <!-- Move forward -->\n    <ion-col size=\"6\" style=\"text-align: end;\">\n        <ion-button fill=\"clear\" size=\"small\" (click)=\"next()\">\n            <ion-icon name=\"arrow-forward\" slot=\"icon-only\"></ion-icon>\n        </ion-button>\n    </ion-col> \n\n  </ion-row>   \n\n  <!--(onCurrentDateChanged)=\"onCurrentDateChanged($event)\"-->\n  \n  <calendar [eventSource]=\"eventSource\"\n    [calendarMode]=\"calendar.mode\"\n    [currentDate]=\"calendar.currentDate\"\n    (onRangeChanged)=\"reloadSource(startTime, endTime)\"\n    (onEventSelected)=\"onEventSelected($leaveDetail)\"\n    (onTitleChanged)=\"onViewTitleChanged($event)\"\n    \n    startHour=\"6\"\n    endHour=\"20\"\n    step=\"30\"\n    startingDayWeek=\"1\"\n    startingDayMonth=\"1\">\n  </calendar>\n  <!-- <ion-segment [(ngModel)]=\"calendar.mode\">\n    <ion-segment-button value=\"month\">\n      <ion-label>Month</ion-label>\n    </ion-segment-button>\n    <ion-segment-button value=\"week\">\n      <ion-label>Week</ion-label>\n    </ion-segment-button>\n    <ion-segment-button value=\"day\">\n      <ion-label>Day</ion-label>\n    </ion-segment-button>\n  </ion-segment>\n \n  <ion-row>\n    <ion-col size=\"6\">\n      <ion-button (click)=\"createRandomEvents()\" expand=\"block\" fill=\"outline\">\n        Add random events\n      </ion-button>\n    </ion-col>\n    <ion-col size=\"6\">\n      <ion-button (click)=\"removeEvents()\" expand=\"block\" fill=\"outline\">\n        Remove all events\n      </ion-button>\n    </ion-col>\n  </ion-row> -->\n \n  <!-- <ion-row> -->\n    <!-- Move back one screen of the slides -->\n    <!-- <ion-col size=\"2\">\n      <ion-button fill=\"clear\" (click)=\"back()\">\n        <ion-icon name=\"arrow-back\" slot=\"icon-only\"></ion-icon>\n      </ion-button>\n    </ion-col>\n \n    <ion-col size=\"8\" class=\"ion-text-center\">\n      <h2>{{ viewTitle }}</h2>\n    </ion-col> -->\n \n    <!-- Move forward one screen of the slides -->\n    <!-- <ion-col size=\"2\">\n      <ion-button fill=\"clear\" (click)=\"next()\">\n        <ion-icon name=\"arrow-forward\" slot=\"icon-only\"></ion-icon>\n      </ion-button>\n    </ion-col>\n  </ion-row> -->\n\n  <!-- <calendar\n  [eventSource]=\"eventSource\"\n  [calendarMode]=\"calendar.mode\"\n  [currentDate]=\"calendar.currentDate\"\n  (onEventSelected)=\"onEventSelected($event)\"\n  (onTitleChanged)=\"onViewTitleChanged($event)\"\n  startHour=\"6\"\n  endHour=\"20\"\n  step=\"30\"\n  startingDayWeek=\"1\"\n  [monthviewDisplayEventTemplate]=\"template\"\n>\n</calendar> -->\n \n<!-- <ng-template #template let-view=\"view\" let-row=\"row\" let-col=\"col\">\n  <div [class.with-event]=\"view.dates[row*7+col].events.length\">\n    {{view.dates[row*7+col].label}}\n    <div class=\"indicator-container\">\n      <div class=\"event-indicator\" *ngFor=\"let e of view.dates[row*7+col].events\"></div>\n    </div>\n  </div>\n</ng-template> -->\n  \n</ion-content>";
+      __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color='light'>\r\n    <ion-title>Calendar</ion-title>\r\n    \r\n    <ion-buttons slot=\"end\" style=\"margin-right: 20px;\">\r\n        <ion-button (click)=\"today()\">Today</ion-button>\r\n    </ion-buttons>  \r\n   <!-- <ion-buttons slot=\"end\">\r\n      <ion-button (click)=\"openCalModal()\">\r\n        <ion-icon name=\"add\" slot=\"icon-only\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons> -->\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-segment [(ngModel)]=\"calendar.mode\">\r\n    <ion-segment-button value=\"month\">\r\n      <ion-label>Month</ion-label>\r\n    </ion-segment-button>\r\n   <!-- <ion-segment-button value=\"week\">\r\n      <ion-label>Week</ion-label>\r\n    </ion-segment-button>\r\n    <ion-segment-button value=\"day\">\r\n      <ion-label>Day</ion-label>\r\n    </ion-segment-button> -->\r\n  </ion-segment>\r\n\r\n  <ion-row>\r\n    <!-- Move back one screen of the slides -->\r\n    <ion-col size=\"2\">\r\n      <ion-button fill=\"clear\" (click)=\"back()\">\r\n        <ion-icon name=\"arrow-back\" slot=\"icon-only\"></ion-icon>\r\n      </ion-button>\r\n    </ion-col>\r\n \r\n    <ion-col size=\"8\" class=\"ion-text-center\">\r\n      <h2>{{ viewTitle }}</h2>\r\n    </ion-col>\r\n \r\n    <!-- Move forward one screen of the slides -->\r\n    <ion-col size=\"2\">\r\n      <ion-button fill=\"clear\" (click)=\"next()\">\r\n        <ion-icon name=\"arrow-forward\" slot=\"icon-only\"></ion-icon>\r\n      </ion-button>\r\n    </ion-col>\r\n  </ion-row>\r\n\r\n<calendar\r\n  [eventSource]=\"eventSource\"\r\n  [calendarMode]=\"calendar.mode\"\r\n  [currentDate]=\"calendar.currentDate\"\r\n  (onEventSelected)=\"onEventSelected($event)\"\r\n  (onTitleChanged)=\"onViewTitleChanged($event)\"\r\n  (onEventSelected)=\"onEventSelected($event)\"\r\n  (onTitleChanged)=\"onViewTitleChanged($event)\"\r\n  (onTimeSelected)=\"onTimeSelected($event)\">\r\n</calendar>\r\n  \r\n</ion-content>";
       /***/
     },
 
@@ -241,22 +241,43 @@
       var src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! src/app/services/auth.service */
       "lGQG");
+      /* harmony import */
+
+
+      var _services_storage_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! ../../services/storage.service */
+      "n90K");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      /*! @angular/router */
+      "tyNb");
 
       var CalendarPage = /*#__PURE__*/function () {
-        function CalendarPage(alertCtrl, locale, popoverController, authService, nav) {
+        function CalendarPage(alertCtrl, datePipe, locale, popoverController, authService, router, storageService, nav) {
           _classCallCheck(this, CalendarPage);
 
           this.alertCtrl = alertCtrl;
+          this.datePipe = datePipe;
           this.locale = locale;
           this.popoverController = popoverController;
           this.authService = authService;
+          this.router = router;
+          this.storageService = storageService;
           this.nav = nav;
-          this.viewTitle = "";
+          this.eventSource = [];
+          this.calendar = {
+            mode: 'month',
+            //mode: 'month' as CalendarMode,
+            currentDate: new Date(),
+            queryMode: 'remote'
+          };
           this.postData = {
             staff_id: '',
             leavetype: '',
             reason: '',
-            currentDate: '',
+            currentDate: Date,
             endDate: '',
             image: '',
             halfday1: '',
@@ -275,11 +296,6 @@
             allDay: false
           };
           this.minDate = new Date().toISOString();
-          this.eventSource = [];
-          this.calendar = {
-            mode: 'month',
-            currentDate: new Date()
-          };
         }
 
         _createClass(CalendarPage, [{
@@ -292,80 +308,115 @@
             });
           }
         }, {
-          key: "ionViewWillEnter",
-          value: function ionViewWillEnter() {
-            var _this2 = this;
-
-            this.authService.getUserDataPromise().then(function () {
-              var res = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-              // console.log(res);
-              _this2.userInfo = res;
-
-              _this2.authService.leavedetailPromise({
-                staffid: _this2.userInfo.staff_id
-              }).then(function (res) {
-                console.log(res);
-                _this2.leaveDetail = res[0];
-                _this2.eventSource = _this2.leaveDetail;
-              }, function (err) {
-                console.log(err);
-              });
-            }, function (err) {
-              _this2.nav.navigateBack('login');
-            });
+          key: "ngAfterViewInit",
+          value: function ngAfterViewInit() {
+            this.getEvents('2022-04-01', '2022-04-30');
           }
         }, {
-          key: "changeMode",
-          value: function changeMode(mode) {
-            this.calendar.mode = mode;
-          }
-        }, {
-          key: "back",
-          value: function back() {
-            var swiper = document.querySelector('.swiper-container')['swiper'];
-            swiper.slidePrev();
-          }
-        }, {
-          key: "next",
-          value: function next() {
-            var swiper = document.querySelector('.swiper-container')['swiper'];
-            swiper.slideNext();
-          }
-        }, {
-          key: "today",
-          value: function today() {
-            this.calendar.currentDate = new Date();
-          }
-        }, {
-          key: "onEventSelected",
-          value: function onEventSelected(event) {
+          key: "getEvents",
+          value: function getEvents(start, end) {
             return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-              var start, end, alert;
+              var events, startDate, endDate, holidays;
               return regeneratorRuntime.wrap(function _callee$(_context) {
                 while (1) {
                   switch (_context.prev = _context.next) {
                     case 0:
-                      start = Object(_angular_common__WEBPACK_IMPORTED_MODULE_6__["formatDate"])(event.startTime, 'medium', this.locale);
-                      end = Object(_angular_common__WEBPACK_IMPORTED_MODULE_6__["formatDate"])(event.endTime, 'medium', this.locale);
-                      _context.next = 4;
-                      return this.alertCtrl.create({
-                        header: event.title,
-                        subHeader: event.desc,
-                        message: 'From:' + start + ' <br><br>To: ' + end,
-                        buttons: ['OK']
-                      });
+                      //console.log('get events');
+                      events = [];
+                      startDate = this.datePipe.transform(start, 'yyyy-MM-dd');
+                      endDate = this.datePipe.transform(end, 'yyyy-MM-dd');
+                      _context.next = 5;
+                      return this.getLeave(startDate, endDate);
 
-                    case 4:
-                      alert = _context.sent;
-                      alert.present();
+                    case 5:
+                      holidays = _context.sent;
+                      console.log('holidays: ', holidays);
 
-                    case 6:
+                      if (holidays) {
+                        //map() method creates a new array populated with the results of calling a provided function
+                        holidays.map(function (item) {
+                          //new Date(getField("dob").value);
+                          var datestart = new Date(item.datefrom);
+                          var startTime = new Date(Date.UTC(datestart.getUTCFullYear(), datestart.getUTCMonth(), datestart.getUTCDate()));
+                          var dateend = new Date(item.dateend);
+                          var endTime = new Date(Date.UTC(dateend.getUTCFullYear(), dateend.getUTCMonth(), dateend.getUTCDate())); //let endTime = new Date(Date.UTC(dateend.getUTCFullYear(), dateend.getUTCMonth(), dateend.getUTCDate()));
+
+                          events.push({
+                            title: item.reason,
+                            startTime: startTime,
+                            endTime: endTime,
+                            allDay: false
+                          });
+                        });
+                        this.eventSource = events;
+                      }
+
+                      console.log('event source: ', this.eventSource);
+
+                    case 9:
                     case "end":
                       return _context.stop();
                   }
                 }
               }, _callee, this);
             }));
+          }
+        }, {
+          key: "getLeave",
+          value: function getLeave(startDate, endDate) {
+            return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+              var _this2 = this;
+
+              return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                while (1) {
+                  switch (_context2.prev = _context2.next) {
+                    case 0:
+                      _context2.next = 2;
+                      return this.authService.getUserDataPromise().then(function () {
+                        var res = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+                        console.log(1);
+                        _this2.userInfo = _this2.displayUserData;
+                      }, function (err) {
+                        _this2.nav.navigateBack('login');
+                      });
+
+                    case 2:
+                      _context2.next = 4;
+                      return this.authService.leavedetailPromise({
+                        staffid: this.userInfo.staff_id
+                      }).then(function (res) {
+                        console.log("leave detail", res);
+                        _this2.leaveDetail = res[0]; //this.eventSource=this.leaveDetail;
+                      }, function (err) {
+                        console.log("leave detail err", err);
+                        return _this2.leaveDetail;
+                      });
+
+                    case 4:
+                      return _context2.abrupt("return", this.leaveDetail);
+
+                    case 5:
+                    case "end":
+                      return _context2.stop();
+                  }
+                }
+              }, _callee2, this);
+            }));
+          }
+        }, {
+          key: "next",
+          value: function next() {
+            this.myCal.slideNext();
+          }
+        }, {
+          key: "back",
+          value: function back() {
+            this.myCal.slidePrev();
+          }
+        }, {
+          key: "today",
+          value: function today() {
+            this.calendar.currentDate = new Date();
           }
         }, {
           key: "onViewTitleChanged",
@@ -380,6 +431,19 @@
             selected.setHours(selected.getHours() + 1);
             this.event.endTime = selected.toISOString();
           }
+        }, {
+          key: "onCurrentDateChanged",
+          value: function onCurrentDateChanged(event) {
+            var today = new Date();
+            today.setHours(0, 0, 0, 0);
+            event.setHours(0, 0, 0, 0);
+            this.isToday = today.getTime() === event.getTime();
+          }
+        }, {
+          key: "onEventSelected",
+          value: function onEventSelected(event) {
+            console.log('Event selected:' + event.startTime + '-' + event.endTime + ',' + event.title);
+          }
         }]);
 
         return CalendarPage;
@@ -388,6 +452,8 @@
       CalendarPage.ctorParameters = function () {
         return [{
           type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["AlertController"]
+        }, {
+          type: _angular_common__WEBPACK_IMPORTED_MODULE_6__["DatePipe"]
         }, {
           type: String,
           decorators: [{
@@ -398,6 +464,10 @@
           type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["PopoverController"]
         }, {
           type: src_app_services_auth_service__WEBPACK_IMPORTED_MODULE_7__["AuthService"]
+        }, {
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_9__["Router"]
+        }, {
+          type: _services_storage_service__WEBPACK_IMPORTED_MODULE_8__["StorageService"]
         }, {
           type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["NavController"]
         }];
@@ -414,6 +484,130 @@
         template: _raw_loader_calendar_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
         styles: [_calendar_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
       })], CalendarPage);
+      /*
+      
+        public postData = {
+          staff_id: '',
+          leavetype: '',
+          reason: '',
+          currentDate: '',
+          endDate: '',
+          image: '',
+          halfday1: '',
+          halfday2: '',
+          data: '',
+          status: ''
+        }
+      
+        public displayUserData: any;
+      
+        userInfo:any={};
+        leaveDetail:any=[];
+        leave:any={};
+      
+        reason:any;
+        currentDate:any;
+        endDate:any;
+        halfday1:any;
+        halfday2:any;
+      
+          event={
+            title:'',
+            desc:'',
+            startTime:'',
+            endTime:'',
+            allDay:false
+        };
+      
+        minDate=new Date().toISOString();
+        
+        eventSource = [];
+        viewTitle;
+      
+        calendar = {
+          mode:'month',
+          //mode: 'month' as CalendarMode,
+          currentDate: new Date(),
+          queryMode: 'remote'
+        }
+          
+          ionViewWillEnter(title)
+          {
+            this.leaveDetail=[];
+            this.authService.getUserDataPromise()
+            .then((res:any={})=>{
+              // console.log(res);
+              this.userInfo=res;
+      
+              this.authService.leavedetailPromise({staffid:this.userInfo.staff_id})
+              .then(res=>{
+                console.log("leave detail",res);
+                this.leaveDetail=res[0];
+                this.eventSource=this.leaveDetail;
+              },err=>{
+                console.log("leave detail",err);
+              })
+        
+            },err=>{
+              this.nav.navigateBack('login')
+            })
+        
+            //this.viewTitle = title;
+        
+          }
+          
+          
+      
+          changeMode(mode) {
+            this.calendar.mode = mode;
+          }
+      
+          today(){
+            this.calendar.currentDate= new Date();
+          }
+      
+          onViewTitleChanged(title){
+            this.viewTitle=title;
+          }
+      
+          loadEvents() {
+            this.eventSource = this.leaveDetail;
+          }
+      
+          // Calendar event was clicked
+          async onEventSelected(event) {
+            // Use Angular date pipe for conversion
+            let start = formatDate(event.startTime, 'medium', this.locale);
+            let end = formatDate(event.endTime, 'medium', this.locale);
+            
+            const alert = await this.alertCtrl.create({
+              header: event.title,
+              subHeader: event.desc,
+              message: 'From: ' + start + '<br><br>To: ' + end,
+              buttons: ['OK'],
+            });
+            alert.present();
+          }
+      
+        
+          
+          onTimeSelected(ev){
+            let selected = new Date(ev.selectedTime);
+            this.event.startTime = selected.toISOString();
+            selected.setHours(selected.getHours()+1);
+            this.event.endTime = (selected.toISOString());
+        
+          }
+      
+         onRangeChanged = (ev: { startTime: Date, endTime: Date }) => {
+            this.event.query(ev, (events) => {
+                this.eventSource = events;
+            });
+          }
+      
+      
+      } */
+
       /***/
     },
 
@@ -510,7 +704,7 @@
       CalendarPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"], _calendar_routing_module__WEBPACK_IMPORTED_MODULE_5__["CalendarPageRoutingModule"], ionic2_calendar__WEBPACK_IMPORTED_MODULE_7__["NgCalendarModule"], src_app_pages_cal_modal_cal_modal_module__WEBPACK_IMPORTED_MODULE_8__["CalModalPageModule"]],
         declarations: [_calendar_page__WEBPACK_IMPORTED_MODULE_6__["CalendarPage"]],
-        providers: [{
+        providers: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["DatePipe"], {
           provide: _angular_core__WEBPACK_IMPORTED_MODULE_1__["LOCALE_ID"],
           useValue: 'en-US'
         }]

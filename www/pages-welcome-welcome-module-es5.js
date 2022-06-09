@@ -22,7 +22,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<ion-content >\n  <app-slides></app-slides>\n  <app-start></app-start>\n</ion-content>";
+      __webpack_exports__["default"] = "<ion-content >\r\n  <app-slides></app-slides>\r\n  <app-start></app-start>\r\n</ion-content>";
       /***/
     },
 

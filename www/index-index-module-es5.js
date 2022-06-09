@@ -22,7 +22,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<ion-content>\n    <router-outlet></router-outlet>\n</ion-content>";
+      __webpack_exports__["default"] = "<ion-content>\r\n    <router-outlet></router-outlet>\r\n</ion-content>";
       /***/
     },
 

@@ -136,7 +136,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<ion-header>\n  <ion-toolbar color=\"light\">\n    <ion-title>List of Attendees</ion-title>\n    <ion-buttons slot=\"start\">\n      <ion-back-button></ion-back-button>\n     </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <ion-item color='secondary'>\n      <ion-grid>\n        <ion-row>\n          <ion-col>Name:</ion-col>\n          <ion-col>Time & Date:</ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-item>\n  </ion-list>\n  <ion-list>\n    <ion-item>\n      <ion-grid>\n        <ion-row *ngFor=\"let a of displayUserData2\" ><ion-col>{{a.staff_name}}</ion-col><ion-col>{{a.checkin | date:'EEEE, h:mm a, dd/MM/yyyy '}}</ion-col>\n        </ion-row>\n      </ion-grid>\n    </ion-item>\n  </ion-list>\n  <!-- <div class=\"bawah\">\n    <ion-button (click)=\"goBack()\" expand=\"block\" color=\"secondary\" style=\"width: fit-content; margin: auto;\" >Back to Homepage</ion-button>\n  </div> -->\n  \n</ion-content>\n";
+      __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color=\"light\">\r\n    <ion-title>List of Attendees</ion-title>\r\n    <ion-buttons slot=\"start\">\r\n      <ion-back-button></ion-back-button>\r\n     </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-list>\r\n    <ion-item color='secondary'>\r\n      <ion-grid>\r\n        <ion-row>\r\n          <ion-col>Name:</ion-col>\r\n          <ion-col>Time & Date:</ion-col>\r\n        </ion-row>\r\n      </ion-grid>\r\n    </ion-item>\r\n  </ion-list>\r\n  <ion-list>\r\n    <ion-item>\r\n      <ion-grid>\r\n        <ion-row *ngFor=\"let a of displayUserData2\" ><ion-col>{{a.staff_name}}</ion-col><ion-col>{{a.checkin | date:'EEEE, h:mm a, dd/MM/yyyy '}}</ion-col>\r\n        </ion-row>\r\n      </ion-grid>\r\n    </ion-item>\r\n  </ion-list>\r\n  <!-- <div class=\"bawah\">\r\n    <ion-button (click)=\"goBack()\" expand=\"block\" color=\"secondary\" style=\"width: fit-content; margin: auto;\" >Back to Homepage</ion-button>\r\n  </div> -->\r\n  \r\n</ion-content>\r\n";
       /***/
     },
 
@@ -289,7 +289,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "ion-toolbar {\n  --min-height: 50px;\n  color: #2C9DDE;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL2xpc3RhdHRlbmRlZXMucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQU9BO0VBQ0ksa0JBQWE7RUFDYixjQUFjO0FBTmxCIiwiZmlsZSI6Imxpc3RhdHRlbmRlZXMucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gLmJhd2Foe1xuLy8gICAgIHBvc2l0aW9uOiBmaXhlZDtcbi8vICAgICBsZWZ0OiAwO1xuLy8gICAgIGJvdHRvbTogMTB2aDtcbi8vICAgICByaWdodDogMDtcbi8vIH1cblxuaW9uLXRvb2xiYXIge1xuICAgIC0tbWluLWhlaWdodDogNTBweDtcbiAgICBjb2xvcjogIzJDOURERTtcbn0iXX0= */";
+      __webpack_exports__["default"] = "ion-toolbar {\n  --min-height: 50px;\n  color: #2C9DDE;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxsaXN0YXR0ZW5kZWVzLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFPQTtFQUNJLGtCQUFBO0VBQ0EsY0FBQTtBQU5KIiwiZmlsZSI6Imxpc3RhdHRlbmRlZXMucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gLmJhd2Foe1xyXG4vLyAgICAgcG9zaXRpb246IGZpeGVkO1xyXG4vLyAgICAgbGVmdDogMDtcclxuLy8gICAgIGJvdHRvbTogMTB2aDtcclxuLy8gICAgIHJpZ2h0OiAwO1xyXG4vLyB9XHJcblxyXG5pb24tdG9vbGJhciB7XHJcbiAgICAtLW1pbi1oZWlnaHQ6IDUwcHg7XHJcbiAgICBjb2xvcjogIzJDOURERTtcclxufSJdfQ== */";
       /***/
     }
   }]);

@@ -318,7 +318,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<ion-content>\n  <ion-list>\n    <ion-item (click)=\"navigateToProfilePage()\">\n      My Profile\n    </ion-item>\n    <ion-item (click)=\"goToHistory()\" >\n      History\n    </ion-item>\n    <ion-item (click)=\"signOut()\">\n      Logout\n    </ion-item>\n  </ion-list>\n</ion-content>";
+      __webpack_exports__["default"] = "<ion-content>\r\n  <ion-list>\r\n    <ion-item (click)=\"navigateToProfilePage()\">\r\n      My Profile\r\n    </ion-item>\r\n    <ion-item (click)=\"goToHistory()\" >\r\n      History\r\n    </ion-item>\r\n    <ion-item (click)=\"signOut()\">\r\n      Logout\r\n    </ion-item>\r\n  </ion-list>\r\n</ion-content>";
       /***/
     },
 
@@ -487,7 +487,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "\n  <ion-slides pager=\"true\" [options]=\"slideOpts\">\n    <ion-slide>\n      <app-logo></app-logo>\n      <h2>Welcome to DynaConsurv HRApp</h2>\n      <p>Explore Us</p>\n    </ion-slide>\n    <ion-slide>\n      <div class=\"displayed\">\n      <img src=\"assets/images/dynaxconsurv.png\"/>\n      </div>\n      <h2></h2>\n      <p></p>\n    </ion-slide>\n    <ion-slide>\n      <h2>We are</h2>\n      <p>Dyna Consurv</p>\n    </ion-slide>\n\n    \n";
+      __webpack_exports__["default"] = "\r\n  <ion-slides pager=\"true\" [options]=\"slideOpts\">\r\n    <ion-slide>\r\n      <app-logo></app-logo>\r\n      <h2>Welcome to DynaConsurv HRApp</h2>\r\n      <p>Explore Us</p>\r\n    </ion-slide>\r\n    <ion-slide>\r\n      <div class=\"displayed\">\r\n      <img src=\"assets/images/dynaxconsurv.png\"/>\r\n      </div>\r\n      <h2></h2>\r\n      <p></p>\r\n    </ion-slide>\r\n    <ion-slide>\r\n      <h2>We are</h2>\r\n      <p>Dyna Consurv</p>\r\n    </ion-slide>\r\n\r\n    \r\n";
       /***/
     },
 
@@ -507,7 +507,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "ion-toolbar {\n  --min-height: 50px;\n  color: #2C9DDE;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL2FwcHJvdmUtbW9kYWwucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQWE7RUFDYixjQUFjO0FBQ2xCIiwiZmlsZSI6ImFwcHJvdmUtbW9kYWwucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLXRvb2xiYXIge1xuICAgIC0tbWluLWhlaWdodDogNTBweDtcbiAgICBjb2xvcjogIzJDOURERTtcbn0iXX0= */";
+      __webpack_exports__["default"] = "ion-toolbar {\n  --min-height: 50px;\n  color: #2C9DDE;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXGFwcHJvdmUtbW9kYWwucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksa0JBQUE7RUFDQSxjQUFBO0FBQ0oiLCJmaWxlIjoiYXBwcm92ZS1tb2RhbC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tdG9vbGJhciB7XHJcbiAgICAtLW1pbi1oZWlnaHQ6IDUwcHg7XHJcbiAgICBjb2xvcjogIzJDOURERTtcclxufSJdfQ== */";
       /***/
     },
 
@@ -595,7 +595,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "ion-toolbar {\n  --min-height: 50px;\n  color: #2C9DDE;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL2xlYXZlLW1vZGFsLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFhO0VBQ2IsY0FBYztBQUNsQiIsImZpbGUiOiJsZWF2ZS1tb2RhbC5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tdG9vbGJhciB7XG4gICAgLS1taW4taGVpZ2h0OiA1MHB4O1xuICAgIGNvbG9yOiAjMkM5RERFO1xufSJdfQ== */";
+      __webpack_exports__["default"] = "ion-toolbar {\n  --min-height: 50px;\n  color: #2C9DDE;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXGxlYXZlLW1vZGFsLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0VBQ0EsY0FBQTtBQUNKIiwiZmlsZSI6ImxlYXZlLW1vZGFsLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi10b29sYmFyIHtcclxuICAgIC0tbWluLWhlaWdodDogNTBweDtcclxuICAgIGNvbG9yOiAjMkM5RERFO1xyXG59Il19 */";
       /***/
     },
 
@@ -615,7 +615,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<ion-header>\n  <ion-toolbar color='light'>\n    <ion-title>Leave Approval</ion-title>\n    <ion-buttons slot='end'>\n      <ion-button (click)=\"close()\">\n        <ion-icon name='close'></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n<ion-item>\n  <ion-label>\n    <strong>\n    Type:\n    </strong>\n  </ion-label>\n  <ion-label text-wrap>\n    {{userData.leavetype}}\n  </ion-label>\n</ion-item>\n<ion-item>\n  <ion-label>\n    <strong>\n    Reason:\n    </strong>\n  </ion-label>\n  <ion-label text-wrap>\n    {{userData.reason}}\n  </ion-label>\n</ion-item>\n<ion-item>\n  <ion-label>\n    <strong>\n      Staff Name:\n    </strong>\n  </ion-label>\n  <ion-label>\n    {{userData.staff_name}}\n  </ion-label>\n</ion-item>\n<ion-item>\n  <ion-label>\n    <strong>\n      Leave Day:\n    </strong>\n  </ion-label>\n  <ion-label>\n    {{userData.leaveday}}\n  </ion-label>\n</ion-item>\n\n<!-- *ngIf=\"userData.datehalf=='0000-00-00'\" -->\n\n<ion-grid>\n<ion-row class='ion-text-center'>\n  <ion-col>\n    <strong>\n      Date From:<br>\n    </strong>\n      {{ getDate(userData.datefrom) }}\n  </ion-col>\n  <ion-col>\n      <strong>\n        Date End:<br>\n      </strong>\n      {{ getDate(userData.dateend) }}\n  </ion-col>\n</ion-row>\n</ion-grid>\n\n<ion-grid>\n  <ion-row>\n    <ion-col>\n        {{ getHalfDate(userData.datehalf) }}\n    </ion-col>\n    </ion-row>\n</ion-grid>\n\n<div *ngIf=\"userData.datehalf!='0000-00-00'\">\n<ion-item>\n  <ion-row>\n  <ion-col>\n      {{userData.datehalf}}\n  </ion-col>\n  </ion-row>\n</ion-item>\n</div>\n\n<ion-row>\n<ion-col>\n  <ion-button expand='full' color='danger' (click)=\"rejectLeave()\">\n    Reject\n  </ion-button>\n</ion-col>\n<ion-col>\n  <ion-button expand='full' color='primary' (click)=\"approveLeave()\">\n    Approve\n  </ion-button>\n</ion-col>\n</ion-row>\n</ion-content>\n";
+      __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color='light'>\r\n    <ion-title>Leave Approval</ion-title>\r\n    <ion-buttons slot='end'>\r\n      <ion-button (click)=\"close()\">\r\n        <ion-icon name='close'></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n<ion-item>\r\n  <ion-label>\r\n    <strong>\r\n    Type:\r\n    </strong>\r\n  </ion-label>\r\n  <ion-label text-wrap>\r\n    {{userData.leavetype}}\r\n  </ion-label>\r\n</ion-item>\r\n<ion-item>\r\n  <ion-label>\r\n    <strong>\r\n    Reason:\r\n    </strong>\r\n  </ion-label>\r\n  <ion-label text-wrap>\r\n    {{userData.reason}}\r\n  </ion-label>\r\n</ion-item>\r\n<ion-item>\r\n  <ion-label>\r\n    <strong>\r\n      Staff Name:\r\n    </strong>\r\n  </ion-label>\r\n  <ion-label>\r\n    {{userData.staff_name}}\r\n  </ion-label>\r\n</ion-item>\r\n<ion-item>\r\n  <ion-label>\r\n    <strong>\r\n      Leave Day:\r\n    </strong>\r\n  </ion-label>\r\n  <ion-label>\r\n    {{userData.leaveday}}\r\n  </ion-label>\r\n</ion-item>\r\n\r\n<!-- *ngIf=\"userData.datehalf=='0000-00-00'\" -->\r\n\r\n<ion-grid>\r\n<ion-row class='ion-text-center'>\r\n  <ion-col>\r\n    <strong>\r\n      Date From:<br>\r\n    </strong>\r\n      {{ getDate(userData.datefrom) }}\r\n  </ion-col>\r\n  <ion-col>\r\n      <strong>\r\n        Date End:<br>\r\n      </strong>\r\n      {{ getDate(userData.dateend) }}\r\n  </ion-col>\r\n</ion-row>\r\n</ion-grid>\r\n\r\n<ion-grid>\r\n  <ion-row>\r\n    <ion-col>\r\n        {{ getHalfDate(userData.datehalf) }}\r\n    </ion-col>\r\n    </ion-row>\r\n</ion-grid>\r\n\r\n<div *ngIf=\"userData.datehalf!='0000-00-00'\">\r\n<ion-item>\r\n  <ion-row>\r\n  <ion-col>\r\n      {{userData.datehalf}}\r\n  </ion-col>\r\n  </ion-row>\r\n</ion-item>\r\n</div>\r\n\r\n<ion-row>\r\n<ion-col>\r\n  <ion-button expand='full' color='danger' (click)=\"rejectLeave()\">\r\n    Reject\r\n  </ion-button>\r\n</ion-col>\r\n<ion-col>\r\n  <ion-button expand='full' color='primary' (click)=\"approveLeave()\">\r\n    Approve\r\n  </ion-button>\r\n</ion-col>\r\n</ion-row>\r\n</ion-content>\r\n";
       /***/
     },
 
@@ -821,7 +821,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "ion-slide {\n  padding: 140px 20px 140px 20px;\n  display: block;\n}\n\nion-slide img {\n  width: 100px;\n}\n\nion-slide h2 {\n  font-size: 27px;\n  font-weight: bold;\n}\n\n.displayed img {\n  width: 300px;\n  height: auto;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3NsaWRlcy5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLDhCQUE4QjtFQUM5QixjQUFjO0FBQ2xCOztBQUhBO0VBSUksWUFBWTtBQUdoQjs7QUFQQTtFQU9JLGVBQWU7RUFDZixpQkFBaUI7QUFJckI7O0FBQ0k7RUFDSSxZQUFZO0VBQ1osWUFBWTtBQUVwQiIsImZpbGUiOiJzbGlkZXMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tc2xpZGUge1xuICAgIHBhZGRpbmc6IDE0MHB4IDIwcHggMTQwcHggMjBweDtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgICBpbWcge1xuICAgIHdpZHRoOiAxMDBweDtcbiAgICB9XG4gICAgaDIge1xuICAgIGZvbnQtc2l6ZTogMjdweDtcbiAgICBmb250LXdlaWdodDogYm9sZDtcbiAgICB9XG4gICAgfVxuICAgIFxuXG4gICAgLmRpc3BsYXllZCBpbWd7XG4gICAgICAgIHdpZHRoOiAzMDBweDtcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xuICAgIH1cblxuICAgIFxuICBcbiJdfQ== */";
+      __webpack_exports__["default"] = "ion-slide {\n  padding: 140px 20px 140px 20px;\n  display: block;\n}\nion-slide img {\n  width: 100px;\n}\nion-slide h2 {\n  font-size: 27px;\n  font-weight: bold;\n}\n.displayed img {\n  width: 300px;\n  height: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxzbGlkZXMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSw4QkFBQTtFQUNBLGNBQUE7QUFDSjtBQUFJO0VBQ0EsWUFBQTtBQUVKO0FBQUk7RUFDQSxlQUFBO0VBQ0EsaUJBQUE7QUFFSjtBQUdJO0VBQ0ksWUFBQTtFQUNBLFlBQUE7QUFBUiIsImZpbGUiOiJzbGlkZXMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tc2xpZGUge1xyXG4gICAgcGFkZGluZzogMTQwcHggMjBweCAxNDBweCAyMHB4O1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICBpbWcge1xyXG4gICAgd2lkdGg6IDEwMHB4O1xyXG4gICAgfVxyXG4gICAgaDIge1xyXG4gICAgZm9udC1zaXplOiAyN3B4O1xyXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XHJcbiAgICB9XHJcbiAgICB9XHJcbiAgICBcclxuXHJcbiAgICAuZGlzcGxheWVkIGltZ3tcclxuICAgICAgICB3aWR0aDogMzAwcHg7XHJcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xyXG4gICAgfVxyXG5cclxuICAgIFxyXG4gIFxyXG4iXX0= */";
       /***/
     },
 
@@ -841,7 +841,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = ".button-container {\n  width: 80%;\n  margin-left: auto;\n  margin-right: auto;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3N0YXJ0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksVUFBVTtFQUNWLGlCQUFpQjtFQUNqQixrQkFBa0I7QUFDdEIiLCJmaWxlIjoic3RhcnQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYnV0dG9uLWNvbnRhaW5lciB7XG4gICAgd2lkdGg6IDgwJTtcbiAgICBtYXJnaW4tbGVmdDogYXV0bztcbiAgICBtYXJnaW4tcmlnaHQ6IGF1dG87XG59Il19 */";
+      __webpack_exports__["default"] = ".button-container {\n  width: 80%;\n  margin-left: auto;\n  margin-right: auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcLi5cXC4uXFxzdGFydC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFVBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0FBQ0oiLCJmaWxlIjoic3RhcnQuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYnV0dG9uLWNvbnRhaW5lciB7XHJcbiAgICB3aWR0aDogODAlO1xyXG4gICAgbWFyZ2luLWxlZnQ6IGF1dG87XHJcbiAgICBtYXJnaW4tcmlnaHQ6IGF1dG87XHJcbn0iXX0= */";
       /***/
     },
 
@@ -1652,7 +1652,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<div class=\"button-container\">\n    <ion-button expand=\"block\" share=\"round\" color='primary' (click)=\"navigateToLoginPage()\">Start!</ion-button>\n</div>";
+      __webpack_exports__["default"] = "<div class=\"button-container\">\r\n    <ion-button expand=\"block\" share=\"round\" color='primary' (click)=\"navigateToLoginPage()\">Start!</ion-button>\r\n</div>";
       /***/
     },
 
@@ -2075,7 +2075,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<ion-header>\n  <ion-toolbar color='light'>\n    <ion-title>Leave Approval</ion-title>\n    <ion-buttons slot='end'>\n      <ion-button (click)=\"close()\">\n        <ion-icon name='close'></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-item>\n    <ion-label>\n      <strong>\n      Type:\n      </strong>\n    </ion-label>\n    <ion-label text-wrap>\n      {{userData.leavetype}}\n    </ion-label>\n  </ion-item>\n<ion-item>\n  <ion-label>\n    <strong>\n    Reason:\n    </strong>\n  </ion-label>\n  <ion-label text-wrap>\n    {{userData.reason}}\n  </ion-label>\n</ion-item>\n<ion-item>\n  <ion-label>\n    <strong>\n      Staff Name:\n    </strong>\n  </ion-label>\n  <ion-label>\n    {{userData.staff_name}}\n  </ion-label>\n</ion-item>\n<ion-item>\n  <ion-label>\n    <strong>\n      Leave Day:\n    </strong>\n  </ion-label>\n  <ion-label>\n    {{userData.leaveday}}\n  </ion-label>\n</ion-item>\n\n<!-- *ngIf=\"userData.datehalf=='0000-00-00'\" -->\n<ion-grid>\n<ion-row class='ion-text-center'>\n  <ion-col>\n    <strong>\n      Date From:<br>\n    </strong>\n      {{ getDate(userData.datefrom) }}\n  </ion-col>\n  <ion-col>\n      <strong>\n        Date End:<br>\n      </strong>\n      {{ getDate(userData.dateend) }}\n  </ion-col>\n</ion-row>\n</ion-grid>\n\n<ion-grid>\n  <ion-row>\n    <ion-col>\n        {{ getHalfDate(userData.datehalf) }}\n    </ion-col>\n    </ion-row>\n</ion-grid>\n\n<div *ngIf=\"userData.datehalf!='0000-00-00'\">\n<ion-item>\n  <ion-row>\n  <ion-col>\n      {{userData.datehalf}}\n  </ion-col>\n  </ion-row>\n</ion-item>\n</div>\n\n<!-- <ion-row>\n<ion-col>\n  <ion-button expand='full' color='danger'>\n    Reject\n  </ion-button>\n</ion-col>\n<ion-col>\n  <ion-button expand='full' color='primary'>\n    Approve\n  </ion-button>\n</ion-col>\n</ion-row> -->\n</ion-content>\n";
+      __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar color='light'>\r\n    <ion-title>Leave Approval</ion-title>\r\n    <ion-buttons slot='end'>\r\n      <ion-button (click)=\"close()\">\r\n        <ion-icon name='close'></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-item>\r\n    <ion-label>\r\n      <strong>\r\n      Type:\r\n      </strong>\r\n    </ion-label>\r\n    <ion-label text-wrap>\r\n      {{userData.leavetype}}\r\n    </ion-label>\r\n  </ion-item>\r\n<ion-item>\r\n  <ion-label>\r\n    <strong>\r\n    Reason:\r\n    </strong>\r\n  </ion-label>\r\n  <ion-label text-wrap>\r\n    {{userData.reason}}\r\n  </ion-label>\r\n</ion-item>\r\n<ion-item>\r\n  <ion-label>\r\n    <strong>\r\n      Staff Name:\r\n    </strong>\r\n  </ion-label>\r\n  <ion-label>\r\n    {{userData.staff_name}}\r\n  </ion-label>\r\n</ion-item>\r\n<ion-item>\r\n  <ion-label>\r\n    <strong>\r\n      Leave Day:\r\n    </strong>\r\n  </ion-label>\r\n  <ion-label>\r\n    {{userData.leaveday}}\r\n  </ion-label>\r\n</ion-item>\r\n\r\n<!-- *ngIf=\"userData.datehalf=='0000-00-00'\" -->\r\n<ion-grid>\r\n<ion-row class='ion-text-center'>\r\n  <ion-col>\r\n    <strong>\r\n      Date From:<br>\r\n    </strong>\r\n      {{ getDate(userData.datefrom) }}\r\n  </ion-col>\r\n  <ion-col>\r\n      <strong>\r\n        Date End:<br>\r\n      </strong>\r\n      {{ getDate(userData.dateend) }}\r\n  </ion-col>\r\n</ion-row>\r\n</ion-grid>\r\n\r\n<ion-grid>\r\n  <ion-row>\r\n    <ion-col>\r\n        {{ getHalfDate(userData.datehalf) }}\r\n    </ion-col>\r\n    </ion-row>\r\n</ion-grid>\r\n\r\n<div *ngIf=\"userData.datehalf!='0000-00-00'\">\r\n<ion-item>\r\n  <ion-row>\r\n  <ion-col>\r\n      {{userData.datehalf}}\r\n  </ion-col>\r\n  </ion-row>\r\n</ion-item>\r\n</div>\r\n\r\n<!-- <ion-row>\r\n<ion-col>\r\n  <ion-button expand='full' color='danger'>\r\n    Reject\r\n  </ion-button>\r\n</ion-col>\r\n<ion-col>\r\n  <ion-button expand='full' color='primary'>\r\n    Approve\r\n  </ion-button>\r\n</ion-col>\r\n</ion-row> -->\r\n</ion-content>\r\n";
       /***/
     },
 
