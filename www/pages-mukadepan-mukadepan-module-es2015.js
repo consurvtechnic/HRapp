@@ -69,6 +69,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_services_storage_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/services/storage.service */ "n90K");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var src_app_setting_setting_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/app/setting/setting.component */ "l7Ag");
+/* harmony import */ var _capacitor_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @capacitor/core */ "gcOT");
 
 
 
@@ -80,6 +81,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+const { PushNotifications } = _capacitor_core__WEBPACK_IMPORTED_MODULE_9__["Plugins"];
 let MukadepanPage = class MukadepanPage {
     constructor(router, toastCtrl, authService, storageService, nav, popoverController, changeRef, loading) {
         this.router = router;
@@ -130,6 +133,35 @@ let MukadepanPage = class MukadepanPage {
     }
     ngOnInit() {
         this.nav.navigateRoot('home/mukadepan');
+        console.log('Initializing HomePage');
+        // Request permission to use push notifications
+        // iOS will prompt user and return if they granted permission or not
+        // Android will just grant without prompting
+        PushNotifications.requestPermission().then(result => {
+            if (result.granted) {
+                // Register with Apple / Google to receive push via APNS/FCM
+                PushNotifications.register();
+            }
+            else {
+                // Show some error
+            }
+        });
+        // On success, we should be able to receive notifications
+        PushNotifications.addListener('registration', (token) => {
+            alert('Push registration success, token: ' + token.value);
+        });
+        // Some issue with our setup and push will not work
+        PushNotifications.addListener('registrationError', (error) => {
+            alert('Error on registration: ' + JSON.stringify(error));
+        });
+        // Show us the notification payload if the app is open on our device
+        PushNotifications.addListener('pushNotificationReceived', (notification) => {
+            alert('Push received: ' + JSON.stringify(notification));
+        });
+        // Method called when tapping on a notification
+        PushNotifications.addListener('pushNotificationActionPerformed', (notification) => {
+            alert('Push action performed: ' + JSON.stringify(notification));
+        });
     }
     ionViewWillEnter() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {

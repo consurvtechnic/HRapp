@@ -136,14 +136,20 @@ let LeavePage = class LeavePage {
         this.authService.userData$.subscribe((res) => {
             this.displayUserData = res;
         });
-        this.leaveDetail.sort((a, b) => {
-            //sort by date
-            if (new Date(b.lastDate) > new Date(a.lastDate))
-                return 1;
-            if (new Date(b.lastDate) < new Date(a.lastDate))
-                return -1;
-            return 0;
-        });
+        /*this.leaveDetail.sort((a, b) =>
+        {
+        //sort by date
+        if (new Date(b.lastDate) > new Date(a.lastDate))
+            return 1;
+    
+        if (new Date(b.lastDate) < new Date(a.lastDate))
+            return -1;
+    
+        return 0;
+      });*/
+    }
+    sortFunc(a, b) {
+        return new Date(b.datefrom).getTime() - new Date(a.datefrom).getTime();
     }
     ionViewWillEnter() {
         this.authService.getUserDataPromise()
@@ -204,7 +210,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\r\n  <ion-toolbar color=\"light\">\r\n    <ion-title>Leave History</ion-title>\r\n    <ion-back-button slot=\"start\"></ion-back-button>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-list *ngFor=\"let leave of leaveDetail\" >\r\n  <div class=\"cuti\">\r\n    <ion-card mode=\"ios\">\r\n      <ion-card-header></ion-card-header>\r\n      <ion-card-content style=\"overflow: scroll;\">\r\n        <ion-card-title color=\"primary-contrast\" style=\"font-size:20px; text-transform: uppercase;\">\r\n          {{leave.leavetype}}\r\n        </ion-card-title>\r\n        <ion-card-subtitle style=\"text-transform:none\" color=\"primary-contrast\">{{leave.reason}}</ion-card-subtitle>\r\n        <ion-card-subtitle color=\"primary-contrast\" style=\"font-size:15px\"> Total of Days: {{leave.leaveday}}</ion-card-subtitle>\r\n        <a>From: {{leave.datefrom | date:'EEEE, dd/MM/yyyy '}}</a> <br> <a>To: {{leave.dateend | date:'EEEE, dd/MM/yyyy '}}</a>\r\n        <ion-button color=\"warning\" expand=\"block\" class=\"main-button\" *ngIf = \"leave.approved === 0; else approved\" >PENDING</ion-button>\r\n        <ng-template #approved>\r\n          <ion-button color=\"success\" expand=\"block\" class=\"main-button\">APPROVED</ion-button>\r\n        </ng-template>\r\n      </ion-card-content>\r\n      \r\n    </ion-card>\r\n    \r\n</div>\r\n\r\n</ion-list>\r\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header [translucent]=\"true\">\r\n  <ion-toolbar color=\"light\">\r\n    <ion-title>Leave History</ion-title>\r\n    <ion-back-button slot=\"start\"></ion-back-button>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-list *ngFor=\"let leave of leaveDetail.sort(sortFunc)\" >\r\n  <div class=\"cuti\">\r\n    <ion-card mode=\"ios\">\r\n      <ion-card-header></ion-card-header>\r\n      <ion-card-content style=\"overflow: scroll;\">\r\n        <ion-card-title color=\"primary-contrast\" style=\"font-size:20px; text-transform: uppercase;\">\r\n          {{leave.leavetype}}\r\n        </ion-card-title>\r\n        <ion-card-subtitle style=\"text-transform:none\" color=\"primary-contrast\">{{leave.reason}}</ion-card-subtitle>\r\n        <ion-card-subtitle color=\"primary-contrast\" style=\"font-size:15px\"> Total of Days: {{leave.leaveday}}</ion-card-subtitle>\r\n        <a>From: {{leave.datefrom | date:'EEEE, dd/MM/yyyy '}}</a> <br> <a>To: {{leave.dateend | date:'EEEE, dd/MM/yyyy '}}</a>\r\n        <ion-button color=\"warning\" expand=\"block\" class=\"main-button\" *ngIf = \"leave.approved === 0; else approved\" >PENDING</ion-button>\r\n        <ng-template #approved>\r\n          <ion-button color=\"success\" expand=\"block\" class=\"main-button\">APPROVED</ion-button>\r\n        </ng-template>\r\n      </ion-card-content>\r\n      \r\n    </ion-card>\r\n    \r\n</div>\r\n\r\n</ion-list>\r\n</ion-content>");
 
 /***/ })
 
