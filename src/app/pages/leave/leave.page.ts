@@ -53,7 +53,8 @@ export class LeavePage implements OnInit {
       this.displayUserData = res;
     })
 
-    this.leaveDetail.sort((a, b) => {
+    /*this.leaveDetail.sort((a, b) =>
+    {
     //sort by date
     if (new Date(b.lastDate) > new Date(a.lastDate))
         return 1;
@@ -62,8 +63,11 @@ export class LeavePage implements OnInit {
         return -1;
 
     return 0;
-});
-    
+  });*/   
+  }
+
+  sortFunc (a, b) {
+    return new Date(b.datefrom).getTime() - new Date(a.datefrom).getTime();
   }
 
   ionViewWillEnter()

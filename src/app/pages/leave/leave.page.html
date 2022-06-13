@@ -6,7 +6,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-list *ngFor="let leave of leaveDetail" >
+  <ion-list *ngFor="let leave of leaveDetail.sort(sortFunc)" >
   <div class="cuti">
     <ion-card mode="ios">
       <ion-card-header></ion-card-header>
