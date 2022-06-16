@@ -3,12 +3,21 @@
   "appName": "HRApp",
   "bundledWebRuntime": false,
   "npmClient": "npm",
+  "windowsAndroidStudioPath": "C:\\Program Files\\Android\\Android Studio\\bin\\studio64.exe",
+  "hideLogs": true,
   "allowMixedContent": true,
   "webDir": "www",
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 0
     }
+  },
+  "server": {
+    "url": "http://192.168.1.33:8100",
+    "hostname": "app",
+   "iosScheme": "ionic",
+    "androidScheme": "http",
+    "allowNavigation": []
   },
   "PushNotifications": {
     "presentationOptions": ["badge", "sound", "alert"]
