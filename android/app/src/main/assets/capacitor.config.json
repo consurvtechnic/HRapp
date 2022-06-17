@@ -1,26 +1,22 @@
 {
-  "appId": "io.consurv.HRApp",
-  "appName": "HRApp",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "windowsAndroidStudioPath": "C:\\Program Files\\Android\\Android Studio\\bin\\studio64.exe",
-  "hideLogs": true,
-  "allowMixedContent": true,
-  "webDir": "www",
-  "plugins": {
-    "SplashScreen": {
-      "launchShowDuration": 0
-    }
-  },
-  "server": {
-    "url": "http://192.168.1.33:8100",
-    "hostname": "app",
-   "iosScheme": "ionic",
-    "androidScheme": "http",
-    "allowNavigation": []
-  },
-  "PushNotifications": {
-    "presentationOptions": ["badge", "sound", "alert"]
-  },
-  "cordova": {}
+	"appId": "io.consurv.HRApp",
+	"appName": "HRApp",
+	"bundledWebRuntime": false,
+	"webDir": "www",
+	"plugins": {
+		"SplashScreen": {
+			"launchAutoHide": false,
+			"launchShowDuration": 0
+		},
+		"LocalNotifications": {
+			"smallIcon": "ic_stat_icon_config_sample",
+			"iconColor": "#CE0B7C"
+		},
+		"PushNotifications": {
+			"presentationOptions": [
+				"alert",
+				"sound"
+			]
+		}
+	}
 }
