@@ -5,7 +5,7 @@ android {
     compileSdkVersion 30
     defaultConfig {
         applicationId "io.consurv.HRApp"
-        minSdkVersion 21
+        minSdk 22
         targetSdkVersion 30
         versionCode 9
         versionName "1.3"
