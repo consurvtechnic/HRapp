@@ -15,11 +15,11 @@
       "iconColor": "#CE0B7C"
     },
     "PushNotifications": {
-      "presentationOptions": ["alert", "sound"]
+      "presentationOptions": [
+        "alert",
+        "sound"
+      ]
     }
   },
   "cordova": {}
 }
-
-
-  
