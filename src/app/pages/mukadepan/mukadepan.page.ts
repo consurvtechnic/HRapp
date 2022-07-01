@@ -244,6 +244,7 @@ export class MukadepanPage implements OnInit {
       }]
     }).then( res => res.present());
     // document.getElementById("status").innerHTML = "You've Checked-In!";
+    window.location.reload();
   }
 
   async showToast2(){

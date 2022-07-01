@@ -1,3 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>NGX Data Table</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <!-- Theme classes dark, material, bootstrap -->
+    <ngx-datatable 
+      #staffTable
+      class="material"
+      [rows]="rows" 
+      [columnMode]="'force'" 
+      [headerHeight]="50" 
+      [footerHeight]="50">
+
+      <ngx-datatable-column name="Name">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.name}}
+        </ng-template>
+      </ngx-datatable-column>
+    
+      <ngx-datatable-column name="Username">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.username}}
+        </ng-template>
+      </ngx-datatable-column>
+    
+      <ngx-datatable-column name="Email">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row.email}}
+        </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
+  </div>
+</ion-content>
+
+
+<!--
 <ion-header class="ion-no-border">
   <ion-toolbar color="primary">
     <ion-title class="ion-text-left">
@@ -24,10 +64,10 @@
 
   <ion-list lines="none">
     <ion-item color="light">
-      <!--<ion-label class="heading">List of Registered{{segmentValue == '1' ? ' Manager' : ' Staff'}}</ion-label>
+      <ion-label class="heading">List of Registered{{segmentValue == '1' ? ' Manager' : ' Staff'}}</ion-label>
        <ion-button slot="end" fill="clear" size="small">
         <ion-icon slot="icon-only" name="options"></ion-icon>
-      </ion-button> -->
+      </ion-button>
     </ion-item>
 
     <ion-item-group>
@@ -47,7 +87,7 @@
           <p>
             <ion-text color="dark">{{item?.age}}</ion-text>
             <ion-text color="dark"><span>&#9679;</span>{{item?.gender}}</ion-text>
-            <!-- <ion-text color="dark"><span>&#9679;</span>{{item?.distance == 1 ? item?.distance + 'km' : item?.distance + 'kms'}}</ion-text> -->
+             <ion-text color="dark"><span>&#9679;</span>{{item?.distance == 1 ? item?.distance + 'km' : item?.distance + 'kms'}}</ion-text>
           </p>
         </ion-label>
         <ion-fab vertical="top" horizontal="end">
@@ -60,3 +100,5 @@
   </ion-list>
   
 </ion-content>
+
+-->

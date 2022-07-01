@@ -1,12 +1,37 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ViewEncapsulation } from '@angular/core';
+//import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-staff',
   templateUrl: './staff.page.html',
   styleUrls: ['./staff.page.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class StaffPage implements OnInit {
+  
+  //public columns: any;
+  public rows: any;
+  //users;
 
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.users();
+  };
+
+  users(): void {
+    //this.service
+    this.http.get('https://jsonplaceholder.typicode.com/users')
+        //.users()
+        .subscribe((response: any) => {
+          console.log("staff",response)
+          this.rows = response;
+        });
+  } 
+
+  /*
   segmentValue = '1';
   requests: any[] = [];
   donors: any[] = [];
@@ -58,4 +83,7 @@ export class StaffPage implements OnInit {
     }
   }
 
+  */
+
 }
+
