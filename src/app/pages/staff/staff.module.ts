@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { NgxEditInlineModule } from 'C:/Users/User/Desktop/HRapp/node_modules/ngx-edit-inline';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -20,6 +21,7 @@ import { StaffPage } from './staff.page';
     IonicModule,
     HttpClientModule,
     NgxDatatableModule,
+    NgxEditInlineModule,
     RouterModule.forChild([
       {
         path: '',

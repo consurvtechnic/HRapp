@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ViewEncapsulation } from '@angular/core';
 //import { UsersService } from '../../services/users.service';
@@ -11,15 +11,24 @@ import { ViewEncapsulation } from '@angular/core';
 })
 export class StaffPage implements OnInit {
   
-  //public columns: any;
-  public rows: any;
-  //users;
+  @Input() rows;
+  @Output() focusOut: EventEmitter<number> = new EventEmitter<number>();
+  isEdit : boolean = true;
+
+  //public rows: any;
+  delRow;
+  enableEdit = false;
+  enableEditIndex = null;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     this.users();
   };
+
+  onFocusOut() {
+    this.focusOut.emit(this.rows);
+  }
 
   users(): void {
     //this.service
@@ -30,6 +39,32 @@ export class StaffPage implements OnInit {
           this.rows = response;
         });
   } 
+
+  editRow(row) {
+    /*this.rows.filter(row => row.isEditable).map(r => { r.isEditable = false; return r })
+    row.isEditable = true; */
+    this.isEdit = false;
+  }
+  
+  saveRow(row){
+    row.isEditable = false
+  }
+
+  addNew(){
+    this.rows.push({
+    name: '',
+    value: ''
+  })
+  }
+
+  deleteRow(row){
+    /*console.log(row);
+    this.delRow = this.rows.indexOf(row);
+    this.rows.splice(this.delRow,1);
+    console.log(this.data); */
+    alert("delete");
+
+  }
 
   /*
   segmentValue = '1';

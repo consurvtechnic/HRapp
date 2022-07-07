@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>NGX Data Table</ion-title>
+    <ion-title>Staff Database</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,15 +10,19 @@
     <ngx-datatable 
       #staffTable
       class="material"
-      [rows]="rows" 
-      [columnMode]="'force'" 
+      rowHeight="auto"
+      [rows]="rows"
+      [columnMode]="'force'"
       [headerHeight]="50" 
-      [footerHeight]="50">
+      [footerHeight]="50"
+      [scrollbarH]="true">
 
       <ngx-datatable-column name="Name">
         <ng-template let-row="row" ngx-datatable-cell-template>
-          {{row.name}}
-        </ng-template>
+          <span class='cell'>
+            {{row.name}}
+          </span>
+          </ng-template>
       </ngx-datatable-column>
     
       <ngx-datatable-column name="Username">
@@ -32,12 +36,32 @@
           {{row.email}}
         </ng-template>
       </ngx-datatable-column>
+
+        <ngx-datatable-column name="Settings">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            <!--{{row.id}}-->
+            <ion-button color="secondary" *ngIf="!enableEdit" (click)="editRow(row)">Edit</ion-button>
+            <ion-button color="danger" (click)="deleteRow(row)">Delete</ion-button>
+          </ng-template>
+        </ngx-datatable-column>
+        
     </ngx-datatable>
   </div>
 </ion-content>
 
 
 <!--
+// Inline Editing
+<span *ngIf='!editMode' (click)='editMode=true' class='cell'>
+  {{row.name}} {{ data | number:'':'en' }}
+</span>
+
+event.currentTarget.blur()
+
+<input *ngIf='editMode' (focusout)="onFocusOut()" (keydown.enter)='($any($event.target).blur())'
+[(ngModel)]='data' class='cellInput' appAutofocus type='number' (keydown.enter)='($any($event.target).blur())' (focusout)="editMode=false">
+
+//
 <ion-header class="ion-no-border">
   <ion-toolbar color="primary">
     <ion-title class="ion-text-left">

@@ -43,6 +43,7 @@
     "jquery": "^3.6.0",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.34",
+    "ngx-edit-inline": "^1.1.2",
     "pipes-module": "^1.0.1",
     "react-native-fs": "^2.17.0",
     "rxjs": "~6.6.0",
