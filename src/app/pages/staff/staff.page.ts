@@ -1,6 +1,9 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ViewEncapsulation } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+
+import { ModalNewstaffPage } from '../../pages/modal-newstaff/modal-newstaff.page';
 //import { UsersService } from '../../services/users.service';
 
 @Component({
@@ -14,13 +17,15 @@ export class StaffPage implements OnInit {
   @Input() rows;
   @Output() focusOut: EventEmitter<number> = new EventEmitter<number>();
   isEdit : boolean = true;
+  modelData: any;
 
   //public rows: any;
   delRow;
   enableEdit = false;
   enableEditIndex = null;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,
+    public modalController: ModalController) {}
 
   ngOnInit(): void {
     this.users();
@@ -41,9 +46,9 @@ export class StaffPage implements OnInit {
   } 
 
   editRow(row) {
-    /*this.rows.filter(row => row.isEditable).map(r => { r.isEditable = false; return r })
-    row.isEditable = true; */
-    this.isEdit = false;
+    this.rows.filter(row => row.isEditable).map(r => { r.isEditable = false; return r })
+    row.isEditable = true;
+    //this.isEdit = false;
   }
   
   saveRow(row){
@@ -64,6 +69,22 @@ export class StaffPage implements OnInit {
     console.log(this.data); */
     alert("delete");
 
+  }
+
+  async openIonModal() {
+    const modal = await this.modalController.create({
+      component: ModalNewstaffPage,
+      componentProps: {
+        'model_title': "Add New DynaConsurv Staff"
+      }
+    });
+    modal.onDidDismiss().then((modelData) => {
+      if (modelData !== null) {
+        this.modelData = modelData.data;
+        console.log('Modal Data : ' + modelData.data);
+      }
+    });
+    return await modal.present();
   }
 
   /*

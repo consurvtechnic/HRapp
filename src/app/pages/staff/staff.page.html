@@ -4,7 +4,14 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <div class="container">
+  <ion-row class="ion-align-self-center">
+      <ion-button (click)="openIonModal()">Register New Staff</ion-button>
+    <strong *ngIf="modelData">{{modelData}}</strong>
+</ion-row>
+
+
   <div class="ion-padding">
     <!-- Theme classes dark, material, bootstrap -->
     <ngx-datatable 
@@ -47,10 +54,17 @@
         
     </ngx-datatable>
   </div>
+</div>
+
+  
+
+
 </ion-content>
 
 
+
 <!--
+
 // Inline Editing
 <span *ngIf='!editMode' (click)='editMode=true' class='cell'>
   {{row.name}} {{ data | number:'':'en' }}

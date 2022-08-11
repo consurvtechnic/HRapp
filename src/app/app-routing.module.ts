@@ -94,6 +94,10 @@ const routes: Routes = [
     path: 'leaveapproval',
     loadChildren: () => import('./pages/leaveapproval/leaveapproval.module').then( m => m.LeaveapprovalPageModule)
   },
+  {
+    path: 'modal-newstaff',
+    loadChildren: () => import('./pages/modal-newstaff/modal-newstaff.module').then( m => m.ModalNewstaffPageModule)
+  },
 
   
   
