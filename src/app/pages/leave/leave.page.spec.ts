@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { LeavePage } from './leave.page';
@@ -7,7 +7,7 @@ describe('LeavePage', () => {
   let component: LeavePage;
   let fixture: ComponentFixture<LeavePage>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ LeavePage ],
       imports: [IonicModule.forRoot()]
